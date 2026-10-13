@@ -1,0 +1,59 @@
+/* ==========================================================================
+   AquaTherma - Global Master Footer & Floating Hotline Styles
+   ========================================================================== */
+
+/* Floating Hotline Pill */
+.floating-hotline {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 40;
+  background-color: var(--color-orange);
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-lg), var(--shadow-glow-orange);
+  text-decoration: none;
+  transition: all var(--transition-standard);
+  user-select: none;
+}
+
+.floating-hotline:hover {
+  transform: translateY(-3px) scale(1.02);
+  background-color: var(--color-orange-hover);
+  color: #FFFFFF;
+}
+
+[dir="rtl"] .floating-hotline {
+  right: auto;
+  left: 24px;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 640px) {
+  .floating-hotline {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  [dir="rtl"] .floating-hotline {
+    right: auto;
+    left: 16px;
+  }
+}
+
+/* The footer already contains a phone link; tuck away the floating duplicate. */
+.floating-hotline.docked-footer {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 150ms ease, visibility 0s;
+}

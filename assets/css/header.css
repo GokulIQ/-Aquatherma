@@ -1,0 +1,57 @@
+/* ==========================================================================
+   AquaTherma - Global Master Header & Navigation Styles
+   ========================================================================== */
+
+.header-cinematic-glass {
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-color);
+  transition: all var(--transition-standard);
+}
+
+/* Reserve the booking action for the full desktop navigation. */
+.header-cinematic-glass .header-book-service {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .header-cinematic-glass .header-book-service {
+    display: inline-flex;
+  }
+}
+
+/* Header sticky scrolled state */
+header.is-sticky {
+  box-shadow: 0 4px 20px -2px rgba(9, 29, 44, 0.08);
+}
+
+/* Keep a closed drawer off-screen in either layout direction. */
+#mobile-menu-drawer {
+  right: 0;
+  left: auto;
+  transform: translateX(100%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 300ms ease;
+  will-change: transform;
+}
+
+[dir="rtl"] #mobile-menu-drawer {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+#mobile-menu-drawer[data-open="true"] {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media (min-width: 1280px) {
+  #mobile-menu-drawer,
+  #mobile-menu-backdrop {
+    display: none;
+  }
+}

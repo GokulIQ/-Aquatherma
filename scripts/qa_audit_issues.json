@@ -1,0 +1,26 @@
+[
+  {
+    "page": "privacy-policy.html",
+    "viewport": "1280px (Laptop)",
+    "mode": "Light RTL",
+    "issue": "Console Errors: Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  },
+  {
+    "page": "privacy-policy.html",
+    "viewport": "1440px (Desktop)",
+    "mode": "Light LTR",
+    "issue": "Console Errors: Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  },
+  {
+    "page": "privacy-policy.html",
+    "viewport": "1440px (Desktop)",
+    "mode": "Dark LTR",
+    "issue": "Console Errors: Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  },
+  {
+    "page": "privacy-policy.html",
+    "viewport": "1440px (Desktop)",
+    "mode": "Light RTL",
+    "issue": "Console Errors: Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  }
+]

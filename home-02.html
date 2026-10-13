@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <!-- Apply the theme before styles and page content can render. -->
+  <script id="theme-bootstrap">
+    (() => {
+      let savedTheme = null;
+      try { savedTheme = localStorage.getItem('aquatherma_theme'); } catch (_) {}
+      const isDark = savedTheme === 'dark' ||
+        (savedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.toggle('dark', isDark);
+    })();
+  </script>
+  <style id="theme-bootstrap-colors">
+    html { background-color: #F6F5F1; color-scheme: light; }
+    html.dark { background-color: #091D2C; color-scheme: dark; }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tankless Water Heater Solutions &amp; Smart Upgrades | AquaTherma</title>
+  <meta name="description" content="Discover modern condensing tankless water heater technology. Endless on-demand hot water, compact wall-mounted space savings, real-time sizing calculator, and professional installation.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'midnight-navy': '#091D2C',
+            'deep-teal': '#087E8B',
+            'fresh-aqua': '#36D4CC',
+            'warm-copper': '#DB8959',
+            'warm-offwhite': '#F6F5F1',
+            'charcoal-text': '#17252D',
+            // Semantic Aliases
+            'deep-navy': '#091D2C',
+            'primary-blue': '#087E8B',
+            'accent-aqua': '#36D4CC',
+            'warm-orange': '#DB8959',
+            'soft-bg': '#F6F5F1',
+            'main-text': '#17252D',
+            'secondary-text': '#5A6D7C',
+            'theme-border': '#E2E8F0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons & Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* Section specific enhancements */
+    .hero-glow-radial {
+      background: radial-gradient(circle at 50% 30%, rgba(54, 212, 204, 0.12) 0%, rgba(8, 126, 139, 0.05) 50%, transparent 80%);
+    }
+    html.dark .hero-glow-radial {
+      background: radial-gradient(circle at 50% 30%, rgba(54, 212, 204, 0.18) 0%, rgba(8, 126, 139, 0.1) 50%, transparent 80%);
+    }
+    .pulse-ring {
+      animation: pulsePing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    @keyframes pulsePing {
+      75%, 100% {
+        transform: scale(2.2);
+        opacity: 0;
+      }
+    }
+    .hotspot-active {
+      transform: scale(1.18);
+      box-shadow: 0 0 20px rgba(54, 212, 204, 0.9);
+      border-color: #ffffff !important;
+    }
+  </style>
+</head>
+<body class="bg-warm-offwhite dark:bg-[#091D2C] text-charcoal-text dark:text-[#F6F5F1] antialiased selection:bg-deep-teal selection:text-white">
+
+  <!-- SITE HEADER / CINEMATIC ARCHITECTURAL NAVIGATION -->
+  <header class="header-cinematic-glass sticky top-0 z-50 text-charcoal-text dark:text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2 flex-shrink-0" aria-label="AquaTherma Home">
+        <img src="assets/images/brand/logo.svg" alt="AquaTherma Water Heater Specialists" class="site-logo-img h-7 sm:h-9 w-auto">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden xl:flex items-center gap-5 xl:gap-7 text-[13px] xl:text-sm font-semibold whitespace-nowrap text-slate-700 dark:text-slate-200" aria-label="Main Navigation">
+        <!-- Home Dropdown -->
+        <div class="relative group py-2">
+          <button type="button" class="flex items-center gap-1.5 text-deep-teal dark:text-fresh-aqua font-bold hover:text-deep-teal dark:hover:text-white transition-colors focus:outline-none whitespace-nowrap">
+            Home <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform"></i>
+          </button>
+          <div class="absolute top-full left-0 w-60 bg-white dark:bg-[#091D2C] border border-theme-border dark:border-[#1C3E57] rounded-xl shadow-2xl p-2 hidden group-hover:block transition-all z-50">
+            <a href="index.html" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-[#16364E] text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white whitespace-nowrap">
+              Home 01: Standard &amp; Repair
+            </a>
+            <a href="home-02.html" class="block px-3 py-2 rounded-lg bg-deep-teal/10 dark:bg-[#16364E] text-xs font-bold text-deep-teal dark:text-fresh-aqua whitespace-nowrap">
+              Home 02: Tankless Solutions
+            </a>
+          </div>
+        </div>
+
+        <a href="about.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">About Us</a>
+        <a href="services.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Services</a>
+        <a href="projects.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Projects</a>
+        <a href="blog.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Knowledge Hub</a>
+        <a href="pricing.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Pricing Guide</a>
+        <a href="contact.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0 ms-auto">
+        <!-- Controls: Theme & RTL -->
+        <div class="flex items-center gap-1 sm:gap-2 sm:me-2">
+          <button type="button" class="theme-toggle w-10 h-10 sm:w-11 sm:h-11 inline-flex items-center justify-center rounded-lg text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+            <i data-lucide="moon" class="theme-toggle-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+          </button>
+          <button type="button" class="rtl-toggle w-10 h-10 sm:w-11 sm:h-11 inline-flex items-center justify-center rounded-lg text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors" title="Toggle RTL Layout" aria-label="Toggle right-to-left layout">
+            RTL
+          </button>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-toggle" type="button" class="xl:hidden w-10 h-10 inline-flex items-center justify-center rounded-lg border border-theme-border dark:border-white/20 text-charcoal-text dark:text-white" aria-label="Open Mobile Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+
+        <!-- Primary Request Service CTA -->
+        <a href="contact.html" class="header-book-service btn-copper text-xs py-2 px-4 shadow-md hidden xl:inline-flex whitespace-nowrap">
+          Book Your Service
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60 z-50 hidden backdrop-blur-sm transition-opacity"></div>
+  <div id="mobile-menu-drawer" class="fixed top-0 right-0 w-80 max-w-[85vw] h-full bg-white dark:bg-midnight-navy z-50 p-6 flex flex-col justify-between shadow-2xl transform translate-x-full transition-transform duration-300 overflow-y-auto text-charcoal-text dark:text-white">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-theme-border dark:border-white/10">
+        <img src="assets/images/brand/logo.svg" alt="AquaTherma" class="site-logo-img h-8 w-auto">
+        <button id="mobile-menu-close" type="button" class="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white" aria-label="Close Mobile Menu">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-3 py-6 text-base font-semibold">
+        <span class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 font-bold">Main Navigation</span>
+        <a href="index.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Home 01: Standard &amp; Repair</a>
+        <a href="home-02.html" class="py-2 text-deep-teal dark:text-fresh-aqua font-bold">Home 02: Tankless Solutions</a>
+        <a href="about.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">About Us</a>
+        <a href="services.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">All Services</a>
+        <a href="projects.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Projects Portfolio</a>
+        <a href="blog.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Water Heater Blog</a>
+        <a href="pricing.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Pricing Guide</a>
+        <a href="contact.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Contact &amp; Support</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-theme-border dark:border-white/10 flex flex-col gap-3">
+      <a href="tel:18005554689" class="btn-copper w-full text-center text-sm py-2.5">
+        <i data-lucide="phone-call" class="w-4 h-4"></i> Call (800) 555-4689
+      </a>
+      <a href="contact.html" class="btn-teal w-full text-center text-sm py-2.5">
+        Book Appointment
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========================================================
+         SECTION 1: NEXT-GENERATION TANKLESS HERO
+         Center-focused, modern architectural product showcase
+         ======================================================== -->
+    <section class="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden hero-glow-radial border-b border-theme-border dark:border-white/10" aria-labelledby="hero-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        
+        <!-- Eyebrow Pill -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua text-xs sm:text-sm font-bold tracking-wide mb-6 border border-deep-teal/20 dark:border-fresh-aqua/30 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-fresh-aqua animate-ping"></span>
+          <span>Next-Generation Condensing Tankless Systems</span>
+        </div>
+
+        <!-- Master Headline -->
+        <h1 id="hero-heading" class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-charcoal-text dark:text-white tracking-tight max-w-4xl mx-auto leading-[1.15]">
+          Smarter Water Heating. <br class="hidden sm:inline">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-deep-teal via-teal-500 to-fresh-aqua">
+            Designed for Modern Living.
+          </span>
+        </h1>
+
+        <!-- Master Description -->
+        <p class="mt-5 text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          Discover professional tankless water heater installation and energy-efficient heating solutions designed around your home’s hot water needs.
+        </p>
+
+        <!-- Primary CTA Buttons -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <a href="#tankless-benefits" class="btn-copper text-sm sm:text-base py-3.5 px-7 shadow-lg inline-flex items-center gap-2">
+            <span>Explore Tankless Solutions</span>
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </a>
+          <a href="#sizing-estimator" class="btn-teal text-sm sm:text-base py-3.5 px-7 shadow-md inline-flex items-center gap-2">
+            <i data-lucide="calculator" class="w-4 h-4"></i>
+            <span>Find Your Ideal System</span>
+          </a>
+        </div>
+
+        <!-- 3 Compact Factual Highlights -->
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
+          <div class="p-4 rounded-xl bg-white/80 dark:bg-white/5 border border-theme-border dark:border-white/10 backdrop-blur-md shadow-sm flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-deep-teal/10 dark:bg-fresh-aqua/10 text-deep-teal dark:text-fresh-aqua flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i data-lucide="waves" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-charcoal-text dark:text-white">Hot Water On Demand</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-snug">Continuous endless flow without waiting for tank reheating cycles.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/80 dark:bg-white/5 border border-theme-border dark:border-white/10 backdrop-blur-md shadow-sm flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-warm-copper/10 text-warm-copper flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i data-lucide="maximize-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-charcoal-text dark:text-white">Space-Conscious Installation</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-snug">Compact wall mount footprint saves up to 80% utility floor space.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/80 dark:bg-white/5 border border-theme-border dark:border-white/10 backdrop-blur-md shadow-sm flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-fresh-aqua/10 text-fresh-aqua flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i data-lucide="zap" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-charcoal-text dark:text-white">Energy-Efficient Options</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-snug">Up to 0.96 UEF condensing performance with low standby loss.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Product Hero Showcase Frame with Badges -->
+        <div class="mt-12 relative max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-theme-border dark:border-white/15 bg-white dark:bg-[#061521] group">
+          <img src="assets/images/home-02/tankless-hero.jpg" alt="Tank, wall-mounted tankless, and hybrid heat pump water heaters with a service technician" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.01]" width="1200" height="800" fetchpriority="high">
+
+          <!-- Floating High-Tech Spec Overlay Badges -->
+          <div class="absolute top-4 left-4 sm:top-6 sm:left-6 bg-slate-900/85 backdrop-blur-md text-white border border-white/20 rounded-xl p-3 sm:p-4 text-left shadow-xl hidden xs:flex items-center gap-3 max-w-xs">
+            <div class="w-9 h-9 rounded-lg bg-fresh-aqua/20 text-fresh-aqua flex items-center justify-center flex-shrink-0">
+              <i data-lucide="thermometer" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Digital Precision</span>
+              <span class="text-sm font-bold text-white">120°F Constant Temp</span>
+              <span class="text-[11px] text-fresh-aqua block mt-0.5">±1°F Electronic Modulation</span>
+            </div>
+          </div>
+
+          <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-slate-900/85 backdrop-blur-md text-white border border-white/20 rounded-xl p-3 sm:p-4 text-left shadow-xl hidden sm:flex items-center gap-3 max-w-xs">
+            <div class="w-9 h-9 rounded-lg bg-warm-copper/20 text-warm-copper flex items-center justify-center flex-shrink-0">
+              <i data-lucide="gauge" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Continuous Output</span>
+              <span class="text-sm font-bold text-white">9.8 GPM Peak Flow</span>
+              <span class="text-[11px] text-slate-300 block mt-0.5">0.96 UEF Condensing Rating</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         SECTION 2: BENEFITS & INTERACTIVE HOTSPOTS
+         Interactive equipment exploration with 4 interactive pulsing hotspots
+         ======================================================== -->
+    <section id="tankless-benefits" class="py-16 md:py-24 bg-white dark:bg-[#071724] border-b border-theme-border dark:border-white/10" aria-labelledby="benefits-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-deep-teal/10 dark:bg-fresh-aqua/10 text-deep-teal dark:text-fresh-aqua text-xs font-bold uppercase tracking-wider mb-3">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+            <span>Interactive Engineering Architecture</span>
+          </div>
+          <h2 id="benefits-heading" class="text-3xl sm:text-4xl font-extrabold font-heading text-charcoal-text dark:text-white tracking-tight">
+            Less Space. More Possibilities.
+          </h2>
+          <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Click or tap the interactive component hotspots below to discover how wall-mounted tankless units redefine utility room space, eliminate standby heat losses, and deliver continuous hot water comfort.
+          </p>
+        </div>
+
+        <!-- Interactive Layout: Image with Hotspots + Dynamic Explanation Card -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left: Equipment Visual with 4 Positioned Pulsing Hotspots -->
+          <div class="lg:col-span-7">
+            <div class="relative rounded-2xl overflow-hidden border border-theme-border dark:border-white/15 shadow-2xl bg-slate-900 group">
+              <picture>
+                <source srcset="assets/images/home-02/tankless-benefits.webp" type="image/webp">
+                <img id="hotspot-equipment-img" src="assets/images/home-02/tankless-benefits.jpg" alt="Technical tankless water heater equipment showcase highlighting condensing heat exchanger, digital thermostat, and space saving wall mount" class="w-full h-auto object-cover" width="1376" height="768" loading="lazy">
+              </picture>
+
+              <!-- Hotspot 1: On-Demand Heating (Heat Exchanger Core) -->
+              <button type="button" class="hotspot-btn absolute top-[28%] left-[48%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-fresh-aqua text-midnight-navy font-bold text-xs flex items-center justify-center border-2 border-white shadow-lg cursor-pointer transition-transform focus:outline-none focus:ring-4 focus:ring-fresh-aqua/50" data-hotspot="1" aria-label="Inspect On-Demand Heating Component" aria-pressed="true">
+                <span class="absolute inset-0 rounded-full bg-fresh-aqua pulse-ring"></span>
+                <span class="relative z-10 font-extrabold">1</span>
+              </button>
+
+              <!-- Hotspot 2: Compact Wall Design (Mounting / Outer Profile) -->
+              <button type="button" class="hotspot-btn absolute top-[20%] left-[82%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/90 text-white font-bold text-xs flex items-center justify-center border-2 border-slate-300 shadow-lg cursor-pointer transition-transform focus:outline-none focus:ring-4 focus:ring-fresh-aqua/50" data-hotspot="2" aria-label="Inspect Compact Wall Design Component" aria-pressed="false">
+                <span class="relative z-10 font-extrabold">2</span>
+              </button>
+
+              <!-- Hotspot 3: Reduced Standby Loss (Burner & Gas Manifold) -->
+              <button type="button" class="hotspot-btn absolute top-[62%] left-[32%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/90 text-white font-bold text-xs flex items-center justify-center border-2 border-slate-300 shadow-lg cursor-pointer transition-transform focus:outline-none focus:ring-4 focus:ring-fresh-aqua/50" data-hotspot="3" aria-label="Inspect Reduced Standby Loss Component" aria-pressed="false">
+                <span class="relative z-10 font-extrabold">3</span>
+              </button>
+
+              <!-- Hotspot 4: Modern Heating Controls (Digital Display & Diagnostics) -->
+              <button type="button" class="hotspot-btn absolute top-[72%] left-[68%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/90 text-white font-bold text-xs flex items-center justify-center border-2 border-slate-300 shadow-lg cursor-pointer transition-transform focus:outline-none focus:ring-4 focus:ring-fresh-aqua/50" data-hotspot="4" aria-label="Inspect Modern Heating Controls Component" aria-pressed="false">
+                <span class="relative z-10 font-extrabold">4</span>
+              </button>
+
+              <!-- Corner helper pill -->
+              <div class="absolute bottom-3 left-3 bg-midnight-navy/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-[11px] text-slate-300 flex items-center gap-2">
+                <i data-lucide="touchpad" class="w-3.5 h-3.5 text-fresh-aqua"></i>
+                <span>Tap any numbered pin to inspect</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Dynamic Detail Panel -->
+          <div class="lg:col-span-5">
+            <!-- Selector Tabs for Mobile / Accessibility -->
+            <div class="grid grid-cols-4 gap-2 mb-4" role="tablist" aria-label="Component Navigation Tabs">
+              <button type="button" class="hotspot-tab p-2 text-center rounded-lg border border-theme-border dark:border-white/10 text-xs font-bold transition-all bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua border-deep-teal/40 dark:border-fresh-aqua/40" data-tab="1" role="tab" aria-selected="true">
+                1. Heating
+              </button>
+              <button type="button" class="hotspot-tab p-2 text-center rounded-lg border border-theme-border dark:border-white/10 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white transition-all bg-slate-50 dark:bg-white/5" data-tab="2" role="tab" aria-selected="false">
+                2. Design
+              </button>
+              <button type="button" class="hotspot-tab p-2 text-center rounded-lg border border-theme-border dark:border-white/10 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white transition-all bg-slate-50 dark:bg-white/5" data-tab="3" role="tab" aria-selected="false">
+                3. Efficiency
+              </button>
+              <button type="button" class="hotspot-tab p-2 text-center rounded-lg border border-theme-border dark:border-white/10 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white transition-all bg-slate-50 dark:bg-white/5" data-tab="4" role="tab" aria-selected="false">
+                4. Controls
+              </button>
+            </div>
+
+            <!-- Active Content Box -->
+            <div id="hotspot-content-card" class="p-6 sm:p-7 rounded-2xl bg-slate-50 dark:bg-white/5 border border-theme-border dark:border-white/10 shadow-lg">
+              <div class="flex items-center justify-between pb-4 border-b border-theme-border dark:border-white/10">
+                <span id="hotspot-eyebrow" class="text-xs uppercase font-extrabold tracking-wider text-deep-teal dark:text-fresh-aqua">
+                  Core Component 01
+                </span>
+                <span id="hotspot-badge" class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua border border-deep-teal/20 dark:border-fresh-aqua/20">
+                  Condensing Stainless
+                </span>
+              </div>
+
+              <h3 id="hotspot-title" class="text-xl sm:text-2xl font-bold font-heading text-charcoal-text dark:text-white mt-4">
+                On-Demand Heating
+              </h3>
+
+              <p id="hotspot-desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-3">
+                Dual stainless steel condensing heat exchangers fire only upon water flow trigger. Incoming cold water extracts latent heat from exhaust flue gases, delivering continuous hot water in seconds with zero standby burner loss.
+              </p>
+
+              <!-- Dynamic Photographic Inset Feature -->
+              <div class="mt-4 rounded-xl overflow-hidden border border-theme-border dark:border-white/10 relative h-36">
+                <img id="hotspot-subimage" src="assets/images/home-02/compact-wall-installation.webp" alt="Compact wall-mounted tankless installation in residential utility space" class="w-full h-full object-cover transition-opacity duration-300" width="1376" height="768" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                <span id="hotspot-subimage-caption" class="absolute bottom-2 left-3 text-[11px] font-semibold text-white">Compact Wall-Mount Installation Proof</span>
+              </div>
+
+              <!-- Technical Metric Chips -->
+              <div class="mt-5 grid grid-cols-2 gap-3 pt-4 border-t border-theme-border dark:border-white/10">
+                <div class="p-3 rounded-xl bg-white dark:bg-[#091D2C] border border-theme-border dark:border-white/10">
+                  <span id="hotspot-stat-label-1" class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold block">Thermal Rating</span>
+                  <span id="hotspot-stat-val-1" class="text-base font-extrabold text-charcoal-text dark:text-white mt-0.5 block">0.96 UEF (96%)</span>
+                </div>
+                <div class="p-3 rounded-xl bg-white dark:bg-[#091D2C] border border-theme-border dark:border-white/10">
+                  <span id="hotspot-stat-label-2" class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold block">Heat Exchanger</span>
+                  <span id="hotspot-stat-val-2" class="text-base font-extrabold text-charcoal-text dark:text-white mt-0.5 block">Dual Stainless</span>
+                </div>
+              </div>
+
+              <!-- Action Link -->
+              <div class="mt-6 pt-4">
+                <a href="service-detail.html?id=tankless-water-heater-installation" class="text-xs sm:text-sm font-bold text-deep-teal dark:text-fresh-aqua hover:underline inline-flex items-center gap-1.5">
+                  <span>Learn more about tankless engineering</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         SECTION 3: INTERACTIVE HOT WATER NEEDS ESTIMATOR
+         Real-time peak GPM & temperature rise calculator with live tier outputs
+         ======================================================== -->
+    <section id="sizing-estimator" class="py-16 md:py-24 bg-warm-offwhite dark:bg-midnight-navy border-b border-theme-border dark:border-white/10" aria-labelledby="sizing-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-warm-copper/10 text-warm-copper text-xs font-bold uppercase tracking-wider mb-3">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            <span>Real-Time Flow Sizing Calculator</span>
+          </div>
+          <h2 id="sizing-heading" class="text-3xl sm:text-4xl font-extrabold font-heading text-charcoal-text dark:text-white tracking-tight">
+            Find a System That Fits Your Home.
+          </h2>
+          <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Tankless water heater performance is engineered around your peak simultaneous water draw (GPM) and your local incoming groundwater temperature. Configure your household below for an instant sizing recommendation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Left: Sizing Inputs Card -->
+          <div class="lg:col-span-7 bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl">
+            <h3 class="text-lg font-bold font-heading text-charcoal-text dark:text-white pb-4 border-b border-theme-border dark:border-white/10 flex items-center justify-between">
+              <span>Household Fixture &amp; Climate Parameters</span>
+              <span class="text-xs font-normal text-slate-500 dark:text-slate-400">Step 1 of 2</span>
+            </h3>
+
+            <div class="space-y-6 mt-6">
+              
+              <!-- Input 1: Bathrooms in Home -->
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2.5">
+                  1. Number of Bathrooms in Residence
+                </label>
+                <div class="grid grid-cols-4 gap-2 sm:gap-3" id="input-baths">
+                  <button type="button" class="btn-calc-bath py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs sm:text-sm font-semibold hover:border-deep-teal transition-all text-slate-700 dark:text-slate-200" data-value="1">1 Bath</button>
+                  <button type="button" class="btn-calc-bath py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs sm:text-sm font-semibold hover:border-deep-teal transition-all text-slate-700 dark:text-slate-200" data-value="2">2 Baths</button>
+                  <button type="button" class="btn-calc-bath py-2.5 px-3 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua font-bold text-xs sm:text-sm shadow-sm" data-value="3" aria-pressed="true">3 Baths</button>
+                  <button type="button" class="btn-calc-bath py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs sm:text-sm font-semibold hover:border-deep-teal transition-all text-slate-700 dark:text-slate-200" data-value="4">4+ Baths</button>
+                </div>
+              </div>
+
+              <!-- Input 2: Simultaneous Showers -->
+              <div>
+                <div class="flex items-center justify-between mb-2.5">
+                  <label class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                    2. Simultaneous Showers (Peak Morning Usage)
+                  </label>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">2.0 GPM per shower head</span>
+                </div>
+                <div class="grid grid-cols-4 gap-2 sm:gap-3" id="input-showers">
+                  <button type="button" class="btn-calc-shower py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs sm:text-sm font-semibold hover:border-deep-teal transition-all text-slate-700 dark:text-slate-200" data-value="1">1 Shower</button>
+                  <button type="button" class="btn-calc-shower py-2.5 px-3 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua font-bold text-xs sm:text-sm shadow-sm" data-value="2" aria-pressed="true">2 Showers</button>
+                  <button type="button" class="btn-calc-shower py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs sm:text-sm font-semibold hover:border-deep-teal transition-all text-slate-700 dark:text-slate-200" data-value="3">3 Showers</button>
+                  <button type="button" class="btn-calc-shower py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs sm:text-sm font-semibold hover:border-deep-teal transition-all text-slate-700 dark:text-slate-200" data-value="4">4 Showers</button>
+                </div>
+              </div>
+
+              <!-- Input 3: Additional Concurrent Fixtures -->
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2.5">
+                  3. Additional Concurrent Appliances / Fixtures
+                </label>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <label class="flex items-center gap-3 p-3 rounded-xl border border-theme-border dark:border-white/10 hover:border-deep-teal cursor-pointer transition-colors bg-slate-50/50 dark:bg-white/5">
+                    <input type="checkbox" id="fixture-kitchen" class="calc-fixture-cb w-4 h-4 text-deep-teal rounded border-slate-300 focus:ring-deep-teal" checked>
+                    <div>
+                      <span class="text-xs font-bold text-charcoal-text dark:text-white block">Kitchen Sink</span>
+                      <span class="text-[11px] text-slate-500 dark:text-slate-400">+1.5 GPM</span>
+                    </div>
+                  </label>
+
+                  <label class="flex items-center gap-3 p-3 rounded-xl border border-theme-border dark:border-white/10 hover:border-deep-teal cursor-pointer transition-colors bg-slate-50/50 dark:bg-white/5">
+                    <input type="checkbox" id="fixture-dishwasher" class="calc-fixture-cb w-4 h-4 text-deep-teal rounded border-slate-300 focus:ring-deep-teal">
+                    <div>
+                      <span class="text-xs font-bold text-charcoal-text dark:text-white block">Dishwasher</span>
+                      <span class="text-[11px] text-slate-500 dark:text-slate-400">+1.2 GPM</span>
+                    </div>
+                  </label>
+
+                  <label class="flex items-center gap-3 p-3 rounded-xl border border-theme-border dark:border-white/10 hover:border-deep-teal cursor-pointer transition-colors bg-slate-50/50 dark:bg-white/5">
+                    <input type="checkbox" id="fixture-washer" class="calc-fixture-cb w-4 h-4 text-deep-teal rounded border-slate-300 focus:ring-deep-teal">
+                    <div>
+                      <span class="text-xs font-bold text-charcoal-text dark:text-white block">Washing Machine</span>
+                      <span class="text-[11px] text-slate-500 dark:text-slate-400">+2.0 GPM</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Input 4: Groundwater Climate Zone -->
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2.5">
+                  4. Regional Groundwater Inlet Temperature
+                </label>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3" id="input-groundwater">
+                  <button type="button" class="btn-calc-temp p-3 rounded-xl border border-theme-border dark:border-white/15 text-left transition-all hover:border-deep-teal" data-temp="40" data-rise="80">
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white block">Cold / Northern</span>
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">40°F inlet (80°F rise)</span>
+                  </button>
+
+                  <button type="button" class="btn-calc-temp p-3 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-left transition-all shadow-sm" data-temp="50" data-rise="70" aria-pressed="true">
+                    <span class="text-xs font-bold text-deep-teal dark:text-fresh-aqua block">Moderate / Central</span>
+                    <span class="text-[11px] text-deep-teal/80 dark:text-fresh-aqua/80 block mt-0.5">50°F inlet (70°F rise)</span>
+                  </button>
+
+                  <button type="button" class="btn-calc-temp p-3 rounded-xl border border-theme-border dark:border-white/15 text-left transition-all hover:border-deep-teal" data-temp="65" data-rise="55">
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white block">Warm / Southern</span>
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">65°F inlet (55°F rise)</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: Live System Recommendation Card -->
+          <div class="lg:col-span-5 bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="flex items-center justify-between pb-4 border-b border-theme-border dark:border-white/10">
+              <span class="text-xs font-bold uppercase tracking-wider text-deep-teal dark:text-fresh-aqua">
+                Calculated Sizing Profile
+              </span>
+              <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                100% Sized Capacity
+              </span>
+            </div>
+
+            <!-- Flow & Temp Metrics -->
+            <div class="grid grid-cols-2 gap-4 mt-6">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-theme-border dark:border-white/10 text-center">
+                <span class="text-xs text-slate-500 dark:text-slate-400 block font-semibold">Peak Continuous Demand</span>
+                <span id="calc-result-gpm" class="text-3xl sm:text-4xl font-extrabold text-deep-teal dark:text-fresh-aqua mt-1 block">5.5 GPM</span>
+                <span class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 block">Gallons Per Minute</span>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-theme-border dark:border-white/10 text-center">
+                <span class="text-xs text-slate-500 dark:text-slate-400 block font-semibold">Required Heating Rise</span>
+                <span id="calc-result-rise" class="text-3xl sm:text-4xl font-extrabold text-warm-copper mt-1 block">70°F &Delta;T</span>
+                <span class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 block">Inlet to 120°F Target</span>
+              </div>
+            </div>
+
+            <!-- GPM Visual Gauge Bar -->
+            <div class="mt-6">
+              <div class="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 mb-2">
+                <span>System Flow Utilization</span>
+                <span id="calc-utilization-text" class="font-bold text-charcoal-text dark:text-white">58% of max capacity</span>
+              </div>
+              <div class="w-full h-3 rounded-full bg-slate-200 dark:bg-white/10 overflow-hidden relative">
+                <div id="calc-gauge-bar" class="h-full bg-gradient-to-r from-teal-500 to-fresh-aqua rounded-full transition-all duration-500" style="width: 58%;"></div>
+              </div>
+              <div class="flex justify-between text-[10px] text-slate-400 mt-1 font-mono">
+                <span>0 GPM</span>
+                <span>5.0 GPM</span>
+                <span>9.8 GPM</span>
+                <span>12+ GPM</span>
+              </div>
+            </div>
+
+            <!-- Recommended Model Box -->
+            <div class="mt-6 p-5 rounded-xl bg-gradient-to-br from-deep-teal/5 to-fresh-aqua/5 dark:from-deep-teal/15 dark:to-fresh-aqua/10 border border-deep-teal/20 dark:border-fresh-aqua/20">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-deep-teal dark:text-fresh-aqua block">
+                Recommended Equipment Tier
+              </span>
+              <h4 id="calc-tier-title" class="text-lg font-bold font-heading text-charcoal-text dark:text-white mt-1">
+                Tier 2: High-Performance 8.0–9.8 GPM Condensing System
+              </h4>
+              <p id="calc-tier-desc" class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                Dual stainless condensing heat exchangers deliver continuous simultaneous flow for 2 showers plus a kitchen fixture without thermal degradation or cold-water sandwich fluctuations.
+              </p>
+
+              <div class="mt-4 pt-3 border-t border-theme-border/60 dark:border-white/10 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span id="calc-btu-estimate">Est. 180,000–199,000 BTU/hr</span>
+                <span class="font-bold text-deep-teal dark:text-fresh-aqua">0.96 UEF Efficiency</span>
+              </div>
+            </div>
+
+            <!-- Engineering Disclaimer Note -->
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-4 leading-normal">
+              * Calculations assume standard 2.0 GPM WaterSense fixtures at 60 PSI. An AquaTherma licensed plumber will verify exact gas pipe diameter, static gas pressure, and vent clearance on-site before equipment sign-off.
+            </p>
+
+            <!-- Action Button -->
+            <div class="mt-6">
+              <a href="contact.html" class="btn-copper w-full text-center py-3.5 text-sm font-bold shadow-lg">
+                Schedule On-Site Sizing Assessment
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         SECTION 4: MODERN TECHNOLOGY EXPLAINED (5-STEP OPERATIONAL CYCLE)
+         Step-by-step thermodynamic flow walkthrough with interactive stage selector
+         ======================================================== -->
+    <section id="how-it-works" class="py-16 md:py-24 bg-white dark:bg-[#071724] border-b border-theme-border dark:border-white/10" aria-labelledby="tech-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-deep-teal/10 dark:bg-fresh-aqua/10 text-deep-teal dark:text-fresh-aqua text-xs font-bold uppercase tracking-wider mb-3">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+            <span>Continuous Flow Cycle</span>
+          </div>
+          <h2 id="tech-heading" class="text-3xl sm:text-4xl font-extrabold font-heading text-charcoal-text dark:text-white tracking-tight">
+            See How On-Demand Heating Works.
+          </h2>
+          <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            From the instant you open a hot water valve to continuous delivery at your showerhead, advanced microprocessors and dual heat exchangers complete an intelligent 5-step operational thermodynamic sequence.
+          </p>
+        </div>
+
+        <!-- Interactive 5-Step Selector Navigation -->
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-4 mb-10" role="tablist" aria-label="5 Step Operational Cycle">
+          <button type="button" class="cycle-step-btn p-3 sm:p-4 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-left transition-all" data-step="1" role="tab" aria-selected="true">
+            <span class="text-[10px] uppercase font-bold text-deep-teal dark:text-fresh-aqua block tracking-wider">Step 01</span>
+            <span class="text-xs sm:text-sm font-bold text-charcoal-text dark:text-white mt-1 block">Flow Sensor Trigger</span>
+          </button>
+
+          <button type="button" class="cycle-step-btn p-3 sm:p-4 rounded-xl border border-theme-border dark:border-white/15 bg-slate-50 dark:bg-white/5 text-left transition-all hover:border-deep-teal" data-step="2" role="tab" aria-selected="false">
+            <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Step 02</span>
+            <span class="text-xs sm:text-sm font-bold text-charcoal-text dark:text-white mt-1 block">Spark &amp; Burner Mod</span>
+          </button>
+
+          <button type="button" class="cycle-step-btn p-3 sm:p-4 rounded-xl border border-theme-border dark:border-white/15 bg-slate-50 dark:bg-white/5 text-left transition-all hover:border-deep-teal" data-step="3" role="tab" aria-selected="false">
+            <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Step 03</span>
+            <span class="text-xs sm:text-sm font-bold text-charcoal-text dark:text-white mt-1 block">Condensing Pre-Heat</span>
+          </button>
+
+          <button type="button" class="cycle-step-btn p-3 sm:p-4 rounded-xl border border-theme-border dark:border-white/15 bg-slate-50 dark:bg-white/5 text-left transition-all hover:border-deep-teal" data-step="4" role="tab" aria-selected="false">
+            <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Step 04</span>
+            <span class="text-xs sm:text-sm font-bold text-charcoal-text dark:text-white mt-1 block">Primary Heat Chamber</span>
+          </button>
+
+          <button type="button" class="cycle-step-btn p-3 sm:p-4 rounded-xl border border-theme-border dark:border-white/15 bg-slate-50 dark:bg-white/5 text-left transition-all hover:border-deep-teal col-span-2 sm:col-span-1" data-step="5" role="tab" aria-selected="false">
+            <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Step 05</span>
+            <span class="text-xs sm:text-sm font-bold text-charcoal-text dark:text-white mt-1 block">Modulated Delivery</span>
+          </button>
+        </div>
+
+        <!-- Detailed Operational Stage Display -->
+        <div class="rounded-2xl border border-theme-border dark:border-white/15 bg-slate-50 dark:bg-white/5 p-6 sm:p-10 shadow-xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Left: Flow Schematic Diagram Card -->
+            <div class="lg:col-span-6 bg-white dark:bg-[#091D2C] p-6 sm:p-8 rounded-xl border border-theme-border dark:border-white/10 shadow-inner">
+              <div class="flex items-center justify-between pb-4 border-b border-theme-border dark:border-white/10 mb-6">
+                <span class="text-xs font-mono font-bold text-deep-teal dark:text-fresh-aqua flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  SYSTEM_TELEMETRY: ACTIVE_CYCLE
+                </span>
+                <span id="cycle-elapsed-tag" class="text-xs font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-white/10 px-2 py-0.5 rounded">
+                  Elapsed: 0.15s
+                </span>
+              </div>
+
+              <!-- Graphic Flow Pathway Visual -->
+              <div class="space-y-4">
+                <div id="flow-node-1" class="flow-stage-node p-3 rounded-lg border-2 border-fresh-aqua bg-fresh-aqua/10 flex items-center justify-between transition-all">
+                  <div class="flex items-center gap-3">
+                    <span class="w-7 h-7 rounded-full bg-fresh-aqua text-midnight-navy font-bold text-xs flex items-center justify-center">1</span>
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white">Impeller Flow Sensor (0.4 GPM Minimum)</span>
+                  </div>
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i>
+                </div>
+
+                <div id="flow-node-2" class="flow-stage-node p-3 rounded-lg border border-theme-border dark:border-white/10 bg-slate-50 dark:bg-white/5 flex items-center justify-between transition-all opacity-70">
+                  <div class="flex items-center gap-3">
+                    <span class="w-7 h-7 rounded-full bg-slate-200 dark:bg-white/20 text-charcoal-text dark:text-white font-bold text-xs flex items-center justify-center">2</span>
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white">Dual Electronic Spark Ignition &amp; Blower Purge</span>
+                  </div>
+                  <i data-lucide="circle" class="w-4 h-4 text-slate-400"></i>
+                </div>
+
+                <div id="flow-node-3" class="flow-stage-node p-3 rounded-lg border border-theme-border dark:border-white/10 bg-slate-50 dark:bg-white/5 flex items-center justify-between transition-all opacity-70">
+                  <div class="flex items-center gap-3">
+                    <span class="w-7 h-7 rounded-full bg-slate-200 dark:bg-white/20 text-charcoal-text dark:text-white font-bold text-xs flex items-center justify-center">3</span>
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white">Secondary Stainless Condensing Exchanger</span>
+                  </div>
+                  <i data-lucide="circle" class="w-4 h-4 text-slate-400"></i>
+                </div>
+
+                <div id="flow-node-4" class="flow-stage-node p-3 rounded-lg border border-theme-border dark:border-white/10 bg-slate-50 dark:bg-white/5 flex items-center justify-between transition-all opacity-70">
+                  <div class="flex items-center gap-3">
+                    <span class="w-7 h-7 rounded-full bg-slate-200 dark:bg-white/20 text-charcoal-text dark:text-white font-bold text-xs flex items-center justify-center">4</span>
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white">Primary Commercial Copper Exchanger</span>
+                  </div>
+                  <i data-lucide="circle" class="w-4 h-4 text-slate-400"></i>
+                </div>
+
+                <div id="flow-node-5" class="flow-stage-node p-3 rounded-lg border border-theme-border dark:border-white/10 bg-slate-50 dark:bg-white/5 flex items-center justify-between transition-all opacity-70">
+                  <div class="flex items-center gap-3">
+                    <span class="w-7 h-7 rounded-full bg-slate-200 dark:bg-white/20 text-charcoal-text dark:text-white font-bold text-xs flex items-center justify-center">5</span>
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white">Modulated 120°F Delivery to Fixtures</span>
+                  </div>
+                  <i data-lucide="circle" class="w-4 h-4 text-slate-400"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Stage Deep-Dive Technical Explanation -->
+            <div class="lg:col-span-6">
+              <span id="cycle-stage-badge" class="px-3 py-1 rounded-full text-xs font-bold bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua border border-deep-teal/20 dark:border-fresh-aqua/20 inline-block mb-3">
+                Phase 1: Hydronic Inflow Detection
+              </span>
+
+              <h3 id="cycle-stage-title" class="text-2xl sm:text-3xl font-bold font-heading text-charcoal-text dark:text-white">
+                Turbine Flow Sensor Activation
+              </h3>
+
+              <p id="cycle-stage-desc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
+                When any hot water faucet or fixture is opened anywhere in the home, cold water begins moving through the intake port. A high-precision digital magnetic turbine detects water movement as low as 0.4 gallons per minute, signaling the central PCB processor within milliseconds.
+              </p>
+
+              <!-- Engineering Detail Specifications -->
+              <div class="mt-6 space-y-3 pt-6 border-t border-theme-border dark:border-white/10">
+                <div class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0"></i>
+                  <span id="cycle-spec-1" class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                    <strong>Minimum Flow Threshold:</strong> 0.4 GPM activation (prevents false firing from pipe pressure fluctuations).
+                  </span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0"></i>
+                  <span id="cycle-spec-2" class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                    <strong>Sensor Technology:</strong> Dual Hall-effect magnetic pulse turbine with instant pulse-width modulation output.
+                  </span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0"></i>
+                  <span id="cycle-spec-3" class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                    <strong>Pre-Ignition Check:</strong> Electronic thermistors instantly measure incoming groundwater temp to calculate precise burner firing rate.
+                  </span>
+                </div>
+              </div>
+
+              <!-- Cycle Step Progression Controls -->
+              <div class="mt-8 flex items-center gap-3">
+                <button type="button" id="cycle-prev-btn" class="p-2.5 rounded-xl border border-theme-border dark:border-white/10 hover:border-deep-teal transition-colors text-charcoal-text dark:text-white disabled:opacity-40" disabled aria-label="Previous Operational Step">
+                  <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                </button>
+                <button type="button" id="cycle-next-btn" class="btn-teal text-xs sm:text-sm py-2.5 px-5 shadow-sm inline-flex items-center gap-1.5" aria-label="Next Operational Step">
+                  <span>Advance to Step 2</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         SECTION 5: SMART UPGRADES & SYSTEM COMPATIBILITY
+         4 Comprehensive horizontal alternating compatibility pillars with real photography
+         ======================================================== -->
+    <section id="system-compatibility" class="py-16 md:py-24 bg-warm-offwhite dark:bg-midnight-navy border-b border-theme-border dark:border-white/10" aria-labelledby="compat-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua text-xs font-bold uppercase tracking-wider mb-3">
+            <i data-lucide="sliders" class="w-3.5 h-3.5"></i>
+            <span>Retrofit &amp; Compatibility Architecture</span>
+          </div>
+          <h2 id="compat-heading" class="text-3xl sm:text-4xl font-extrabold font-heading text-charcoal-text dark:text-white tracking-tight">
+            Built Around Your Home's Heating Needs.
+          </h2>
+          <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Transitioning from a cylindrical storage tank to high-performance tankless requires engineering harmony across four residential utilities. AquaTherma validates every parameter on-site to ensure optimal performance.
+          </p>
+        </div>
+
+        <div class="space-y-12">
+          
+          <!-- Pillar 1: Gas Supply Capacity -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 rounded-2xl p-6 sm:p-8 shadow-lg">
+            <div class="lg:col-span-5 rounded-xl overflow-hidden border border-theme-border dark:border-white/10">
+              <picture>
+                <source srcset="assets/images/home-02/gas-system-compatibility.webp" type="image/webp">
+                <img src="assets/images/home-02/gas-system-compatibility.jpg" alt="Residential gas meter regulator, yellow gas flex line, shutoff valve and test port" class="w-full h-auto object-cover max-h-72" width="1376" height="768" loading="lazy">
+              </picture>
+            </div>
+            <div class="lg:col-span-7">
+              <span class="text-xs font-bold uppercase tracking-wider text-warm-copper">Pillar 01 — Fuel Delivery</span>
+              <h3 class="text-2xl font-bold font-heading text-charcoal-text dark:text-white mt-1">
+                Gas Supply Capacity &amp; Line Sizing
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                Tankless systems demand between 160,000 to 199,000 BTU/hr when heating multiple fixtures simultaneously. Our master plumbers measure your utility meter capacity and run dedicated 3/4" or negative-pressure 1/2" gas piping with digital manometer drop-testing to eliminate burner starvation.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-xs font-semibold text-charcoal-text dark:text-white">Up to 199k BTU/hr Support</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-xs font-semibold text-charcoal-text dark:text-white">3.5" to 10.5" W.C. Pressure</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-xs font-semibold text-charcoal-text dark:text-white">Natural Gas &amp; Propane Kits</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Electrical Requirements -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 rounded-2xl p-6 sm:p-8 shadow-lg">
+            <div class="lg:col-span-7 order-2 lg:order-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-deep-teal dark:text-fresh-aqua">Pillar 02 — Circuit &amp; Safety</span>
+              <h3 class="text-2xl font-bold font-heading text-charcoal-text dark:text-white mt-1">
+                Electrical Service &amp; Smart Diagnostics
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                Modern condensing tankless heaters eliminate standing pilot flames in favor of electronic direct-spark ignition and variable-speed combustion fans. We install a dedicated 120V 60Hz GFCI circuit with surge mitigation, protecting sensitive microprocessors, freeze-prevention heat tape, and Wi-Fi modules.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-xs font-semibold text-charcoal-text dark:text-white">Dedicated 120V / 15A Outlet</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-xs font-semibold text-charcoal-text dark:text-white">&lt;3A Operating Power</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-xs font-semibold text-charcoal-text dark:text-white">Automatic Freeze Protection</span>
+              </div>
+            </div>
+            <div class="lg:col-span-5 order-1 lg:order-2 rounded-xl overflow-hidden border border-theme-border dark:border-white/10">
+              <picture>
+                <source srcset="assets/images/home-02/electrical-system-compatibility.webp" type="image/webp">
+                <img src="assets/images/home-02/electrical-system-compatibility.jpg" alt="Dedicated electrical circuit connection and digital microprocessor control board for tankless system" class="w-full h-auto object-cover max-h-72" width="1376" height="768" loading="lazy">
+              </picture>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Venting & Condensate Management -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 rounded-2xl p-6 sm:p-8 shadow-lg">
+            <div class="lg:col-span-5 rounded-xl overflow-hidden border border-theme-border dark:border-white/10">
+              <picture>
+                <source srcset="assets/images/home-02/venting-condensate.webp" type="image/webp">
+                <img src="assets/images/home-02/venting-condensate.jpg" alt="Direct concentric PVC and polypropylene venting with acidic condensate drain neutralizer" class="w-full h-auto object-cover max-h-72" width="1376" height="768" loading="lazy">
+              </picture>
+            </div>
+            <div class="lg:col-span-7">
+              <span class="text-xs font-bold uppercase tracking-wider text-warm-copper">Pillar 03 — Flue &amp; Drainage</span>
+              <h3 class="text-2xl font-bold font-heading text-charcoal-text dark:text-white mt-1">
+                Direct Sidewall Venting &amp; Condensate Drainage
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                Because condensing units extract nearly all heat from combustion flue gases, exhaust temperatures stay cool enough for lightweight Schedule 40 PVC or Polypropylene pipes running straight through an exterior sidewall. Acidic moisture is safely routed through a limestone neutralizer capsule.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-xs font-semibold text-charcoal-text dark:text-white">Concentric PVC / Polypro</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-xs font-semibold text-charcoal-text dark:text-white">Zero Masonry Chimney Needed</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-xs font-semibold text-charcoal-text dark:text-white">Inline Acid Neutralizer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar 4: Water Quality & Maintenance -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 rounded-2xl p-6 sm:p-8 shadow-lg">
+            <div class="lg:col-span-7 order-2 lg:order-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-deep-teal dark:text-fresh-aqua">Pillar 04 — Longevity</span>
+              <h3 class="text-2xl font-bold font-heading text-charcoal-text dark:text-white mt-1">
+                Hard Water Protection &amp; Service Isolation Valves
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                To safeguard the 15-year factory warranty, every AquaTherma tankless install includes heavy-duty brass service isolation valves with integrated purge ports. This enables 45-minute annual descaling flushes without cutting pipes or disrupting your domestic cold water supply.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-xs font-semibold text-charcoal-text dark:text-white">Full-Port Brass Webstone Valves</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-xs font-semibold text-charcoal-text dark:text-white">Inline Scale-Inhibitor Filter</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-xs font-semibold text-charcoal-text dark:text-white">Quick 45-Min Descaling Port</span>
+              </div>
+            </div>
+            <div class="lg:col-span-5 order-1 lg:order-2 rounded-xl overflow-hidden border border-theme-border dark:border-white/10">
+              <picture>
+                <source srcset="assets/images/home-02/water-quality-maintenance.webp" type="image/webp">
+                <img src="assets/images/home-02/water-quality-maintenance.jpg" alt="Brass service isolation valves with purge ports for tankless water heater flushing" class="w-full h-auto object-cover max-h-72" width="1376" height="768" loading="lazy">
+              </picture>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section Bottom CTA -->
+        <div class="mt-14 text-center">
+          <a href="contact.html" class="btn-copper text-sm sm:text-base py-3.5 px-8 shadow-lg inline-flex items-center gap-2">
+            <span>Request System Assessment</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         SECTION 6: TANKLESS LIVING & REAL INSTALLATION INSPIRATION
+         3 installation showcases with authentic photos and before/after metrics
+         ======================================================== -->
+    <section id="installation-showcases" class="py-16 md:py-24 bg-white dark:bg-[#071724] border-b border-theme-border dark:border-white/10" aria-labelledby="showcase-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-deep-teal/10 dark:bg-fresh-aqua/10 text-deep-teal dark:text-fresh-aqua text-xs font-bold uppercase tracking-wider mb-3">
+            <i data-lucide="home" class="w-3.5 h-3.5"></i>
+            <span>Residential Transformations</span>
+          </div>
+          <h2 id="showcase-heading" class="text-3xl sm:text-4xl font-extrabold font-heading text-charcoal-text dark:text-white tracking-tight">
+            Modern Hot Water Solutions in Real Spaces.
+          </h2>
+          <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            See how homeowners transitioned from bulky storage tanks to sleek, wall-mounted condensing units. More storage room, whisper-quiet operation, and lower monthly gas bills.
+          </p>
+        </div>
+
+        <!-- 3 Showcase Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Showcase 1: Compact Utility Room Upgrade -->
+          <div class="rounded-2xl border border-theme-border dark:border-white/10 bg-slate-50 dark:bg-white/5 overflow-hidden shadow-lg flex flex-col group hover:border-deep-teal transition-all">
+            <div class="relative overflow-hidden">
+              <picture>
+                <source srcset="assets/images/home-02/compact-utility-showcase.webp" type="image/webp">
+                <img src="assets/images/home-02/compact-utility-showcase.jpg" alt="Compact wall mounted tankless heater reclaiming floor space in finished basement utility room" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" width="1376" height="768" loading="lazy">
+              </picture>
+              <span class="absolute top-3 left-3 bg-midnight-navy/90 backdrop-blur-md text-fresh-aqua border border-fresh-aqua/30 text-[11px] font-bold px-2.5 py-1 rounded-full">
+                Basement Utility Closet
+              </span>
+            </div>
+
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold font-heading text-charcoal-text dark:text-white">
+                  Compact Utility Room Upgrade
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Navien NPE-240A2 Condensing Unit</p>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                  Replaced an old 50-gallon atmospheric cylinder that leaked in a finished basement. The wall bracket mounting reclaimed 14 square feet of floor space for custom storage shelving.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-theme-border dark:border-white/10 grid grid-cols-2 gap-2 text-center">
+                <div class="p-2 rounded-lg bg-white dark:bg-[#091D2C] border border-theme-border dark:border-white/10">
+                  <span class="text-[10px] text-slate-500 dark:text-slate-400 block font-semibold">Space Reclaimed</span>
+                  <span class="text-sm font-extrabold text-deep-teal dark:text-fresh-aqua">14 Sq. Ft.</span>
+                </div>
+                <div class="p-2 rounded-lg bg-white dark:bg-[#091D2C] border border-theme-border dark:border-white/10">
+                  <span class="text-[10px] text-slate-500 dark:text-slate-400 block font-semibold">Sound Level</span>
+                  <span class="text-sm font-extrabold text-charcoal-text dark:text-white">49 dB Quiet</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Showcase 2: Whole-Home Continuous Solution -->
+          <div class="rounded-2xl border border-theme-border dark:border-white/10 bg-slate-50 dark:bg-white/5 overflow-hidden shadow-lg flex flex-col group hover:border-deep-teal transition-all">
+            <div class="relative overflow-hidden">
+              <picture>
+                <source srcset="assets/images/home-02/whole-home-tankless.webp" type="image/webp">
+                <img src="assets/images/home-02/whole-home-tankless.jpg" alt="Whole home high capacity tankless installation with copper manifold and digital controller" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" width="1376" height="768" loading="lazy">
+              </picture>
+              <span class="absolute top-3 left-3 bg-midnight-navy/90 backdrop-blur-md text-warm-copper border border-warm-copper/30 text-[11px] font-bold px-2.5 py-1 rounded-full">
+                High-Demand Residence
+              </span>
+            </div>
+
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold font-heading text-charcoal-text dark:text-white">
+                  Whole-Home Continuous Solution
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Rinnai SENSEI RX199i Indoor Unit</p>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                  Homeowners with a family of five previously ran out of hot water during morning routines. Now powers three simultaneous rain showers and laundry without temperature drops.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-theme-border dark:border-white/10 grid grid-cols-2 gap-2 text-center">
+                <div class="p-2 rounded-lg bg-white dark:bg-[#091D2C] border border-theme-border dark:border-white/10">
+                  <span class="text-[10px] text-slate-500 dark:text-slate-400 block font-semibold">Simultaneous Flow</span>
+                  <span class="text-sm font-extrabold text-warm-copper">3 Showers</span>
+                </div>
+                <div class="p-2 rounded-lg bg-white dark:bg-[#091D2C] border border-theme-border dark:border-white/10">
+                  <span class="text-[10px] text-slate-500 dark:text-slate-400 block font-semibold">Output Flow</span>
+                  <span class="text-sm font-extrabold text-charcoal-text dark:text-white">9.8 GPM Peak</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Showcase 3: Condensing Efficiency Retrofit -->
+          <div class="rounded-2xl border border-theme-border dark:border-white/10 bg-slate-50 dark:bg-white/5 overflow-hidden shadow-lg flex flex-col group hover:border-deep-teal transition-all">
+            <div class="relative overflow-hidden">
+              <picture>
+                <source srcset="assets/images/home-02/condensing-installation.webp" type="image/webp">
+                <img src="assets/images/home-02/condensing-installation.jpg" alt="Certified plumber inspecting high-efficiency dual heat exchanger condensing tankless installation" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" width="1376" height="768" loading="lazy">
+              </picture>
+              <span class="absolute top-3 left-3 bg-midnight-navy/90 backdrop-blur-md text-emerald-400 border border-emerald-400/30 text-[11px] font-bold px-2.5 py-1 rounded-full">
+                ENERGY STAR® Certified
+              </span>
+            </div>
+
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold font-heading text-charcoal-text dark:text-white">
+                  Condensing Efficiency Retrofit
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Bosch Greentherm 9900 Series</p>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                  Converted an outdated chimney-vented unit to direct dual-pipe sidewall venting. Thermal efficiency surged from 62% to 97%, qualifying for maximum local utility rebates.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-theme-border dark:border-white/10 grid grid-cols-2 gap-2 text-center">
+                <div class="p-2 rounded-lg bg-white dark:bg-[#091D2C] border border-theme-border dark:border-white/10">
+                  <span class="text-[10px] text-slate-500 dark:text-slate-400 block font-semibold">Energy Savings</span>
+                  <span class="text-sm font-extrabold text-emerald-600 dark:text-emerald-400">Up to 38%</span>
+                </div>
+                <div class="p-2 rounded-lg bg-white dark:bg-[#091D2C] border border-theme-border dark:border-white/10">
+                  <span class="text-[10px] text-slate-500 dark:text-slate-400 block font-semibold">Warranty</span>
+                  <span class="text-sm font-extrabold text-charcoal-text dark:text-white">15 Years</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- View Projects Portfolio Link -->
+        <div class="mt-12 text-center">
+          <a href="projects.html" class="inline-flex items-center gap-2 text-sm font-bold text-deep-teal dark:text-fresh-aqua hover:underline">
+            <span>Explore all residential installation case studies</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         SECTION 7: TANKLESS CONSULTATION & CONVERSION CTA
+         Product-focused closing section with consultation image and dual CTAs
+         ======================================================== -->
+    <section id="tankless-consultation" class="py-16 md:py-24 bg-warm-offwhite dark:bg-midnight-navy border-b border-theme-border dark:border-white/10 relative overflow-hidden" aria-labelledby="cta-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="bg-gradient-to-br from-slate-900 to-[#0A263C] text-white rounded-3xl overflow-hidden shadow-2xl border border-white/15">
+          <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+            
+            <!-- Left: Consultation & Benefit Details -->
+            <div class="lg:col-span-7 p-8 sm:p-12 lg:p-14">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fresh-aqua/20 text-fresh-aqua text-xs font-bold uppercase tracking-wider mb-4 border border-fresh-aqua/30">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                <span>Certified Master Plumbers</span>
+              </div>
+
+              <h2 id="cta-heading" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
+                Ready to Upgrade Your Hot Water Experience?
+              </h2>
+
+              <p class="mt-4 text-base text-slate-300 leading-relaxed max-w-xl">
+                Schedule a comprehensive in-home compatibility assessment. Our licensed plumbers calculate your exact gas supply, venting path, and fixture demand to ensure flawless performance.
+              </p>
+
+              <!-- Guarantee Bullet Points -->
+              <div class="mt-8 space-y-3">
+                <div class="flex items-center gap-3 text-sm text-slate-200">
+                  <div class="w-5 h-5 rounded-full bg-fresh-aqua/20 text-fresh-aqua flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <span>On-site gas pipe sizing &amp; static pressure verification</span>
+                </div>
+                <div class="flex items-center gap-3 text-sm text-slate-200">
+                  <div class="w-5 h-5 rounded-full bg-fresh-aqua/20 text-fresh-aqua flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <span>Guaranteed flat-rate quote with zero hidden change orders</span>
+                </div>
+                <div class="flex items-center gap-3 text-sm text-slate-200">
+                  <div class="w-5 h-5 rounded-full bg-fresh-aqua/20 text-fresh-aqua flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <span>15-Year heat exchanger warranty &amp; 100% satisfaction guarantee</span>
+                </div>
+              </div>
+
+              <!-- CTA Buttons & Phone Hotline -->
+              <div class="mt-10 flex flex-wrap items-center gap-4">
+                <a href="contact.html" class="btn-copper text-sm sm:text-base py-3.5 px-8 shadow-xl inline-flex items-center gap-2">
+                  <span>Schedule In-Home Sizing Assessment</span>
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                </a>
+                <a href="services.html" class="btn-teal text-sm sm:text-base py-3.5 px-6 shadow-md inline-flex items-center gap-2">
+                  <span>Browse All Services</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
+
+              <div class="mt-6 flex items-center gap-4 text-xs text-slate-400">
+                <a href="tel:18005554689" class="hover:text-white flex items-center gap-2 text-slate-300 font-bold">
+                  <i data-lucide="phone" class="w-4 h-4 text-warm-copper"></i>
+                  <span>Direct Hotline: (800) 555-4689</span>
+                </a>
+                <span>•</span>
+                <span>Same-day assessments available</span>
+              </div>
+            </div>
+
+            <!-- Right: Authentic Photographic Asset -->
+            <div class="lg:col-span-5 h-full min-h-[380px] relative overflow-hidden">
+              <picture>
+                <source srcset="assets/images/home-02/tankless-consultation.webp" type="image/webp">
+                <img src="assets/images/home-02/tankless-consultation.jpg" alt="Professional tankless water heater technician reviewing energy graphs and sizing options on tablet with homeowner" class="w-full h-full object-cover min-h-[380px]" width="1376" height="768" loading="lazy">
+              </picture>
+              <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-900 via-transparent to-transparent opacity-80"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="bg-white dark:bg-midnight-navy text-slate-700 dark:text-slate-300 text-sm pt-16 pb-12 border-t border-theme-border dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-theme-border dark:border-white/10">
+        <!-- Col 1: Brand Info -->
+        <div class="lg:col-span-4">
+          <a href="index.html" class="inline-block mb-4">
+            <img src="assets/images/brand/logo.svg" alt="AquaTherma" class="site-logo-img h-9 w-auto">
+          </a>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+            Residential Water Heater Installation, Rapid Emergency Repair, Tankless Engineering, and Preventative Maintenance. Serving homeowners with honesty and precision.
+          </p>
+          <div class="space-y-2 text-xs">
+            <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+              <i data-lucide="map-pin" class="w-4 h-4 text-deep-teal dark:text-fresh-aqua"></i> 4820 Precision Way, Suite 100, Metro City, ST 90210
+            </p>
+            <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+              <i data-lucide="shield-check" class="w-4 h-4 text-deep-teal dark:text-fresh-aqua"></i> Lic #MP-849204 | HVAC-R #HV-309112
+            </p>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="lg:col-span-2">
+          <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Navigation</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="index.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Home 01: Standard &amp; Repair</a></li>
+            <li><a href="home-02.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Home 02 (Tankless)</a></li>
+            <li><a href="about.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">All Services</a></li>
+            <li><a href="projects.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Projects Portfolio</a></li>
+            <li><a href="pricing.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Pricing Guide</a></li>
+            <li><a href="contact.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services Menu -->
+        <div class="lg:col-span-3">
+          <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Top Services</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="service-detail.html?id=tankless-water-heater-installation" class="hover:text-deep-teal dark:hover:text-white transition-colors">Tankless Installation</a></li>
+            <li><a href="service-detail.html?id=tank-water-heater-installation" class="hover:text-deep-teal dark:hover:text-white transition-colors">Tank Water Heater Install</a></li>
+            <li><a href="service-detail.html?id=water-heater-leak-repair" class="hover:text-deep-teal dark:hover:text-white transition-colors">Water Heater Leak Repair</a></li>
+            <li><a href="service-detail.html?id=no-hot-water-troubleshooting" class="hover:text-deep-teal dark:hover:text-white transition-colors">No Hot Water Diagnostics</a></li>
+            <li><a href="service-detail.html?id=gas-water-heater-services" class="hover:text-deep-teal dark:hover:text-white transition-colors">Gas Water Heater Service</a></li>
+            <li><a href="service-detail.html?id=water-heater-flushing-maintenance" class="hover:text-deep-teal dark:hover:text-white transition-colors">Flushing &amp; Descaling</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Emergency Hotline -->
+        <div class="lg:col-span-3">
+          <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Urgent Dispatch</h4>
+          <a href="tel:18005554689" class="block p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-theme-border dark:border-white/10 hover:border-warm-copper transition-colors mb-4">
+            <span class="text-[11px] text-[#995027] dark:text-warm-copper font-bold uppercase tracking-wider block">Hot Water Hotline</span>
+            <span class="text-base font-extrabold text-charcoal-text dark:text-white mt-1 block">(800) 555-4689</span>
+            <span class="text-[11px] text-slate-600 dark:text-slate-400 mt-1 block">Live technician assistance</span>
+          </a>
+
+          <!-- Newsletter Form -->
+          <form class="newsletter-form mt-4">
+            <label class="text-[11px] font-semibold text-slate-700 dark:text-slate-300 block mb-1">Water Heater Maintenance Tips</label>
+            <div class="flex gap-2">
+              <input type="email" placeholder="Your email address" required class="w-full text-xs px-3 py-2 rounded-lg bg-slate-100 dark:bg-white/10 border border-theme-border dark:border-white/20 text-charcoal-text dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-deep-teal">
+              <button type="submit" class="btn-copper text-xs py-2 px-3 whitespace-nowrap">Join</button>
+            </div>
+            <span class="newsletter-feedback"></span>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-600 dark:text-slate-400 gap-4">
+        <p>© 2026 AquaTherma Water Heating Specialists LLC. All Rights Reserved. Demonstration Portfolio Content.</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy-policy.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Terms of Service</a>
+          <a href="coming-soon.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Coming Soon</a>
+          <a href="maintenance.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">System Status</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING EMERGENCY HOTLINE BUTTON -->
+  <a href="tel:18005554689" class="floating-hotline whitespace-nowrap" title="Call Emergency Dispatch">
+    <i data-lucide="phone-call" class="w-4 h-4"></i> (800) 555-4689
+  </a>
+
+  <!-- Core Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+
+  <!-- HOME 02 CUSTOM INTERACTIVITY SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initHome02Hotspots();
+      initHome02SizingCalculator();
+      initHome02OperationalCycle();
+    });
+
+    /**
+     * 1. Interactive Hotspots Manager (Section 2)
+     */
+    function initHome02Hotspots() {
+      const hotspotsData = {
+        1: {
+          eyebrow: 'Core Component 01',
+          badge: 'Condensing Stainless',
+          title: 'On-Demand Heating',
+          image: 'assets/images/home-02/tankless-hero.webp',
+          caption: 'Dual Condensing Heat Exchanger Core',
+          desc: 'Dual stainless steel condensing heat exchangers fire only upon water flow trigger. Incoming cold water extracts latent heat from exhaust flue gases, delivering continuous hot water in seconds with zero standby burner loss.',
+          stat1Label: 'Thermal Rating',
+          stat1Val: '0.96 UEF (96%)',
+          stat2Label: 'Heat Exchanger',
+          stat2Val: 'Dual Stainless',
+          ctaHref: 'service-detail.html?id=tankless-water-heater-installation'
+        },
+        2: {
+          eyebrow: 'Core Component 02',
+          badge: 'Space Reclaimed',
+          title: 'Compact Wall Design',
+          image: 'assets/images/home-02/compact-wall-installation.webp',
+          caption: 'Compact Residential Wall-Mount Footprint Showcase',
+          desc: 'With a suitcase-sized footprint measuring just 28"H x 18"W x 10"D, wall-bracket mounting reclaims up to 14–16 square feet of floor space. Free up valuable utility area in laundry rooms, attics, or finished basements.',
+          stat1Label: 'Footprint Reduction',
+          stat1Val: '80% Less Space',
+          stat2Label: 'Mounting Style',
+          stat2Val: 'Stud Wall Bracket',
+          ctaHref: 'service-detail.html?id=tankless-water-heater-installation'
+        },
+        3: {
+          eyebrow: 'Core Component 03',
+          badge: 'Fuel Conservation',
+          title: 'Reduced Standby Loss',
+          image: 'assets/images/home-02/gas-system-compatibility.webp',
+          caption: 'Modulating Gas Burner & Standby Conservation',
+          desc: 'Traditional tanks burn fuel 24/7 to maintain 50 gallons of water even while your family sleeps or is away on vacation. Tankless systems burn fuel strictly while water is moving, saving up to ₹150–₹300 annually on gas utility bills.',
+          stat1Label: 'Annual Gas Savings',
+          stat1Val: 'Up to ₹300/yr',
+          stat2Label: 'Standby Loss',
+          stat2Val: '0 Watts (Idle)',
+          ctaHref: 'pricing.html'
+        },
+        4: {
+          eyebrow: 'Core Component 04',
+          badge: 'Smart Diagnostics',
+          title: 'Modern Heating Controls',
+          image: 'assets/images/home-02/electrical-system-compatibility.webp',
+          caption: 'Digital Diagnostics & Precision Electronic Interface',
+          desc: 'Precision digital thermostat lets you adjust temperature with 1°F precision. Built-in smart diagnostics detect hard water mineral accumulation, flame failure, or venting restrictions before a shutdown occurs.',
+          stat1Label: 'Temperature Range',
+          stat1Val: '100°F–140°F',
+          stat2Label: 'Telemetry',
+          stat2Val: 'Wi-Fi / Digital',
+          ctaHref: 'service-detail.html?id=no-hot-water-troubleshooting'
+        }
+      };
+
+      const buttons = document.querySelectorAll('.hotspot-btn');
+      const tabs = document.querySelectorAll('.hotspot-tab');
+      const card = document.getElementById('hotspot-content-card');
+      if (!card) return;
+
+      const eyebrowEl = document.getElementById('hotspot-eyebrow');
+      const badgeEl = document.getElementById('hotspot-badge');
+      const titleEl = document.getElementById('hotspot-title');
+      const descEl = document.getElementById('hotspot-desc');
+      const stat1LabelEl = document.getElementById('hotspot-stat-label-1');
+      const stat1ValEl = document.getElementById('hotspot-stat-val-1');
+      const stat2LabelEl = document.getElementById('hotspot-stat-label-2');
+      const stat2ValEl = document.getElementById('hotspot-stat-val-2');
+      const subimageEl = document.getElementById('hotspot-subimage');
+      const captionEl = document.getElementById('hotspot-subimage-caption');
+
+      function setActiveHotspot(id) {
+        const item = hotspotsData[id];
+        if (!item) return;
+
+        // Update Buttons
+        buttons.forEach(btn => {
+          const btnId = btn.getAttribute('data-hotspot');
+          if (btnId === String(id)) {
+            btn.classList.add('hotspot-active', 'bg-fresh-aqua', 'text-midnight-navy');
+            btn.classList.remove('bg-slate-900/90', 'text-white');
+            btn.setAttribute('aria-pressed', 'true');
+          } else {
+            btn.classList.remove('hotspot-active', 'bg-fresh-aqua', 'text-midnight-navy');
+            btn.classList.add('bg-slate-900/90', 'text-white');
+            btn.setAttribute('aria-pressed', 'false');
+          }
+        });
+
+        // Update Tabs
+        tabs.forEach(tab => {
+          const tabId = tab.getAttribute('data-tab');
+          if (tabId === String(id)) {
+            tab.className = 'hotspot-tab p-2 text-center rounded-lg border border-deep-teal/40 dark:border-fresh-aqua/40 text-xs font-bold transition-all bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua';
+            tab.setAttribute('aria-selected', 'true');
+          } else {
+            tab.className = 'hotspot-tab p-2 text-center rounded-lg border border-theme-border dark:border-white/10 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white transition-all bg-slate-50 dark:bg-white/5';
+            tab.setAttribute('aria-selected', 'false');
+          }
+        });
+
+        // Animate Content Transition
+        card.style.opacity = '0.4';
+        setTimeout(() => {
+          if (eyebrowEl) eyebrowEl.textContent = item.eyebrow;
+          if (badgeEl) badgeEl.textContent = item.badge;
+          if (titleEl) titleEl.textContent = item.title;
+          if (descEl) descEl.textContent = item.desc;
+          if (stat1LabelEl) stat1LabelEl.textContent = item.stat1Label;
+          if (stat1ValEl) stat1ValEl.textContent = item.stat1Val;
+          if (stat2LabelEl) stat2LabelEl.textContent = item.stat2Label;
+          if (stat2ValEl) stat2ValEl.textContent = item.stat2Val;
+          if (subimageEl && item.image) subimageEl.src = item.image;
+          if (captionEl && item.caption) captionEl.textContent = item.caption;
+          card.style.opacity = '1';
+        }, 120);
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-hotspot');
+          setActiveHotspot(id);
+        });
+      });
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const id = tab.getAttribute('data-tab');
+          setActiveHotspot(id);
+        });
+      });
+    }
+
+    /**
+     * 2. Interactive Sizing & Flow Calculator (Section 3)
+     */
+    function initHome02SizingCalculator() {
+      let state = {
+        baths: 3,
+        showers: 2,
+        kitchen: true,
+        dishwasher: false,
+        washer: false,
+        inletTemp: 50,
+        tempRise: 70
+      };
+
+      const bathBtns = document.querySelectorAll('.btn-calc-bath');
+      const showerBtns = document.querySelectorAll('.btn-calc-shower');
+      const tempBtns = document.querySelectorAll('.btn-calc-temp');
+      const cbKitchen = document.getElementById('fixture-kitchen');
+      const cbDishwasher = document.getElementById('fixture-dishwasher');
+      const cbWasher = document.getElementById('fixture-washer');
+
+      const resultGpm = document.getElementById('calc-result-gpm');
+      const resultRise = document.getElementById('calc-result-rise');
+      const utilText = document.getElementById('calc-utilization-text');
+      const gaugeBar = document.getElementById('calc-gauge-bar');
+      const tierTitle = document.getElementById('calc-tier-title');
+      const tierDesc = document.getElementById('calc-tier-desc');
+      const btuEst = document.getElementById('calc-btu-estimate');
+
+      function recalculate() {
+        // Showers @ 2.0 GPM
+        let gpm = state.showers * 2.0;
+        if (state.kitchen) gpm += 1.5;
+        if (state.dishwasher) gpm += 1.2;
+        if (state.washer) gpm += 2.0;
+
+        const rise = 120 - state.inletTemp;
+        state.tempRise = rise;
+
+        // Render metrics
+        if (resultGpm) resultGpm.textContent = gpm.toFixed(1) + ' GPM';
+        if (resultRise) resultRise.innerHTML = rise + '&deg;F &Delta;T';
+
+        // Gauge percentage relative to 11 GPM max single unit
+        const pct = Math.min(Math.round((gpm / 10.5) * 100), 100);
+        if (gaugeBar) gaugeBar.style.width = pct + '%';
+        if (utilText) utilText.textContent = pct + '% of capacity load';
+
+        // Tier Determination
+        if (gpm <= 5.5) {
+          if (tierTitle) tierTitle.textContent = 'Tier 1: Compact 6.0–7.0 GPM Condensing Unit';
+          if (tierDesc) tierDesc.textContent = 'Single or dual-bathroom residences with standard fixtures. Provides continuous endless hot water for 1 shower plus simultaneously running dishwasher or sink.';
+          if (btuEst) btuEst.textContent = 'Est. 140,000–160,000 BTU/hr';
+        } else if (gpm <= 8.5) {
+          if (tierTitle) tierTitle.textContent = 'Tier 2: High-Performance 8.0–9.8 GPM Dual-Condensing System';
+          if (tierDesc) tierDesc.textContent = 'Ideal for 2 to 3.5 bathroom households with simultaneous multi-point demands. Easily supplies two hot showers concurrently with kitchen usage and zero thermal drop.';
+          if (btuEst) btuEst.textContent = 'Est. 180,000–199,000 BTU/hr';
+        } else {
+          if (tierTitle) tierTitle.textContent = 'Tier 3: Cascaded Twin-Tankless 11.0+ GPM System';
+          if (tierDesc) tierDesc.textContent = 'Engineered for luxury 4+ bathroom residences, deep soaking tubs, and multi-head body spray showers. Dual cascaded units modulate in tandem for commercial-grade residential reliability.';
+          if (btuEst) btuEst.textContent = 'Est. 300,000–398,000 BTU/hr (Cascaded)';
+        }
+      }
+
+      // Bath buttons
+      bathBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          bathBtns.forEach(b => {
+            b.className = 'btn-calc-bath py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs sm:text-sm font-semibold hover:border-deep-teal transition-all text-slate-700 dark:text-slate-200';
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.className = 'btn-calc-bath py-2.5 px-3 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua font-bold text-xs sm:text-sm shadow-sm';
+          btn.setAttribute('aria-pressed', 'true');
+          state.baths = parseInt(btn.getAttribute('data-value'), 10);
+          recalculate();
+        });
+      });
+
+      // Shower buttons
+      showerBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          showerBtns.forEach(b => {
+            b.className = 'btn-calc-shower py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs sm:text-sm font-semibold hover:border-deep-teal transition-all text-slate-700 dark:text-slate-200';
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.className = 'btn-calc-shower py-2.5 px-3 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua font-bold text-xs sm:text-sm shadow-sm';
+          btn.setAttribute('aria-pressed', 'true');
+          state.showers = parseInt(btn.getAttribute('data-value'), 10);
+          recalculate();
+        });
+      });
+
+      // Groundwater Temp buttons
+      tempBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tempBtns.forEach(b => {
+            b.className = 'btn-calc-temp p-3 rounded-xl border border-theme-border dark:border-white/15 text-left transition-all hover:border-deep-teal';
+            b.setAttribute('aria-pressed', 'false');
+            const t1 = b.querySelector('span:first-child');
+            const t2 = b.querySelector('span:last-child');
+            if (t1) t1.className = 'text-xs font-bold text-charcoal-text dark:text-white block';
+            if (t2) t2.className = 'text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5';
+          });
+          btn.className = 'btn-calc-temp p-3 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-left transition-all shadow-sm';
+          btn.setAttribute('aria-pressed', 'true');
+          const t1 = btn.querySelector('span:first-child');
+          const t2 = btn.querySelector('span:last-child');
+          if (t1) t1.className = 'text-xs font-bold text-deep-teal dark:text-fresh-aqua block';
+          if (t2) t2.className = 'text-[11px] text-deep-teal/80 dark:text-fresh-aqua/80 block mt-0.5';
+
+          state.inletTemp = parseInt(btn.getAttribute('data-temp'), 10);
+          recalculate();
+        });
+      });
+
+      // Checkbox listeners
+      if (cbKitchen) {
+        cbKitchen.addEventListener('change', e => {
+          state.kitchen = e.target.checked;
+          recalculate();
+        });
+      }
+      if (cbDishwasher) {
+        cbDishwasher.addEventListener('change', e => {
+          state.dishwasher = e.target.checked;
+          recalculate();
+        });
+      }
+      if (cbWasher) {
+        cbWasher.addEventListener('change', e => {
+          state.washer = e.target.checked;
+          recalculate();
+        });
+      }
+
+      recalculate();
+    }
+
+    /**
+     * 3. 5-Step Operational Cycle Walkthrough (Section 4)
+     */
+    function initHome02OperationalCycle() {
+      const cycleStepsData = {
+        1: {
+          badge: 'Phase 1: Hydronic Inflow Detection',
+          title: 'Turbine Flow Sensor Activation',
+          desc: 'When any hot water faucet or fixture is opened anywhere in the home, cold water begins moving through the intake port. A high-precision digital magnetic turbine detects water movement as low as 0.4 gallons per minute, signaling the central PCB processor within milliseconds.',
+          elapsed: 'Elapsed: 0.15s',
+          spec1: 'Minimum Flow Threshold: 0.4 GPM activation (prevents false firing from pipe pressure fluctuations).',
+          spec2: 'Sensor Technology: Dual Hall-effect magnetic pulse turbine with instant pulse-width modulation output.',
+          spec3: 'Pre-Ignition Check: Electronic thermistors instantly measure incoming groundwater temp to calculate precise burner firing rate.'
+        },
+        2: {
+          badge: 'Phase 2: Combustion Chamber Prep',
+          title: 'Direct Spark Ignition & Combustion Fan Purge',
+          desc: 'The variable-speed DC combustion blower revs up to purge any residual gases from the burner chamber. Dual electronic direct spark electrodes fire simultaneously as the proportional gas modulating valve opens to release natural gas or propane.',
+          elapsed: 'Elapsed: 0.45s',
+          spec1: 'Purge Cycle: High-RPM DC brushless motor clears chamber in under 300 milliseconds.',
+          spec2: 'Ignition Architecture: Direct dual-spark electronic electrodes replace wasteful pilot flames.',
+          spec3: 'Fuel Modulation: Stepper motor gas valve controls manifold pressure between 10% and 100% capacity.'
+        },
+        3: {
+          badge: 'Phase 3: Latent Thermal Recovery',
+          title: 'Secondary Stainless Condensing Exchanger',
+          desc: 'Cold groundwater enters the secondary heat exchanger first. Fabricated from commercial-grade 316L stainless steel, it absorbs latent heat from departing combustion flue gases before they escape the vent pipe, dropping exhaust temperature down to 110°F.',
+          elapsed: 'Elapsed: 0.85s',
+          spec1: 'Thermal Efficiency Gain: Recovers an extra 12% to 15% efficiency that traditional units waste.',
+          spec2: 'Flue Gas Cooling: Allows safe venting through low-cost Schedule 40 PVC instead of metal flue pipes.',
+          spec3: 'Condensate Capture: Acidic moisture is funneled toward the integrated neutralizer canister.'
+        },
+        4: {
+          badge: 'Phase 4: Target Setpoint Transfer',
+          title: 'Primary Copper Heat Exchanger Chamber',
+          desc: 'Pre-warmed water flows into the heavy-duty primary oxygen-free copper heat exchanger. The modulated premix burner flames rapidly transfer heat through extruded copper fins, heating water directly to your programmed setpoint.',
+          elapsed: 'Elapsed: 1.25s',
+          spec1: 'Thermal Conductivity: Oxygen-free copper delivers 25x faster thermal transfer than stainless steel.',
+          spec2: 'Flame Sensing: Flame rectification rod verifies stable combustion 60 times per second.',
+          spec3: 'Overheat Limiter: Thermal fuse boundary prevents heat exchanger temperature exceeding 185°F.'
+        },
+        5: {
+          badge: 'Phase 5: Continuous Anti-Fluctuation Delivery',
+          title: 'Bypass Water Mixing Valve & Endless Output',
+          desc: 'An automated internal bypass servo valve balances heated water with a fraction of incoming cold water to eliminate cold-water sandwiches during intermittent tap usage. Endless hot water flows at an unwavering setpoint temperature until the faucet is shut off.',
+          elapsed: 'Continuous Operation',
+          spec1: 'Zero Cold Water Sandwiches: Digital servo mixing valve buffers water temperature to ±1°F tolerance.',
+          spec2: 'Uninterrupted Flow: System operates continuously as long as water flow remains above 0.4 GPM.',
+          spec3: 'Automatic Standby: When the faucet closes, gas valve shuts within 0.1s and fan performs post-purge.'
+        }
+      };
+
+      let currentStep = 1;
+      const stepBtns = document.querySelectorAll('.cycle-step-btn');
+      const prevBtn = document.getElementById('cycle-prev-btn');
+      const nextBtn = document.getElementById('cycle-next-btn');
+
+      const badgeEl = document.getElementById('cycle-stage-badge');
+      const titleEl = document.getElementById('cycle-stage-title');
+      const descEl = document.getElementById('cycle-stage-desc');
+      const elapsedEl = document.getElementById('cycle-elapsed-tag');
+      const spec1El = document.getElementById('cycle-spec-1');
+      const spec2El = document.getElementById('cycle-spec-2');
+      const spec3El = document.getElementById('cycle-spec-3');
+
+      function updateCycle(stepNum) {
+        currentStep = stepNum;
+        const data = cycleStepsData[stepNum];
+        if (!data) return;
+
+        // Update step navigation buttons
+        stepBtns.forEach(btn => {
+          const s = parseInt(btn.getAttribute('data-step'), 10);
+          if (s === stepNum) {
+            btn.className = 'cycle-step-btn p-3 sm:p-4 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-left transition-all';
+            btn.setAttribute('aria-selected', 'true');
+            const stepLabel = btn.querySelector('span:first-child');
+            if (stepLabel) stepLabel.className = 'text-[10px] uppercase font-bold text-deep-teal dark:text-fresh-aqua block tracking-wider';
+          } else {
+            btn.className = 'cycle-step-btn p-3 sm:p-4 rounded-xl border border-theme-border dark:border-white/15 bg-slate-50 dark:bg-white/5 text-left transition-all hover:border-deep-teal';
+            btn.setAttribute('aria-selected', 'false');
+            const stepLabel = btn.querySelector('span:first-child');
+            if (stepLabel) stepLabel.className = 'text-[10px] uppercase font-bold text-slate-400 block tracking-wider';
+          }
+        });
+
+        // Update flow schematic nodes
+        for (let i = 1; i <= 5; i++) {
+          const node = document.getElementById(`flow-node-${i}`);
+          if (node) {
+            if (i === stepNum) {
+              node.className = 'flow-stage-node p-3 rounded-lg border-2 border-fresh-aqua bg-fresh-aqua/10 flex items-center justify-between transition-all opacity-100';
+              const badge = node.querySelector('span:first-child');
+              if (badge) badge.className = 'w-7 h-7 rounded-full bg-fresh-aqua text-midnight-navy font-bold text-xs flex items-center justify-center';
+            } else if (i < stepNum) {
+              node.className = 'flow-stage-node p-3 rounded-lg border border-emerald-500/40 bg-emerald-500/5 flex items-center justify-between transition-all opacity-90';
+              const badge = node.querySelector('span:first-child');
+              if (badge) badge.className = 'w-7 h-7 rounded-full bg-emerald-500 text-white font-bold text-xs flex items-center justify-center';
+            } else {
+              node.className = 'flow-stage-node p-3 rounded-lg border border-theme-border dark:border-white/10 bg-slate-50 dark:bg-white/5 flex items-center justify-between transition-all opacity-60';
+              const badge = node.querySelector('span:first-child');
+              if (badge) badge.className = 'w-7 h-7 rounded-full bg-slate-200 dark:bg-white/20 text-charcoal-text dark:text-white font-bold text-xs flex items-center justify-center';
+            }
+          }
+        }
+
+        // Update content elements
+        if (badgeEl) badgeEl.textContent = data.badge;
+        if (titleEl) titleEl.textContent = data.title;
+        if (descEl) descEl.textContent = data.desc;
+        if (elapsedEl) elapsedEl.textContent = data.elapsed;
+        if (spec1El) spec1El.innerHTML = `<strong>Specification:</strong> ${data.spec1}`;
+        if (spec2El) spec2El.innerHTML = `<strong>Mechanism:</strong> ${data.spec2}`;
+        if (spec3El) spec3El.innerHTML = `<strong>Safety Telemetry:</strong> ${data.spec3}`;
+
+        // Prev / Next button states
+        if (prevBtn) prevBtn.disabled = (currentStep === 1);
+        if (nextBtn) {
+          if (currentStep === 5) {
+            nextBtn.innerHTML = `<span>Restart Cycle (Step 1)</span> <i data-lucide="rotate-ccw" class="w-4 h-4"></i>`;
+          } else {
+            nextBtn.innerHTML = `<span>Advance to Step ${currentStep + 1}</span> <i data-lucide="chevron-right" class="w-4 h-4"></i>`;
+          }
+          if (window.lucide) window.lucide.createIcons();
+        }
+      }
+
+      stepBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const s = parseInt(btn.getAttribute('data-step'), 10);
+          updateCycle(s);
+        });
+      });
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          if (currentStep > 1) updateCycle(currentStep - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          if (currentStep < 5) {
+            updateCycle(currentStep + 1);
+          } else {
+            updateCycle(1);
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

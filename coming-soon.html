@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <!-- Apply the theme before styles and page content can render. -->
+  <script id="theme-bootstrap">
+    (() => {
+      let savedTheme = null;
+      try { savedTheme = localStorage.getItem('aquatherma_theme'); } catch (_) {}
+      const isDark = savedTheme === 'dark' ||
+        (savedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.toggle('dark', isDark);
+    })();
+  </script>
+  <style id="theme-bootstrap-colors">
+    html { background-color: #F6F5F1; color-scheme: light; }
+    html.dark { background-color: #091D2C; color-scheme: dark; }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Water Heater Monitoring Coming Soon | AquaTherma</title>
+  <meta name="description" content="AquaTherma's next-generation smart water heater monitoring portal is launching soon. Get notified on launch day.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'midnight-navy': '#091D2C',
+            'deep-teal': '#087E8B',
+            'fresh-aqua': '#36D4CC',
+            'warm-copper': '#DB8959',
+            'warm-offwhite': '#F6F5F1',
+            'charcoal-text': '#17252D',
+            // Semantic Aliases
+            'deep-navy': '#091D2C',
+            'primary-blue': '#087E8B',
+            'accent-aqua': '#36D4CC',
+            'warm-orange': '#DB8959',
+            'soft-bg': '#F6F5F1',
+            'main-text': '#17252D',
+            'secondary-text': '#5A6D7C',
+            'theme-border': '#E2E8F0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gradient-to-br from-deep-navy via-[#14263B] to-[#0A1422] text-white antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="py-6 px-4 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html">
+        <img src="assets/images/brand/logo-white.svg" alt="AquaTherma" class="h-10 w-auto">
+      </a>
+      <a href="index.html" class="btn-secondary border-white/20 text-white hover:bg-white/10 text-xs py-2 px-4">
+        Back to Website
+      </a>
+    </div>
+  </header>
+
+  <!-- Coming Soon Body -->
+  <main class="py-16 px-4 text-center my-auto">
+    <div class="max-w-2xl mx-auto">
+      <span class="badge-tag badge-aqua bg-accent-aqua/20 text-accent-aqua border-accent-aqua/40 mb-4 inline-block">
+        Feature In Development
+      </span>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6">
+        Smart Tank Health & Remote Diagnostics
+      </h1>
+
+      <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-10 max-w-xl mx-auto">
+        We are engineering an intelligent homeowner dashboard for real-time anode rod corrosion tracking, leak sensor monitoring, and automated seasonal flush reminders.
+      </p>
+
+      <!-- Countdown Timer Component -->
+      <div class="grid grid-cols-4 gap-3 sm:gap-6 max-w-md mx-auto mb-12">
+        <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15">
+          <span id="days" class="text-2xl sm:text-4xl font-extrabold text-accent-aqua block">42</span>
+          <span class="text-[10px] uppercase font-bold text-slate-300 tracking-wider">Days</span>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15">
+          <span id="hours" class="text-2xl sm:text-4xl font-extrabold text-accent-aqua block">18</span>
+          <span class="text-[10px] uppercase font-bold text-slate-300 tracking-wider">Hours</span>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15">
+          <span id="minutes" class="text-2xl sm:text-4xl font-extrabold text-accent-aqua block">34</span>
+          <span class="text-[10px] uppercase font-bold text-slate-300 tracking-wider">Minutes</span>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15">
+          <span id="seconds" class="text-2xl sm:text-4xl font-extrabold text-warm-orange block">50</span>
+          <span class="text-[10px] uppercase font-bold text-slate-300 tracking-wider">Seconds</span>
+        </div>
+      </div>
+
+      <!-- Newsletter Form -->
+      <div class="max-w-md mx-auto">
+        <p class="text-xs text-slate-300 mb-3">Be the first to know when the platform launches:</p>
+        <form class="newsletter-form flex gap-2">
+          <input type="email" required placeholder="Enter your email address..." class="input-theme text-xs py-3 bg-white/10 border-white/20 text-white placeholder-slate-400">
+          <button type="submit" class="btn-primary bg-accent-aqua hover:bg-cyan-600 text-deep-navy font-bold text-xs py-3 px-6 flex-shrink-0">
+            Notify Me
+          </button>
+        </form>
+        <span class="newsletter-feedback block mt-2 text-xs"></span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-6 border-t border-white/10 text-center text-xs text-slate-400">
+    <!-- Replace platform URLs with your business social profile URLs. -->
+    <nav class="footer-socials footer-socials-centered" aria-label="Social media">
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="9" width="4" height="13"/><circle cx="4" cy="4" r="2"/><path d="M10 9h4v2a4 4 0 0 1 8 2v9h-4v-8a2 2 0 0 0-4 0v8h-4z"/></svg></a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube (opens in a new tab)" title="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
+    </nav>
+    <p>© 2026 AquaTherma Water Heating Specialists LLC. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script>
+    // Live Countdown Timer
+    let target = new Date();
+    target.setDate(target.getDate() + 42);
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = target.getTime() - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = days;
+      document.getElementById('hours').innerText = hours;
+      document.getElementById('minutes').innerText = minutes;
+      document.getElementById('seconds').innerText = seconds;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>

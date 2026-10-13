@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <!-- Apply the theme before styles and page content can render. -->
+  <script id="theme-bootstrap">
+    (() => {
+      let savedTheme = null;
+      try { savedTheme = localStorage.getItem('aquatherma_theme'); } catch (_) {}
+      const isDark = savedTheme === 'dark' ||
+        (savedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.toggle('dark', isDark);
+    })();
+  </script>
+  <style id="theme-bootstrap-colors">
+    html { background-color: #F6F5F1; color-scheme: light; }
+    html.dark { background-color: #091D2C; color-scheme: dark; }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Heater Services | AquaTherma</title>
+  <meta name="description" content="Explore our full spectrum of residential water heater services: tank and tankless installation, leak repairs, heating element swaps, flushing maintenance, and emergency service.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'midnight-navy': '#091D2C',
+            'deep-teal': '#087E8B',
+            'fresh-aqua': '#36D4CC',
+            'warm-copper': '#DB8959',
+            'warm-offwhite': '#F6F5F1',
+            'charcoal-text': '#17252D',
+            // Semantic Aliases
+            'deep-navy': '#091D2C',
+            'primary-blue': '#087E8B',
+            'accent-aqua': '#36D4CC',
+            'warm-orange': '#DB8959',
+            'soft-bg': '#F6F5F1',
+            'main-text': '#17252D',
+            'secondary-text': '#5A6D7C',
+            'theme-border': '#E2E8F0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-warm-offwhite dark:bg-[#091D2C] text-charcoal-text dark:text-[#F6F5F1] antialiased selection:bg-deep-teal selection:text-white">
+
+  <!-- SITE HEADER / CINEMATIC ARCHITECTURAL NAVIGATION -->
+<header class="header-cinematic-glass sticky top-0 z-50 text-charcoal-text dark:text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
+    <!-- Brand Logo -->
+    <a href="index.html" class="flex items-center gap-2 flex-shrink-0" aria-label="AquaTherma Home">
+      <img src="assets/images/brand/logo.svg" alt="AquaTherma Water Heater Specialists" class="site-logo-img h-7 sm:h-9 w-auto">
+    </a>
+
+    <!-- Desktop Navigation Menu (whitespace-nowrap prevents any multi-line wrapping) -->
+    <nav class="hidden xl:flex items-center gap-5 xl:gap-7 text-[13px] xl:text-sm font-semibold whitespace-nowrap text-slate-700 dark:text-slate-200" aria-label="Main Navigation">
+      <!-- Home Dropdown -->
+      <div class="relative group py-2">
+        <button type="button" class="flex items-center gap-1.5 text-deep-teal dark:text-fresh-aqua font-bold hover:text-deep-teal dark:hover:text-white transition-colors focus:outline-none whitespace-nowrap">
+          Home <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform"></i>
+        </button>
+        <div class="absolute top-full left-0 w-60 bg-white dark:bg-[#091D2C] border border-theme-border dark:border-[#1C3E57] rounded-xl shadow-2xl p-2 hidden group-hover:block transition-all z-50">
+          <a href="index.html" class="block px-3 py-2 rounded-lg bg-deep-teal/10 dark:bg-[#16364E] text-xs font-bold text-deep-teal dark:text-fresh-aqua whitespace-nowrap">
+            Home 01: Standard &amp; Repair
+          </a>
+          <a href="home-02.html" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-[#16364E] text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white whitespace-nowrap">
+            Home 02: Tankless Solutions
+          </a>
+        </div>
+      </div>
+
+      <a href="about.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">About Us</a>
+      <a href="services.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Services</a>
+      <a href="projects.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Projects</a>
+      <a href="blog.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Knowledge Hub</a>
+      <a href="pricing.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Pricing Guide</a>
+      <a href="contact.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Contact</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0 ms-auto">
+      <!-- Controls: Theme & RTL -->
+      <div class="flex items-center gap-1 sm:gap-2 sm:me-2">
+        <button type="button" class="theme-toggle w-10 h-10 sm:w-11 sm:h-11 inline-flex items-center justify-center rounded-lg text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <i data-lucide="moon" class="theme-toggle-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+        </button>
+        <button type="button" class="rtl-toggle w-10 h-10 sm:w-11 sm:h-11 inline-flex items-center justify-center rounded-lg text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors" title="Toggle RTL Layout" aria-label="Toggle right-to-left layout">
+          RTL
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-toggle" type="button" class="xl:hidden w-10 h-10 inline-flex items-center justify-center rounded-lg border border-theme-border dark:border-white/20 text-charcoal-text dark:text-white" aria-label="Open Mobile Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Primary Request Service CTA -->
+      <a href="contact.html" class="header-book-service btn-copper text-xs py-2 px-4 shadow-md hidden xl:inline-flex whitespace-nowrap">
+        Book Your Service
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU DRAWER -->
+<div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60 z-50 hidden backdrop-blur-sm transition-opacity"></div>
+<div id="mobile-menu-drawer" class="fixed top-0 right-0 w-80 max-w-[85vw] h-full bg-white dark:bg-midnight-navy z-50 p-6 flex flex-col justify-between shadow-2xl transform translate-x-full transition-transform duration-300 overflow-y-auto text-charcoal-text dark:text-white">
+  <div>
+    <div class="flex items-center justify-between pb-6 border-b border-theme-border dark:border-white/10">
+      <img src="assets/images/brand/logo.svg" alt="AquaTherma" class="site-logo-img h-8 w-auto">
+      <button id="mobile-menu-close" type="button" class="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white" aria-label="Close Mobile Menu">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <nav class="flex flex-col gap-3 py-6 text-base font-semibold">
+      <span class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 font-bold">Main Navigation</span>
+      <a href="index.html" class="py-2 text-deep-teal dark:text-fresh-aqua font-bold">Home 01: Standard &amp; Repair</a>
+      <a href="home-02.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Home 02: Tankless Solutions</a>
+      <a href="about.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">About Us</a>
+      <a href="services.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">All Services</a>
+      <a href="projects.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Projects Portfolio</a>
+      <a href="blog.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Water Heater Blog</a>
+      <a href="pricing.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Pricing Guide</a>
+      <a href="contact.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Contact &amp; Support</a>
+    </nav>
+  </div>
+
+  <div class="pt-6 border-t border-theme-border dark:border-white/10 flex flex-col gap-3">
+    <a href="tel:18005554689" class="btn-copper w-full text-center text-sm py-2.5">
+      <i data-lucide="phone-call" class="w-4 h-4"></i> Call (800) 555-4689
+    </a>
+    <a href="contact.html" class="btn-teal w-full text-center text-sm py-2.5">
+      Book Appointment
+    </a>
+  </div>
+</div>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 1: SERVICES HERO (1/7)
+         ========================================================================= -->
+    <section class="relative bg-gradient-to-b from-soft-bg to-white dark:from-[#0B1726] dark:to-[#09131F] py-16 lg:py-20 border-b border-theme-border dark:border-[#182C46]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+        <span class="badge-tag badge-blue mb-3">Residential Water Heating Catalog</span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-deep-navy dark:text-white mb-6">
+          Comprehensive Water Heater Services
+        </h1>
+        <p class="text-base sm:text-lg text-secondary-text dark:text-slate-300 leading-relaxed">
+          From new tankless installations to same-day leak repairs and annual descaling, our master plumbers deliver code-compliant excellence for every type of water heater.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: INTERACTIVE CATEGORY FILTER BAR (2/7)
+         ========================================================================= -->
+    <section class="service-filter-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="service-filter-bar" role="group" aria-label="Filter services by category">
+          <button type="button" class="service-filter-btn active" data-filter="all" aria-pressed="true" aria-controls="services-grid-container">
+            All Services
+          </button>
+          <button type="button" class="service-filter-btn" data-filter="installation" aria-pressed="false" aria-controls="services-grid-container">
+            Installation
+          </button>
+          <button type="button" class="service-filter-btn" data-filter="repair" aria-pressed="false" aria-controls="services-grid-container">
+            Repair &amp; Diagnostics
+          </button>
+          <button type="button" class="service-filter-btn" data-filter="replacement" aria-pressed="false" aria-controls="services-grid-container">
+            Replacement
+          </button>
+          <button type="button" class="service-filter-btn" data-filter="maintenance" aria-pressed="false" aria-controls="services-grid-container">
+            Maintenance
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: SERVICES CARDS GRID (3/7)
+         ========================================================================= -->
+    <section class="py-16 bg-soft-bg dark:bg-[#0E1B2C]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid-container">
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: DIAGNOSTIC SYMPTOM CHECKER (4/7)
+         ========================================================================= -->
+    <section class="py-20 bg-white dark:bg-[#09131F] border-t border-theme-border dark:border-[#182C46]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="badge-tag badge-blue mb-3">Self-Assessment Guide</span>
+          <h2 class="text-3xl font-extrabold text-deep-navy dark:text-white">
+            What's Wrong With Your Water Heater?
+          </h2>
+          <p class="text-base text-secondary-text dark:text-slate-300 mt-4">
+            Identify your water heater symptoms to understand the probable cause and appropriate technical solution.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 rounded-2xl bg-soft-bg dark:bg-[#14253B] border border-theme-border dark:border-[#213A5C]">
+            <div class="w-10 h-10 rounded-lg bg-warm-orange/10 text-warm-orange flex items-center justify-center mb-4">
+              <i data-lucide="volume-2" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-main-text dark:text-white mb-2">Popping or Rumbling</h4>
+            <p class="text-xs text-secondary-text leading-relaxed mb-3">
+              <strong>Likely Cause:</strong> Heavy mineral scale trapped at the bottom boiling into steam pockets.
+            </p>
+            <span class="text-xs font-bold text-primary-blue block">Fix: Descaling Flush</span>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-soft-bg dark:bg-[#14253B] border border-theme-border dark:border-[#213A5C]">
+            <div class="w-10 h-10 rounded-lg bg-primary-blue/10 text-primary-blue flex items-center justify-center mb-4">
+              <i data-lucide="droplet-off" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-main-text dark:text-white mb-2">Water Is Freezing Cold</h4>
+            <p class="text-xs text-secondary-text leading-relaxed mb-3">
+              <strong>Likely Cause:</strong> Burned-out heating element, tripped high-limit switch, or extinguished pilot light.
+            </p>
+            <span class="text-xs font-bold text-primary-blue block">Fix: Diagnostic Inspection</span>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-soft-bg dark:bg-[#14253B] border border-theme-border dark:border-[#213A5C]">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center mb-4">
+              <i data-lucide="paint-bucket" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-main-text dark:text-white mb-2">Rusty Brown Hot Water</h4>
+            <p class="text-xs text-secondary-text leading-relaxed mb-3">
+              <strong>Likely Cause:</strong> Depleted sacrificial anode rod causing internal steel vessel oxidation.
+            </p>
+            <span class="text-xs font-bold text-primary-blue block">Fix: Anode Swap or Replace</span>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-soft-bg dark:bg-[#14253B] border border-theme-border dark:border-[#213A5C]">
+            <div class="w-10 h-10 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center mb-4">
+              <i data-lucide="alert-octagon" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-main-text dark:text-white mb-2">Puddle Beneath Tank</h4>
+            <p class="text-xs text-secondary-text leading-relaxed mb-3">
+              <strong>Likely Cause:</strong> Dripping T&P valve, cracked drain valve, or outer vessel weld breach.
+            </p>
+            <span class="text-xs font-bold text-red-500 block">Fix: Urgent Leak Repair</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5: CODE & SAFETY STANDARDS (5/7)
+         ========================================================================= -->
+    <section class="py-20 bg-soft-bg dark:bg-[#0E1B2C] border-y border-theme-border dark:border-[#182C46]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6">
+            <span class="badge-tag badge-blue mb-3">Strict Mechanical Code</span>
+            <h2 class="text-3xl font-extrabold text-deep-navy dark:text-white mb-6">
+              Mandatory Code Features Every Installation Receives
+            </h2>
+            <p class="text-base text-secondary-text dark:text-slate-300 leading-relaxed mb-6">
+              Many budget installers skip critical parts to shave costs. At AquaTherma, every installation includes full code-compliant safety hardware as standard:
+            </p>
+
+            <div class="space-y-4 text-sm text-secondary-text">
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <strong class="text-main-text dark:text-white block">Pre-Charged Thermal Expansion Tank:</strong>
+                  <span>Absorbs thermal expansion spikes on closed water meters, preventing burst piping.</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <strong class="text-main-text dark:text-white block">Full-Port Solid Brass Ball Valves:</strong>
+                  <span>Replaces fragile plastic factory drain valves and gate valves with commercial quarter-turn shutoffs.</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <strong class="text-main-text dark:text-white block">Gas Drip Leg & Sediment Trap:</strong>
+                  <span>Traps pipe scale before it reaches sensitive gas control valves.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div class="card-theme overflow-hidden rounded-2xl shadow-xl">
+              <img src="assets/images/services/service1.jpg" alt="Technician inspecting water heater equipment with a diagnostic meter" class="w-full h-[380px] object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 6: SERVICE GUARANTEE & WARRANTIES (6/7)
+         ========================================================================= -->
+    <section class="py-20 bg-white dark:bg-[#09131F]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="p-8 lg:p-12 rounded-3xl bg-deep-navy text-white shadow-2xl">
+          <div class="grid lg:grid-cols-3 gap-8 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-accent-aqua/20 text-accent-aqua flex items-center justify-center flex-shrink-0 font-bold">
+                <i data-lucide="shield-check" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-white mb-1">100% Workmanship Warranty</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">Full labor guarantee covering all pipe soldering, connections, and venting.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-primary-blue/20 text-primary-blue flex items-center justify-center flex-shrink-0 font-bold">
+                <i data-lucide="award" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-white mb-1">Manufacturer Tank Warranties</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">6 to 15-year factory tank and heat exchanger coverage registration handled by our office.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-warm-orange/20 text-warm-orange flex items-center justify-center flex-shrink-0 font-bold">
+                <i data-lucide="phone-call" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-white mb-1">Post-Install Support</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">Dedicated service line with direct access to your installation technicians.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 7: SCHEDULE SERVICE CTA (7/7)
+         ========================================================================= -->
+    <section class="py-16 bg-gradient-to-r from-deep-navy via-[#14253B] to-deep-navy text-white text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">
+          Ready to Book Professional Water Heater Service?
+        </h2>
+        <p class="text-slate-300 text-base leading-relaxed mb-8 max-w-2xl mx-auto">
+          Same-day appointments and upfront flat-rate pricing. Select your preferred date and time online in under two minutes.
+        </p>
+        <div class="flex flex-wrap justify-center items-center gap-4">
+          <a href="contact.html" class="btn-primary text-base py-3.5 px-8">
+            Book Online Now
+          </a>
+          <a href="tel:18005554689" class="btn-emergency text-base py-3.5 px-8">
+            <i data-lucide="phone-call" class="w-5 h-5"></i> Emergency Hotline
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+<footer class="bg-white dark:bg-midnight-navy text-slate-700 dark:text-slate-300 text-sm pt-16 pb-12 border-t border-theme-border dark:border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-theme-border dark:border-white/10">
+      <!-- Col 1: Brand Info -->
+      <div class="lg:col-span-4">
+        <a href="index.html" class="inline-block mb-4">
+          <img src="assets/images/brand/logo.svg" alt="AquaTherma" class="site-logo-img h-9 w-auto">
+        </a>
+        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+          Residential Water Heater Installation, Rapid Emergency Repair, Tankless Engineering, and Preventative Maintenance. Serving homeowners with honesty and precision.
+        </p>
+        <div class="space-y-2 text-xs">
+          <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+            <i data-lucide="map-pin" class="w-4 h-4 text-deep-teal dark:text-fresh-aqua"></i> 4820 Precision Way, Suite 100, Metro City, ST 90210
+          </p>
+          <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+            <i data-lucide="shield-check" class="w-4 h-4 text-deep-teal dark:text-fresh-aqua"></i> Lic #MP-849204 | HVAC-R #HV-309112
+          </p>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation -->
+      <div class="lg:col-span-2">
+        <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Navigation</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Home 01: Standard &amp; Repair</a></li>
+          <li><a href="home-02.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Home 02 (Tankless)</a></li>
+          <li><a href="about.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">All Services</a></li>
+          <li><a href="projects.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Projects Portfolio</a></li>
+          <li><a href="pricing.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Pricing Guide</a></li>
+          <li><a href="contact.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services Menu -->
+      <div class="lg:col-span-3">
+        <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Top Services</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="service-detail.html?id=tankless-water-heater-installation" class="hover:text-deep-teal dark:hover:text-white transition-colors">Tankless Installation</a></li>
+          <li><a href="service-detail.html?id=tank-water-heater-installation" class="hover:text-deep-teal dark:hover:text-white transition-colors">Tank Water Heater Install</a></li>
+          <li><a href="service-detail.html?id=water-heater-leak-repair" class="hover:text-deep-teal dark:hover:text-white transition-colors">Water Heater Leak Repair</a></li>
+          <li><a href="service-detail.html?id=no-hot-water-troubleshooting" class="hover:text-deep-teal dark:hover:text-white transition-colors">No Hot Water Diagnostics</a></li>
+          <li><a href="service-detail.html?id=gas-water-heater-services" class="hover:text-deep-teal dark:hover:text-white transition-colors">Gas Water Heater Service</a></li>
+          <li><a href="service-detail.html?id=water-heater-flushing-maintenance" class="hover:text-deep-teal dark:hover:text-white transition-colors">Flushing &amp; Descaling</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Newsletter & Emergency Hotline -->
+      <div class="lg:col-span-3">
+        <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Urgent Dispatch</h4>
+        <a href="tel:18005554689" class="block p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-theme-border dark:border-white/10 hover:border-warm-copper transition-colors mb-4">
+          <span class="text-[11px] text-[#995027] dark:text-warm-copper font-bold uppercase tracking-wider block">Hot Water Hotline</span>
+          <span class="text-base font-extrabold text-charcoal-text dark:text-white mt-1 block">(800) 555-4689</span>
+          <span class="text-[11px] text-slate-600 dark:text-slate-400 mt-1 block">Live technician assistance</span>
+        </a>
+
+        <!-- Newsletter Form -->
+        <form class="newsletter-form mt-4">
+          <label class="text-[11px] font-semibold text-slate-700 dark:text-slate-300 block mb-1">Water Heater Maintenance Tips</label>
+          <div class="flex gap-2">
+            <input type="email" placeholder="Your email address" required class="w-full text-xs px-3 py-2 rounded-lg bg-slate-100 dark:bg-white/10 border border-theme-border dark:border-white/20 text-charcoal-text dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-deep-teal">
+            <button type="submit" class="btn-copper text-xs py-2 px-3 whitespace-nowrap">Join</button>
+          </div>
+          <span class="newsletter-feedback"></span>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-600 dark:text-slate-400 gap-4">
+      <p>© 2026 AquaTherma Water Heating Specialists LLC. All Rights Reserved. Demonstration Portfolio Content.</p>
+      <div class="flex items-center gap-6">
+        <a href="privacy-policy.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Terms of Service</a>
+        <a href="coming-soon.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Coming Soon</a>
+        <a href="maintenance.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">System Status</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING EMERGENCY HOTLINE BUTTON (Sleek, unobtrusive) -->
+<a href="tel:18005554689" class="floating-hotline whitespace-nowrap" title="Call Emergency Dispatch">
+  <i data-lucide="phone-call" class="w-4 h-4"></i> (800) 555-4689
+</a>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script>
+    // AquaTherma - Dynamic Category Filter & 12 Services Catalog Renderer
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof AQUA_DATA === 'undefined' || !AQUA_DATA.services) return;
+
+      const filterBar = document.getElementById('service-filter-bar');
+      const container = document.getElementById('services-grid-container');
+      if (!container) return;
+
+      // Centralized Category Manifest
+      const categories = [
+        { id: "all", label: "All Services" },
+        { id: "installation", label: "Installation" },
+        { id: "repair", label: "Repair & Diagnostics" },
+        { id: "replacement", label: "Replacement" },
+        { id: "maintenance", label: "Maintenance" }
+      ];
+
+      function getFilteredServices(catId) {
+        return catId === "all"
+          ? AQUA_DATA.services
+          : AQUA_DATA.services.filter(s => s.category === catId);
+      }
+
+      let activeCategory = 'all';
+      let pendingScrollFrame;
+
+      function scrollToServiceResults() {
+        cancelAnimationFrame(pendingScrollFrame);
+        pendingScrollFrame = requestAnimationFrame(() => {
+          const header = document.querySelector('header');
+          const filterSection = filterBar?.closest('.service-filter-section');
+          let offset = 0;
+
+          // Measure the current layout so wrapped filters and mobile layouts work too.
+          [header, filterSection].forEach(element => {
+            if (!element) return;
+            const styles = window.getComputedStyle(element);
+            if (styles.position === 'sticky' || styles.position === 'fixed') {
+              offset = Math.max(offset, (parseFloat(styles.top) || 0) + element.getBoundingClientRect().height);
+            }
+          });
+
+          const top = container.getBoundingClientRect().top + window.scrollY - offset - 16;
+          window.scrollTo({
+            top: Math.max(0, top),
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+          });
+        });
+      }
+
+      // Dynamically render category filter pills
+      function renderFilterButtons() {
+        if (!filterBar) return;
+        filterBar.innerHTML = categories.map(cat => {
+          const isActive = cat.id === activeCategory;
+          return `
+            <button type="button" 
+                    class="service-filter-btn ${isActive ? 'active' : ''}" 
+                    data-filter="${cat.id}" 
+                    aria-pressed="${isActive ? 'true' : 'false'}" 
+                    aria-controls="services-grid-container">
+              ${cat.label}
+            </button>
+          `;
+        }).join('');
+
+        // Attach Click Listeners
+        filterBar.querySelectorAll('.service-filter-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const catId = btn.dataset.filter;
+            if (activeCategory === catId) {
+              scrollToServiceResults();
+              return;
+            }
+            activeCategory = catId;
+
+            // Update Active Pill State & ARIA
+            filterBar.querySelectorAll('.service-filter-btn').forEach(b => {
+              const isSelected = b.dataset.filter === catId;
+              b.classList.toggle('active', isSelected);
+              b.setAttribute('aria-pressed', String(isSelected));
+            });
+
+            // Render first, then scroll once the new card layout is ready.
+            renderServiceCards(catId);
+            scrollToServiceResults();
+          });
+        });
+      }
+
+      // Render Service Cards for the Active Category
+      function renderServiceCards(catId = 'all') {
+        const filtered = getFilteredServices(catId);
+
+        container.innerHTML = filtered.map(s => `
+          <div class="card-theme group flex flex-col justify-between transition-all duration-300" data-category="${s.category}" data-service-id="${s.id}">
+            <div>
+              <div class="h-52 overflow-hidden relative">
+                <img src="${s.cardImage}" alt="${s.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-midnight-navy/60 via-transparent to-transparent pointer-events-none"></div>
+                <div class="absolute top-3 inset-x-3 flex flex-wrap items-start justify-between gap-2">
+                  <span class="badge-tag service-image-badge">
+                    ${s.categoryLabel || s.category}
+                  </span>
+                  ${s.badge ? `
+                    <span class="badge-tag service-image-badge service-image-badge-accent">
+                      ${s.badge}
+                    </span>
+                  ` : ''}
+                </div>
+                <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white text-xs">
+                  <span class="flex items-center gap-1.5 font-medium bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px]">
+                    <i data-lucide="${s.icon || 'wrench'}" class="w-3.5 h-3.5 text-fresh-aqua"></i>
+                    <span>${s.efficiency ? s.efficiency.split(' ')[0] + ' Efficiency' : 'Code Certified'}</span>
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-charcoal-text dark:text-white mb-2 group-hover:text-deep-teal dark:group-hover:text-fresh-aqua transition-colors leading-snug">
+                  ${s.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-secondary-text dark:text-slate-300 leading-relaxed line-clamp-3 mb-0">
+                  ${s.shortDesc}
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-4 border-t border-theme-border dark:border-[#1C3E57] flex items-center justify-between">
+              <a href="service-detail.html?id=${s.id}" class="text-xs font-bold text-deep-teal dark:text-fresh-aqua hover:underline inline-flex items-center gap-1.5">
+                Explore Details <i data-lucide="arrow-right" class="w-3.5 h-3.5 rtl-mirror"></i>
+              </a>
+              <span class="text-[11px] text-secondary-text dark:text-slate-400 font-medium">
+                ${s.pricingGuidance ? s.pricingGuidance.timeframe : 'Same-Day Service'}
+              </span>
+            </div>
+          </div>
+        `).join('');
+
+        if (window.lucide) window.lucide.createIcons();
+      }
+
+      // Initialize
+      renderFilterButtons();
+      renderServiceCards('all');
+    });
+  </script>
+</body>
+</html>

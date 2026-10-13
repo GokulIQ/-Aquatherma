@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <!-- Apply the theme before styles and page content can render. -->
+  <script id="theme-bootstrap">
+    (() => {
+      let savedTheme = null;
+      try { savedTheme = localStorage.getItem('aquatherma_theme'); } catch (_) {}
+      const isDark = savedTheme === 'dark' ||
+        (savedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.toggle('dark', isDark);
+    })();
+  </script>
+  <style id="theme-bootstrap-colors">
+    html { background-color: #F6F5F1; color-scheme: light; }
+    html.dark { background-color: #091D2C; color-scheme: dark; }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suburban Whole-Home Tankless Upgrade | AquaTherma Case Study</title>
+  <meta name="description" content="Detailed case study of a whole-home tankless water heater conversion in Westfield Estates with 28% gas savings.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'midnight-navy': '#091D2C',
+            'deep-teal': '#087E8B',
+            'fresh-aqua': '#36D4CC',
+            'warm-copper': '#DB8959',
+            'warm-offwhite': '#F6F5F1',
+            'charcoal-text': '#17252D',
+            // Semantic Aliases
+            'deep-navy': '#091D2C',
+            'primary-blue': '#087E8B',
+            'accent-aqua': '#36D4CC',
+            'warm-orange': '#DB8959',
+            'soft-bg': '#F6F5F1',
+            'main-text': '#17252D',
+            'secondary-text': '#5A6D7C',
+            'theme-border': '#E2E8F0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-warm-offwhite dark:bg-[#091D2C] text-charcoal-text dark:text-[#F6F5F1] antialiased selection:bg-deep-teal selection:text-white">
+
+  <!-- SITE HEADER / CINEMATIC ARCHITECTURAL NAVIGATION -->
+<header class="header-cinematic-glass sticky top-0 z-50 text-charcoal-text dark:text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
+    <!-- Brand Logo -->
+    <a href="index.html" class="flex items-center gap-2 flex-shrink-0" aria-label="AquaTherma Home">
+      <img src="assets/images/brand/logo.svg" alt="AquaTherma Water Heater Specialists" class="site-logo-img h-7 sm:h-9 w-auto">
+    </a>
+
+    <!-- Desktop Navigation Menu (whitespace-nowrap prevents any multi-line wrapping) -->
+    <nav class="hidden xl:flex items-center gap-5 xl:gap-7 text-[13px] xl:text-sm font-semibold whitespace-nowrap text-slate-700 dark:text-slate-200" aria-label="Main Navigation">
+      <!-- Home Dropdown -->
+      <div class="relative group py-2">
+        <button type="button" class="flex items-center gap-1.5 text-deep-teal dark:text-fresh-aqua font-bold hover:text-deep-teal dark:hover:text-white transition-colors focus:outline-none whitespace-nowrap">
+          Home <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform"></i>
+        </button>
+        <div class="absolute top-full left-0 w-60 bg-white dark:bg-[#091D2C] border border-theme-border dark:border-[#1C3E57] rounded-xl shadow-2xl p-2 hidden group-hover:block transition-all z-50">
+          <a href="index.html" class="block px-3 py-2 rounded-lg bg-deep-teal/10 dark:bg-[#16364E] text-xs font-bold text-deep-teal dark:text-fresh-aqua whitespace-nowrap">
+            Home 01: Standard &amp; Repair
+          </a>
+          <a href="home-02.html" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-[#16364E] text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white whitespace-nowrap">
+            Home 02: Tankless Solutions
+          </a>
+        </div>
+      </div>
+
+      <a href="about.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">About Us</a>
+      <a href="services.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Services</a>
+      <a href="projects.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Projects</a>
+      <a href="blog.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Knowledge Hub</a>
+      <a href="pricing.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Pricing Guide</a>
+      <a href="contact.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Contact</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0 ms-auto">
+      <!-- Controls: Theme & RTL -->
+      <div class="flex items-center gap-1 sm:gap-2 sm:me-2">
+        <button type="button" class="theme-toggle w-10 h-10 sm:w-11 sm:h-11 inline-flex items-center justify-center rounded-lg text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <i data-lucide="moon" class="theme-toggle-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+        </button>
+        <button type="button" class="rtl-toggle w-10 h-10 sm:w-11 sm:h-11 inline-flex items-center justify-center rounded-lg text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors" title="Toggle RTL Layout" aria-label="Toggle right-to-left layout">
+          RTL
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-toggle" type="button" class="xl:hidden w-10 h-10 inline-flex items-center justify-center rounded-lg border border-theme-border dark:border-white/20 text-charcoal-text dark:text-white" aria-label="Open Mobile Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Primary Request Service CTA -->
+      <a href="contact.html" class="header-book-service btn-copper text-xs py-2 px-4 shadow-md hidden xl:inline-flex whitespace-nowrap">
+        Book Your Service
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU DRAWER -->
+<div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60 z-50 hidden backdrop-blur-sm transition-opacity"></div>
+<div id="mobile-menu-drawer" class="fixed top-0 right-0 w-80 max-w-[85vw] h-full bg-white dark:bg-midnight-navy z-50 p-6 flex flex-col justify-between shadow-2xl transform translate-x-full transition-transform duration-300 overflow-y-auto text-charcoal-text dark:text-white">
+  <div>
+    <div class="flex items-center justify-between pb-6 border-b border-theme-border dark:border-white/10">
+      <img src="assets/images/brand/logo.svg" alt="AquaTherma" class="site-logo-img h-8 w-auto">
+      <button id="mobile-menu-close" type="button" class="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white" aria-label="Close Mobile Menu">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <nav class="flex flex-col gap-3 py-6 text-base font-semibold">
+      <span class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 font-bold">Main Navigation</span>
+      <a href="index.html" class="py-2 text-deep-teal dark:text-fresh-aqua font-bold">Home 01: Standard &amp; Repair</a>
+      <a href="home-02.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Home 02: Tankless Solutions</a>
+      <a href="about.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">About Us</a>
+      <a href="services.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">All Services</a>
+      <a href="projects.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Projects Portfolio</a>
+      <a href="blog.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Water Heater Blog</a>
+      <a href="pricing.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Pricing Guide</a>
+      <a href="contact.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Contact &amp; Support</a>
+    </nav>
+  </div>
+
+  <div class="pt-6 border-t border-theme-border dark:border-white/10 flex flex-col gap-3">
+    <a href="tel:18005554689" class="btn-copper w-full text-center text-sm py-2.5">
+      <i data-lucide="phone-call" class="w-4 h-4"></i> Call (800) 555-4689
+    </a>
+    <a href="contact.html" class="btn-teal w-full text-center text-sm py-2.5">
+      Book Appointment
+    </a>
+  </div>
+</div>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 1: PROJECT HERO (1/7)
+         ========================================================================= -->
+    <section class="relative bg-gradient-to-b from-warm-offwhite via-white to-warm-offwhite dark:from-[#091D2C] dark:via-[#0E2235] dark:to-[#091D2C] py-10 lg:py-16 border-b border-theme-border dark:border-[#182C46]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <!-- Hero Content (Col 1-7) -->
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 mb-3">
+              <span id="proj-category" class="badge-tag badge-blue font-bold text-xs uppercase tracking-wider">Tankless</span>
+              <span class="text-xs text-secondary-text dark:text-slate-400 flex items-center gap-1 font-semibold">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-deep-teal dark:text-fresh-aqua"></i> Certified Field Installation
+              </span>
+            </div>
+            
+            <h1 id="proj-title" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-charcoal-text dark:text-white mb-4 leading-tight">
+              Whole-Home Tankless System Upgrade
+            </h1>
+
+            <p id="proj-hero-desc" class="text-sm sm:text-base text-secondary-text dark:text-slate-300 leading-relaxed mb-6">
+              Replaced an aging, inefficient 50-gallon atmospheric storage tank with an endless 199,000 BTU condensing tankless system, freeing up 14 sq ft of basement space and achieving 28% gas savings.
+            </p>
+
+            <!-- Meta Information Card -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 p-4 rounded-2xl bg-white dark:bg-[#102B3F] border border-theme-border dark:border-[#1C3E57] shadow-sm mb-6 text-xs">
+              <div>
+                <span class="text-secondary-text dark:text-slate-400 block font-semibold uppercase text-[10px] tracking-wider">Location</span>
+                <span id="proj-location" class="font-bold text-charcoal-text dark:text-white flex items-center gap-1 mt-0.5">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-deep-teal dark:text-fresh-aqua"></i> Westfield Estates, Metro Area
+                </span>
+              </div>
+              <div>
+                <span class="text-secondary-text dark:text-slate-400 block font-semibold uppercase text-[10px] tracking-wider">Turnaround Time</span>
+                <span id="proj-duration" class="font-bold text-charcoal-text dark:text-white flex items-center gap-1 mt-0.5">
+                  <i data-lucide="clock" class="w-3.5 h-3.5 text-deep-teal dark:text-fresh-aqua"></i> 5 Hours Turnaround
+                </span>
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <span class="text-secondary-text dark:text-slate-400 block font-semibold uppercase text-[10px] tracking-wider">Verification</span>
+                <span id="proj-client" class="font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1 mt-0.5">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Verified Homeowner
+                </span>
+              </div>
+            </div>
+
+            <!-- Hero Action Buttons -->
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="contact.html" class="btn-copper text-xs py-3 px-6 shadow-md inline-flex items-center gap-2">
+                <i data-lucide="calendar" class="w-4 h-4"></i> Request Similar Service
+              </a>
+              <a href="tel:18005554689" class="btn-teal text-xs py-3 px-6 inline-flex items-center gap-2">
+                <i data-lucide="phone-call" class="w-4 h-4"></i> Call Emergency Hotline
+              </a>
+            </div>
+          </div>
+
+          <!-- Matching Hero Cover Image (Col 8-12) -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-theme-border dark:border-[#1C3E57] group">
+              <img id="proj-hero-image" src="assets/images/projects/project-1.jpg" alt="Whole-Home Tankless System Upgrade - Primary Installation" class="w-full h-72 sm:h-84 lg:h-96 object-cover group-hover:scale-102 transition-transform duration-500" loading="eager">
+              <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white text-xs flex items-center justify-between">
+                <span class="font-bold flex items-center gap-1.5"><i data-lucide="camera" class="w-3.5 h-3.5 text-fresh-aqua"></i> Primary Installation View</span>
+                <span class="text-[11px] bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded font-medium">100% Authentic Photo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: PROJECT OVERVIEW & EQUIPMENT SPECIFICATIONS (2/7)
+         ========================================================================= -->
+    <section class="py-16 bg-white dark:bg-[#0E1E2E]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 items-center mb-12">
+          <!-- Overview Story (Col 1-7) -->
+          <div class="lg:col-span-7">
+            <span class="badge-tag badge-aqua mb-3">Case Study Overview</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal-text dark:text-white mb-4">
+              Project Context &amp; Scope of Work
+            </h2>
+            <p id="proj-overview-text" class="text-sm sm:text-base text-secondary-text dark:text-slate-300 leading-relaxed mb-6">
+              The homeowners in Westfield Estates were frustrated by cold showers every morning as their family grew. Their 14-year-old atmospheric gas tank required nearly an hour to recover and had begun showing mineral weeping at the base fittings. AquaTherma engineered a complete conversion to an ultra-efficient wall-hung condensing tankless unit.
+            </p>
+            <div class="p-4 rounded-xl bg-warm-offwhite dark:bg-[#102B3F] border border-theme-border dark:border-[#1C3E57] text-xs text-secondary-text dark:text-slate-300 space-y-2">
+              <div class="flex items-start gap-2">
+                <i data-lucide="wrench" class="w-4 h-4 text-deep-teal dark:text-fresh-aqua flex-shrink-0 mt-0.5"></i>
+                <span><strong>Scope of Service:</strong> Complete system decommissioning, utility line upgrading, mechanical wall-mounting, code-compliant venting, and high-flow commissioning.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i data-lucide="home" class="w-4 h-4 text-warm-copper flex-shrink-0 mt-0.5"></i>
+                <span><strong>Property Setting:</strong> Single-family residence, multi-bath simultaneous demand requirement.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Unique Detail Image (Col 8-12) -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl border border-theme-border dark:border-[#1C3E57]">
+              <img id="proj-detail-image" src="assets/images/project-details/project-1-b.jpg" alt="Secondary Technical Detail View" class="w-full h-64 sm:h-76 lg:h-80 object-cover" loading="lazy">
+              <div class="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white text-xs flex items-center justify-between">
+                <span class="font-bold flex items-center gap-1.5"><i data-lucide="zoom-in" class="w-3.5 h-3.5 text-warm-copper"></i> Precision Component Inspection</span>
+                <span class="text-[10px] bg-black/40 px-2 py-0.5 rounded font-mono">Detail View</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Equipment & Engineering Specification Matrix -->
+        <div class="border-t border-theme-border dark:border-[#1C3E57] pt-10">
+          <div class="mb-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-charcoal-text dark:text-white flex items-start gap-3">
+              <i data-lucide="sliders" class="w-6 h-6 flex-shrink-0 mt-1 text-deep-teal dark:text-fresh-aqua"></i> Equipment &amp; Engineering Specifications
+            </h3>
+            <p class="text-sm text-secondary-text dark:text-slate-300 mt-3 mb-0">Certified technical parameters for this installation.</p>
+          </div>
+          <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6" id="proj-specs-grid">
+            <!-- Populated dynamically via detail-loader.js -->
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: INITIAL PROBLEM & DIAGNOSTIC ASSESSMENT (3/7)
+         ========================================================================= -->
+    <section class="py-16 bg-warm-offwhite dark:bg-[#091D2C] border-y border-theme-border dark:border-[#182C46]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="badge-tag badge-orange mb-3">Diagnostic Phase</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal-text dark:text-white">
+            The Initial Problem &amp; Technical Assessment
+          </h2>
+          <p class="text-xs sm:text-sm text-secondary-text dark:text-slate-400 mt-2">
+            Detailed pre-service diagnostic inspection and root-cause analysis conducted by AquaTherma certified field technicians.
+          </p>
+        </div>
+
+        <div class="card-theme p-6 sm:p-8 space-y-6">
+          <p id="proj-challenge" class="text-sm sm:text-base text-secondary-text dark:text-slate-300 leading-relaxed mb-0">
+            A family of five suffered from severe hot water exhaustion during morning peak hours. The existing tank suffered from heavy lime buildup, inadequate combustion air, and occupied valuable floor space in their finished basement utility room.
+          </p>
+
+          <div class="border-t border-theme-border dark:border-[#1C3E57] pt-6">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-charcoal-text dark:text-white mb-4 flex items-center gap-2">
+              <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i> Field Diagnostic Findings &amp; Observations
+            </h4>
+            <div class="grid sm:grid-cols-2 gap-4 text-xs" id="proj-diagnostic-points">
+              <!-- Dynamically populated via detail-loader.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: SOLUTION & WORK PERFORMED (4/7)
+         ========================================================================= -->
+    <section class="py-16 bg-white dark:bg-[#0E1E2E]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="badge-tag badge-blue mb-3">Engineering Execution</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal-text dark:text-white">
+            Engineered Solution &amp; Work Performed
+          </h2>
+          <p class="text-xs sm:text-sm text-secondary-text dark:text-slate-400 mt-2">
+            Step-by-step technical execution following local plumbing code, manufacturer specifications, and safety protocols.
+          </p>
+        </div>
+
+        <div class="card-theme p-6 sm:p-8 space-y-6">
+          <div>
+            <h4 class="text-base font-bold text-charcoal-text dark:text-white mb-3 flex items-center gap-2">
+              <i data-lucide="check-square" class="w-5 h-5 text-deep-teal dark:text-fresh-aqua"></i> Technical Scope of Work
+            </h4>
+            <p id="proj-solution" class="text-sm sm:text-base text-secondary-text dark:text-slate-300 leading-relaxed mb-0">
+              Our technicians removed the obsolete 50-gallon tank, upgraded the gas supply line to 3/4-inch black iron from the primary manifold, and mounted an Energy Star condensing tankless unit. We installed dual concentric PVC venting through the rim joist, built copper supply headers with lead-free brass ball valves, and integrated a webstone isolation valve flush kit for effortless maintenance.
+            </p>
+          </div>
+
+          <div class="border-t border-theme-border dark:border-[#1C3E57] pt-6">
+            <h5 class="text-xs font-bold uppercase tracking-wider text-charcoal-text dark:text-white mb-3">Key Technical Milestones</h5>
+            <div id="proj-work-steps" class="grid sm:grid-cols-2 gap-3 text-xs">
+              <!-- Populated dynamically via detail-loader.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5: PROJECT OUTCOME & VERIFIED HOMEOWNER FEEDBACK (5/7)
+         ========================================================================= -->
+    <section class="py-16 bg-warm-offwhite dark:bg-[#091D2C] border-y border-theme-border dark:border-[#182C46]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="p-8 lg:p-12 rounded-3xl bg-midnight-navy text-white shadow-2xl relative overflow-hidden">
+          <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-deep-teal/20 blur-3xl pointer-events-none"></div>
+
+          <span class="badge-tag badge-aqua mb-3">Verified Project Result</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">
+            Measured Performance &amp; Long-Term Outcome
+          </h2>
+          <p id="proj-outcome" class="text-sm sm:text-base text-slate-200 leading-relaxed mb-8">
+            The family now enjoys continuous, limitless hot water across three simultaneous showers. The wall-mounted footprint reclaimed 14 square feet of floor space, while the 0.96 UEF condensing unit delivered an estimated 28% reduction in monthly water-heating gas usage.
+          </p>
+
+          <blockquote class="p-5 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm border-s-4 border-fresh-aqua text-sm sm:text-base italic text-slate-200 relative">
+            <span id="proj-quote" class="block leading-relaxed">
+              "We can run the dishwasher, laundry, and two showers simultaneously without the slightest temperature drop. Reclaiming our basement floor space was the icing on the cake."
+            </span>
+            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between not-italic text-xs">
+              <span id="proj-client-name" class="font-bold text-white flex items-center gap-1.5">
+                <i data-lucide="user-check" class="w-4 h-4 text-fresh-aqua"></i> The Henderson Family
+              </span>
+              <span class="text-fresh-aqua font-bold flex items-center gap-1">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i> 5.0 Star Verified Review
+              </span>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 6: RELATED PROJECTS (6/7)
+         ========================================================================= -->
+    <section class="py-20 bg-white dark:bg-[#0E1E2E]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="badge-tag badge-blue mb-3">Portfolio Explorer</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal-text dark:text-white">
+            Explore Related Installations &amp; Case Studies
+          </h2>
+          <p class="text-xs sm:text-sm text-secondary-text dark:text-slate-400 mt-2">
+            Browse real installations across different homes and hot water systems.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" id="proj-related-grid">
+          <!-- Populated dynamically via detail-loader.js with 2 related project cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 7: BOOKING / CONSULTATION CTA (7/7)
+         ========================================================================= -->
+    <section class="project-consultation-cta py-16 border-t">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="badge-tag badge-aqua mb-3">Ready to Upgrade?</span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4">
+          Need a Similar Water Heater Upgrade or Emergency Repair?
+        </h2>
+        <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+          Our licensed water heating technicians provide honest sizing evaluations, transparent upfront estimates, and same-day professional installation.
+        </p>
+        <div class="flex flex-wrap justify-center items-center gap-4">
+          <a href="contact.html" class="btn-copper text-xs sm:text-sm py-3.5 px-8 shadow-lg inline-flex items-center gap-2">
+            <i data-lucide="calendar" class="w-4 h-4"></i> Schedule Your Evaluation
+          </a>
+          <a href="tel:18005554689" class="btn-teal text-xs sm:text-sm py-3.5 px-8 inline-flex items-center gap-2">
+            <i data-lucide="phone-call" class="w-4 h-4"></i> Call Emergency Hotline: (800) 555-4689
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+<footer class="bg-white dark:bg-midnight-navy text-slate-700 dark:text-slate-300 text-sm pt-16 pb-12 border-t border-theme-border dark:border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-theme-border dark:border-white/10">
+      <!-- Col 1: Brand Info -->
+      <div class="lg:col-span-4">
+        <a href="index.html" class="inline-block mb-4">
+          <img src="assets/images/brand/logo.svg" alt="AquaTherma" class="site-logo-img h-9 w-auto">
+        </a>
+        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+          Residential Water Heater Installation, Rapid Emergency Repair, Tankless Engineering, and Preventative Maintenance. Serving homeowners with honesty and precision.
+        </p>
+        <div class="space-y-2 text-xs">
+          <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+            <i data-lucide="map-pin" class="w-4 h-4 text-deep-teal dark:text-fresh-aqua"></i> 4820 Precision Way, Suite 100, Metro City, ST 90210
+          </p>
+          <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+            <i data-lucide="shield-check" class="w-4 h-4 text-deep-teal dark:text-fresh-aqua"></i> Lic #MP-849204 | HVAC-R #HV-309112
+          </p>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation -->
+      <div class="lg:col-span-2">
+        <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Navigation</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Home 01: Standard &amp; Repair</a></li>
+          <li><a href="home-02.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Home 02 (Tankless)</a></li>
+          <li><a href="about.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">All Services</a></li>
+          <li><a href="projects.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Projects Portfolio</a></li>
+          <li><a href="pricing.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Pricing Guide</a></li>
+          <li><a href="contact.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services Menu -->
+      <div class="lg:col-span-3">
+        <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Top Services</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="service-detail.html?id=tankless-water-heater-installation" class="hover:text-deep-teal dark:hover:text-white transition-colors">Tankless Installation</a></li>
+          <li><a href="service-detail.html?id=tank-water-heater-installation" class="hover:text-deep-teal dark:hover:text-white transition-colors">Tank Water Heater Install</a></li>
+          <li><a href="service-detail.html?id=water-heater-leak-repair" class="hover:text-deep-teal dark:hover:text-white transition-colors">Water Heater Leak Repair</a></li>
+          <li><a href="service-detail.html?id=no-hot-water-troubleshooting" class="hover:text-deep-teal dark:hover:text-white transition-colors">No Hot Water Diagnostics</a></li>
+          <li><a href="service-detail.html?id=gas-water-heater-services" class="hover:text-deep-teal dark:hover:text-white transition-colors">Gas Water Heater Service</a></li>
+          <li><a href="service-detail.html?id=water-heater-flushing-maintenance" class="hover:text-deep-teal dark:hover:text-white transition-colors">Flushing &amp; Descaling</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Newsletter & Emergency Hotline -->
+      <div class="lg:col-span-3">
+        <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Urgent Dispatch</h4>
+        <a href="tel:18005554689" class="block p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-theme-border dark:border-white/10 hover:border-warm-copper transition-colors mb-4">
+          <span class="text-[11px] text-[#995027] dark:text-warm-copper font-bold uppercase tracking-wider block">Hot Water Hotline</span>
+          <span class="text-base font-extrabold text-charcoal-text dark:text-white mt-1 block">(800) 555-4689</span>
+          <span class="text-[11px] text-slate-600 dark:text-slate-400 mt-1 block">Live technician assistance</span>
+        </a>
+
+        <!-- Newsletter Form -->
+        <form class="newsletter-form mt-4">
+          <label class="text-[11px] font-semibold text-slate-700 dark:text-slate-300 block mb-1">Water Heater Maintenance Tips</label>
+          <div class="flex gap-2">
+            <input type="email" placeholder="Your email address" required class="w-full text-xs px-3 py-2 rounded-lg bg-slate-100 dark:bg-white/10 border border-theme-border dark:border-white/20 text-charcoal-text dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-deep-teal">
+            <button type="submit" class="btn-copper text-xs py-2 px-3 whitespace-nowrap">Join</button>
+          </div>
+          <span class="newsletter-feedback"></span>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-600 dark:text-slate-400 gap-4">
+      <p>© 2026 AquaTherma Water Heating Specialists LLC. All Rights Reserved. Demonstration Portfolio Content.</p>
+      <div class="flex items-center gap-6">
+        <a href="privacy-policy.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Terms of Service</a>
+        <a href="coming-soon.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Coming Soon</a>
+        <a href="maintenance.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">System Status</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING EMERGENCY HOTLINE BUTTON (Sleek, unobtrusive) -->
+<a href="tel:18005554689" class="floating-hotline whitespace-nowrap" title="Call Emergency Dispatch">
+  <i data-lucide="phone-call" class="w-4 h-4"></i> (800) 555-4689
+</a>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/detail-loader.js"></script>
+</body>
+</html>

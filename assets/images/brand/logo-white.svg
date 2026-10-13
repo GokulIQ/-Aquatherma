@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 52" fill="none" class="brand-logo-white">
+  <!-- Flame & Water Droplet Emblem -->
+  <g transform="translate(4, 4)">
+    <rect width="44" height="44" rx="12" fill="url(#brand-grad-dark)" />
+    <!-- Droplet contour -->
+    <path d="M22 10C22 10 14 20 14 26C14 30.4183 17.5817 34 22 34C26.4183 34 30 30.4183 30 26C30 20 22 10 22 10Z" fill="white" fill-opacity="0.2" />
+    <!-- Inner Heat Flame -->
+    <path d="M22 15C22 15 17 22 17 26.5C17 29.5376 19.2386 32 22 32C24.7614 32 27 29.5376 27 26.5C27 22 22 15 22 15Z" fill="#F28C45" />
+    <path d="M22 20C22 20 19 24 19 27C19 28.6569 20.3431 30 22 30C23.6569 30 25 28.6569 25 27C25 24 22 20 22 20Z" fill="#FDBA74" />
+    <path d="M12 22C10 24 10 28 12 30" stroke="#21B6C7" stroke-width="2" stroke-linecap="round"/>
+    <path d="M32 22C34 24 34 28 32 30" stroke="#F28C45" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <!-- Typography for Dark Backgrounds -->
+  <g transform="translate(58, 12)">
+    <text x="0" y="20" font-family="'Manrope', sans-serif" font-weight="800" font-size="28" fill="#FFFFFF" letter-spacing="-0.5">Aqua<tspan fill="#21B6C7">Therma</tspan></text>
+    <text x="0" y="36" font-family="'Inter', sans-serif" font-weight="700" font-size="11" fill="#E2E8F0" letter-spacing="0.65">WATER HEATER SPECIALISTS</text>
+  </g>
+  <defs>
+    <linearGradient id="brand-grad-dark" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#147DB3"/>
+      <stop offset="0.7" stop-color="#21B6C7"/>
+      <stop offset="1" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+</svg>

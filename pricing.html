@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <!-- Apply the theme before styles and page content can render. -->
+  <script id="theme-bootstrap">
+    (() => {
+      let savedTheme = null;
+      try { savedTheme = localStorage.getItem('aquatherma_theme'); } catch (_) {}
+      const isDark = savedTheme === 'dark' ||
+        (savedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.toggle('dark', isDark);
+    })();
+  </script>
+  <style id="theme-bootstrap-colors">
+    html { background-color: #F6F5F1; color-scheme: light; }
+    html.dark { background-color: #091D2C; color-scheme: dark; }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Heater Pricing &amp; Cost Guide | AquaTherma</title>
+  <meta name="description" content="Transparent, honest pricing guidance for water heater installation, replacement, and repairs. Compare costs for electric tank, gas tank, tankless, and hybrid systems.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'midnight-navy': '#091D2C',
+            'deep-teal': '#087E8B',
+            'fresh-aqua': '#36D4CC',
+            'warm-copper': '#DB8959',
+            'warm-offwhite': '#F6F5F1',
+            'charcoal-text': '#17252D',
+            // Semantic Aliases
+            'deep-navy': '#091D2C',
+            'primary-blue': '#087E8B',
+            'accent-aqua': '#36D4CC',
+            'warm-orange': '#DB8959',
+            'soft-bg': '#F6F5F1',
+            'main-text': '#17252D',
+            'secondary-text': '#5A6D7C',
+            'theme-border': '#E2E8F0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons & Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* Custom Pricing Guide Enhancements */
+    .pricing-hero-mesh {
+      background: radial-gradient(circle at 85% 20%, rgba(54, 212, 204, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 15% 80%, rgba(8, 126, 139, 0.08) 0%, transparent 50%);
+    }
+    html.dark .pricing-hero-mesh {
+      background: radial-gradient(circle at 85% 20%, rgba(54, 212, 204, 0.18) 0%, transparent 60%),
+                  radial-gradient(circle at 15% 80%, rgba(8, 126, 139, 0.15) 0%, transparent 50%);
+    }
+    .modal-backdrop-blur {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    /* Comparison Table Horizontal Scroll Styling */
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 9999px;
+    }
+    html.dark .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #087E8B;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-warm-offwhite dark:bg-[#091D2C] text-charcoal-text dark:text-[#F6F5F1] antialiased selection:bg-deep-teal selection:text-white">
+
+  <!-- SITE HEADER / CINEMATIC ARCHITECTURAL NAVIGATION -->
+  <header class="header-cinematic-glass sticky top-0 z-50 text-charcoal-text dark:text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2 flex-shrink-0" aria-label="AquaTherma Home">
+        <img src="assets/images/brand/logo.svg" alt="AquaTherma Water Heater Specialists" class="site-logo-img h-7 sm:h-9 w-auto">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden xl:flex items-center gap-5 xl:gap-7 text-[13px] xl:text-sm font-semibold whitespace-nowrap text-slate-700 dark:text-slate-200" aria-label="Main Navigation">
+        <!-- Home Dropdown -->
+        <div class="relative group py-2">
+          <button type="button" class="flex items-center gap-1.5 hover:text-deep-teal dark:hover:text-white transition-colors focus:outline-none whitespace-nowrap">
+            Home <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform"></i>
+          </button>
+          <div class="absolute top-full left-0 w-60 bg-white dark:bg-[#091D2C] border border-theme-border dark:border-[#1C3E57] rounded-xl shadow-2xl p-2 hidden group-hover:block transition-all z-50">
+            <a href="index.html" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-[#16364E] text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white whitespace-nowrap">
+              Home 01: Standard &amp; Repair
+            </a>
+            <a href="home-02.html" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-[#16364E] text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white whitespace-nowrap">
+              Home 02: Tankless Solutions
+            </a>
+          </div>
+        </div>
+
+        <a href="about.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">About Us</a>
+        <a href="services.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Services</a>
+        <a href="projects.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Projects</a>
+        <a href="blog.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Knowledge Hub</a>
+        <a href="pricing.html" class="text-deep-teal dark:text-fresh-aqua font-bold transition-colors whitespace-nowrap">Pricing Guide</a>
+        <a href="contact.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0 ms-auto">
+        <!-- Controls: Theme & RTL -->
+        <div class="flex items-center gap-1 sm:gap-2 sm:me-2">
+          <button type="button" class="theme-toggle w-10 h-10 sm:w-11 sm:h-11 inline-flex items-center justify-center rounded-lg text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+            <i data-lucide="moon" class="theme-toggle-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+          </button>
+          <button type="button" class="rtl-toggle w-10 h-10 sm:w-11 sm:h-11 inline-flex items-center justify-center rounded-lg text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors" title="Toggle RTL Layout" aria-label="Toggle right-to-left layout">
+            RTL
+          </button>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-toggle" type="button" class="xl:hidden w-10 h-10 inline-flex items-center justify-center rounded-lg border border-theme-border dark:border-white/20 text-charcoal-text dark:text-white" aria-label="Open Mobile Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+
+        <!-- Primary Request Service CTA -->
+        <a href="contact.html" class="header-book-service btn-copper text-xs py-2 px-4 shadow-md hidden xl:inline-flex whitespace-nowrap">
+          Book Your Service
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60 z-50 hidden backdrop-blur-sm transition-opacity"></div>
+  <div id="mobile-menu-drawer" class="fixed top-0 right-0 w-80 max-w-[85vw] h-full bg-white dark:bg-midnight-navy z-50 p-6 flex flex-col justify-between shadow-2xl transform translate-x-full transition-transform duration-300 overflow-y-auto text-charcoal-text dark:text-white">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-theme-border dark:border-white/10">
+        <img src="assets/images/brand/logo.svg" alt="AquaTherma" class="site-logo-img h-8 w-auto">
+        <button id="mobile-menu-close" type="button" class="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white" aria-label="Close Mobile Menu">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-3 py-6 text-base font-semibold">
+        <span class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 font-bold">Main Navigation</span>
+        <a href="index.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Home 01: Standard &amp; Repair</a>
+        <a href="home-02.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Home 02: Tankless Solutions</a>
+        <a href="about.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">About Us</a>
+        <a href="services.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">All Services</a>
+        <a href="projects.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Projects Portfolio</a>
+        <a href="blog.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Water Heater Blog</a>
+        <a href="pricing.html" class="py-2 text-deep-teal dark:text-fresh-aqua font-bold">Pricing Guide</a>
+        <a href="contact.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Contact &amp; Support</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-theme-border dark:border-white/10 flex flex-col gap-3">
+      <a href="tel:18005554689" class="btn-copper w-full text-center text-sm py-2.5">
+        <i data-lucide="phone-call" class="w-4 h-4"></i> Call (800) 555-4689
+      </a>
+      <a href="contact.html" class="btn-teal w-full text-center text-sm py-2.5">
+        Book Appointment
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 01: PREMIUM PRICING HERO WITH QUICK PRICE OVERVIEW
+         Asymmetric layout with immediate visible pricing data above the fold
+         ========================================================================= -->
+    <section class="relative pt-10 pb-16 lg:pt-14 lg:pb-20 border-b border-theme-border dark:border-white/10 pricing-hero-mesh overflow-hidden" aria-labelledby="pricing-hero-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Left Column: Modern Value Proposition & CTAs -->
+          <div class="lg:col-span-7 text-left">
+            <!-- Eyebrow Pill -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua text-xs font-bold uppercase tracking-wider mb-5 border border-deep-teal/20 dark:border-fresh-aqua/30">
+              <span class="w-2 h-2 rounded-full bg-fresh-aqua animate-pulse"></span>
+              <span>Transparent Pricing • Zero Hidden Fees</span>
+            </div>
+
+            <!-- Master Headline -->
+            <h1 id="pricing-hero-heading" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-charcoal-text dark:text-white tracking-tight leading-[1.18]">
+              Water Heater Pricing, <br class="hidden sm:inline">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-deep-teal via-teal-500 to-fresh-aqua">
+                Made Simple.
+              </span>
+            </h1>
+
+            <!-- Supporting Text -->
+            <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+              Understand installation, replacement, and repair costs before choosing the right solution for your home. Honest flat-rate estimates backed by master plumber expertise.
+            </p>
+
+            <!-- Dual CTAs -->
+            <div class="mt-7 flex flex-wrap items-center gap-3 sm:gap-4">
+              <a href="#pricing-packages" class="btn-copper text-sm sm:text-base py-3 px-6 sm:px-7 shadow-lg inline-flex items-center gap-2">
+                <span>Explore Pricing Packages</span>
+                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+              </a>
+              <a href="#estimate-builder" class="btn-teal text-sm sm:text-base py-3 px-6 sm:px-7 shadow-md inline-flex items-center gap-2">
+                <i data-lucide="calculator" class="w-4 h-4"></i>
+                <span>Get My Estimate</span>
+              </a>
+            </div>
+
+            <!-- Pricing Disclaimer -->
+            <div class="mt-6 p-3 sm:p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 max-w-2xl flex items-start gap-2.5">
+              <i data-lucide="info" class="w-4 h-4 text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0"></i>
+              <p class="text-xs text-amber-900 dark:text-amber-200 leading-normal">
+                <strong>Pricing Transparency Notice:</strong> Prices shown are illustrative estimates. Actual costs depend on equipment model, existing utility connections, permit fees, and specific installation conditions confirmed during on-site inspection.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: Refined Quick-Pricing Overview Card -->
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl p-6 sm:p-7 bg-white dark:bg-[#071724] border border-theme-border dark:border-white/15 shadow-xl">
+              <div class="flex items-center justify-between pb-4 border-b border-theme-border dark:border-white/10 mb-4">
+                <span class="text-xs uppercase font-extrabold tracking-wider text-slate-500 dark:text-slate-400">
+                  Quick Benchmark Overview
+                </span>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                  Updated 2026 Rates
+                </span>
+              </div>
+
+              <div class="space-y-3.5">
+                <!-- Category 1: Installation -->
+                <a href="#pricing-packages" class="block p-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-theme-border dark:border-white/10 hover:border-deep-teal transition-all group">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white flex items-center gap-2">
+                      <i data-lucide="wrench" class="w-4 h-4 text-deep-teal dark:text-fresh-aqua"></i>
+                      Water Heater Installation
+                    </span>
+                    <span class="text-sm font-extrabold text-deep-teal dark:text-fresh-aqua font-mono">₹1,650 – ₹2,850</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 leading-snug">
+                    Turnkey 40–50 gal replacement including thermal tank, shutoff valve &amp; disposal.
+                  </p>
+                </a>
+
+                <!-- Category 2: Repairs -->
+                <a href="#repair-pricing" class="block p-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-theme-border dark:border-white/10 hover:border-warm-copper transition-all group">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white flex items-center gap-2">
+                      <i data-lucide="activity" class="w-4 h-4 text-warm-copper"></i>
+                      Diagnostic &amp; Component Repairs
+                    </span>
+                    <span class="text-sm font-extrabold text-warm-copper font-mono">₹89 – ₹129 Diagnostic</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 leading-snug">
+                    Full testing fee waived when you authorize repair work. Elements, valves &amp; igniters.
+                  </p>
+                </a>
+
+                <!-- Category 3: Tankless Upgrades -->
+                <a href="#pricing-packages" class="block p-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-theme-border dark:border-white/10 hover:border-fresh-aqua transition-all group">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white flex items-center gap-2">
+                      <i data-lucide="zap" class="w-4 h-4 text-emerald-500"></i>
+                      Tankless System Upgrades
+                    </span>
+                    <span class="text-sm font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">₹2,850 – ₹4,600</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 leading-snug">
+                    Continuous on-demand flow. Qualifies for up to ₹2,000 clean energy tax credits.
+                  </p>
+                </a>
+              </div>
+
+              <!-- Quick Action Link -->
+              <div class="mt-5 pt-4 border-t border-theme-border dark:border-white/10 flex items-center justify-between">
+                <span class="text-xs text-slate-500 dark:text-slate-400">Need immediate consultation?</span>
+                <a href="tel:18005554689" class="text-xs font-bold text-deep-teal dark:text-fresh-aqua hover:underline flex items-center gap-1">
+                  <i data-lucide="phone-call" class="w-3.5 h-3.5"></i> (800) 555-4689
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 02: INSTALLATION & REPLACEMENT PACKAGES (4 DISTINCT PACKAGES)
+         Responsive 4-column desktop grid with equipment images, inclusions & exclusions
+         ========================================================================= -->
+    <section id="pricing-packages" class="py-16 lg:py-24 bg-white dark:bg-[#071724] border-b border-theme-border dark:border-white/10" aria-labelledby="packages-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-deep-teal/10 dark:bg-fresh-aqua/10 text-deep-teal dark:text-fresh-aqua text-xs font-bold uppercase tracking-wider mb-3">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            <span>Turnkey Water Heating Packages</span>
+          </div>
+          <h2 id="packages-heading" class="text-3xl sm:text-4xl font-extrabold font-heading text-charcoal-text dark:text-white tracking-tight">
+            Choose the Right Water Heater Package
+          </h2>
+          <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Explore installation and replacement options based on your home's heating needs. Every package includes verified equipment, code-compliant plumbing fittings, and old-appliance disposal.
+          </p>
+        </div>
+
+        <!-- Responsive, aligned installation package cards -->
+        <div class="package-card-grid">
+          <article class="package-card">
+            <div class="package-card-image">
+              <picture>
+                  <source srcset="assets/images/pricing/electric-tank-package.webp" type="image/webp">
+                  <img src="assets/images/pricing/electric-tank-package.jpg" alt="Residential electric tank water heater installation with expansion tank and copper plumbing" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="1376" height="768" loading="lazy">
+                </picture>
+              <span class="package-card-category">Electric Storage</span>
+              
+            </div>
+            <h3 class="package-card-title">Electric Tank Water Heater</h3>
+            <p class="package-card-description">Conventional dual-element storage system for all-electric residences.</p>
+            <div class="package-card-price">
+              <span>₹1,650 – ₹2,250</span>
+              <small>Sample Turnkey Estimate</small>
+            </div>
+            <div class="package-card-fit"><i data-lucide="home" class="w-3.5 h-3.5 inline me-1"></i> Ideal for 2–4 occupants with existing 240V circuit.</div>
+            <div class="package-card-inclusions">
+              <h4>Key Inclusions</h4>
+              <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>40 or 50-Gal dual-element electric tank</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Thermal expansion tank &amp; relief line</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Full-port solid brass shutoff valve</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Electrical breaker &amp; voltage verification</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Old tank removal &amp; eco-friendly recycling</span>
+                    </li>
+                  </ul>
+            </div>
+            <div class="package-card-extra">
+              <h4>What Might Cost Extra</h4>
+              <p>240V/30A main panel circuit addition or tight crawlspace rigging.</p>
+            </div>
+            <div class="package-card-action"><button type="button" class="btn-calc-request btn-secondary w-full text-xs py-2.5 text-center font-bold" data-package="electric-tank" data-package-name="Electric Tank Water Heater">
+                Request Electric Estimate
+              </button></div>
+          </article>
+
+          <article class="package-card">
+            <div class="package-card-image">
+              <picture>
+                  <source srcset="assets/images/pricing/gas-tank-package.webp" type="image/webp">
+                  <img src="assets/images/pricing/gas-tank-package.jpg" alt="Residential gas tank water heater installation with gas flex line and draft hood venting" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="1376" height="768" loading="lazy">
+                </picture>
+              <span class="package-card-category">Natural Gas / Propane</span>
+              
+            </div>
+            <h3 class="package-card-title">Gas Tank Water Heater</h3>
+            <p class="package-card-description">High-recovery atmospheric or power-vent gas storage unit.</p>
+            <div class="package-card-price">
+              <span>₹1,850 – ₹2,550</span>
+              <small>Sample Turnkey Estimate</small>
+            </div>
+            <div class="package-card-fit"><i data-lucide="home" class="w-3.5 h-3.5 inline me-1"></i> Ideal for homes with existing natural gas connection.</div>
+            <div class="package-card-inclusions">
+              <h4>Key Inclusions</h4>
+              <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>High-recovery glass-lined gas storage tank</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Gas flex line, sediment drip trap &amp; cock</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Venting inspection &amp; draft safety assessment</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>ASME code relief valve &amp; expansion tank</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Safe old unit haul-away &amp; recycling</span>
+                    </li>
+                  </ul>
+            </div>
+            <div class="package-card-extra">
+              <h4>What Might Cost Extra</h4>
+              <p>Chimney metal liner installation or gas supply pipe upsizing.</p>
+            </div>
+            <div class="package-card-action"><button type="button" class="btn-calc-request btn-secondary w-full text-xs py-2.5 text-center font-bold" data-package="gas-tank" data-package-name="Gas Tank Water Heater">
+                Request Gas Estimate
+              </button></div>
+          </article>
+
+          <article class="package-card package-card-featured">
+            <div class="package-card-image">
+              <picture>
+                  <source srcset="assets/images/pricing/tankless-package.webp" type="image/webp">
+                  <img src="assets/images/pricing/tankless-package.jpg" alt="Modern wall-mounted condensing tankless water heater with digital controls and brass isolation valves" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="1376" height="768" loading="lazy">
+                </picture>
+              <span class="package-card-category">0.96 UEF Condensing</span>
+              <span class="package-card-featured-label">Featured Solution</span>
+            </div>
+            <h3 class="package-card-title">Tankless Water Heater</h3>
+            <p class="package-card-description">On-demand condensing gas unit delivering unlimited hot water.</p>
+            <div class="package-card-price">
+              <span>₹2,850 – ₹4,600</span>
+              <small>Sample Conversion Estimate</small>
+            </div>
+            <div class="package-card-fit"><i data-lucide="home" class="w-3.5 h-3.5 inline me-1"></i> Ideal for 3+ bath homes seeking space and zero standby loss.</div>
+            <div class="package-card-inclusions">
+              <h4>Key Inclusions</h4>
+              <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>199,000 BTU dual stainless condensing unit</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Concentric PVC direct sidewall venting</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Brass service isolation valves &amp; flush ports</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Condensate acid neutralizer canister</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>15-Year heat exchanger manufacturer warranty</span>
+                    </li>
+                  </ul>
+            </div>
+            <div class="package-card-extra">
+              <h4>What Might Cost Extra</h4>
+              <p>Dedicated 3/4" gas meter line or exterior masonry wall penetration.</p>
+            </div>
+            <div class="package-card-action"><button type="button" class="btn-calc-request btn-copper w-full text-xs py-2.5 text-center font-bold shadow-md" data-package="tankless" data-package-name="Tankless Water Heater">
+                Request Tankless Estimate
+              </button></div>
+          </article>
+
+          <article class="package-card">
+            <div class="package-card-image">
+              <picture>
+                  <source srcset="assets/images/pricing/high-efficiency-package.webp" type="image/webp">
+                  <img src="assets/images/pricing/high-efficiency-package.jpg" alt="High efficiency hybrid heat pump water heater upgrade with digital display" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="1376" height="768" loading="lazy">
+                </picture>
+              <span class="package-card-category">Heat Pump / Hybrid</span>
+              
+            </div>
+            <h3 class="package-card-title">High-Efficiency Upgrade</h3>
+            <p class="package-card-description">ENERGY STAR® hybrid heat pump cutting power usage by 75%.</p>
+            <div class="package-card-price">
+              <span>₹2,950 – ₹4,350</span>
+              <small>Pre-Rebate Turnkey Estimate</small>
+            </div>
+            <div class="package-card-fit"><i data-lucide="indian-rupee" class="w-3.5 h-3.5 inline me-1"></i> Qualifies for up to ₹2,000 Federal Clean Energy Credit.</div>
+            <div class="package-card-inclusions">
+              <h4>Key Inclusions</h4>
+              <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>50–65 Gallon hybrid heat pump unit</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Condensate drainage &amp; check valve routing</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Vibration dampening rubber equipment pads</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Wi-Fi digital app schedule &amp; leak detection</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                      <span>Old unit extraction &amp; refrigerant recovery</span>
+                    </li>
+                  </ul>
+            </div>
+            <div class="package-card-extra">
+              <h4>What Might Cost Extra</h4>
+              <p>Ducting kit for enclosed utility closets under 700 cu. ft.</p>
+            </div>
+            <div class="package-card-action"><button type="button" class="btn-calc-request btn-secondary w-full text-xs py-2.5 text-center font-bold" data-package="high-efficiency" data-package-name="High-Efficiency Upgrade">
+                Request Hybrid Estimate
+              </button></div>
+          </article>
+        </div>
+
+        <!-- Section Notice -->
+        <div class="mt-10 text-center text-xs text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+          Need custom dual-unit commercial or multifamily installations? 
+          <a href="contact.html" class="font-bold text-deep-teal dark:text-fresh-aqua hover:underline ms-1">Contact our commercial engineering team &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 03: REPAIR & MAINTENANCE PRICING GUIDE
+         Interactive category filter tabs (All, Repairs, Diagnostics, Maintenance)
+         ========================================================================= -->
+    <section id="repair-pricing" class="py-16 lg:py-24 bg-warm-offwhite dark:bg-midnight-navy border-b border-theme-border dark:border-white/10" aria-labelledby="repair-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-warm-copper/10 text-warm-copper text-xs font-bold uppercase tracking-wider mb-3">
+            <i data-lucide="wrench" class="w-3.5 h-3.5"></i>
+            <span>Transparent Service Rates</span>
+          </div>
+          <h2 id="repair-heading" class="text-3xl sm:text-4xl font-extrabold font-heading text-charcoal-text dark:text-white tracking-tight">
+            Clear Guidance for Repairs &amp; Maintenance
+          </h2>
+          <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Straightforward flat-rate pricing on diagnostics, common component replacements, and preventative flushes. Diagnostic fees are waived whenever you authorize repairs.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap justify-center items-center gap-2 mb-8" role="tablist" aria-label="Repair service categories">
+          <button type="button" class="repair-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border border-deep-teal/40 dark:border-fresh-aqua/40 bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua" data-category="all" role="tab" aria-selected="true">
+            All Services (7)
+          </button>
+          <button type="button" class="repair-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-theme-border dark:border-white/10 bg-white dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white" data-category="repairs" role="tab" aria-selected="false">
+            Repairs (3)
+          </button>
+          <button type="button" class="repair-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-theme-border dark:border-white/10 bg-white dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white" data-category="diagnostics" role="tab" aria-selected="false">
+            Diagnostics (2)
+          </button>
+          <button type="button" class="repair-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-theme-border dark:border-white/10 bg-white dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white" data-category="maintenance" role="tab" aria-selected="false">
+            Maintenance (2)
+          </button>
+        </div>
+
+        <!-- Interactive Repair List / Table Container -->
+        <div class="rounded-2xl border border-theme-border dark:border-white/10 bg-white dark:bg-[#071724] shadow-xl overflow-hidden">
+          <div class="divide-y divide-theme-border dark:divide-white/10" id="repair-items-container">
+            
+            <!-- Item 1: Diagnostic Inspection -->
+            <div class="repair-row p-5 sm:p-6 transition-colors hover:bg-slate-50 dark:hover:bg-white/5" data-cat="diagnostics">
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <div class="md:col-span-5">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400">
+                      Diagnostics
+                    </span>
+                    <h3 class="text-base font-bold text-charcoal-text dark:text-white">Water Heater Diagnostic Inspection</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                    Full electrical, combustion, gas pressure, and relief valve assessment.
+                  </p>
+                </div>
+                <div class="md:col-span-3">
+                  <span class="text-xl font-extrabold font-heading text-deep-teal dark:text-fresh-aqua font-mono">₹89 – ₹129</span>
+                  <span class="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold block mt-0.5">Waived with authorized repair</span>
+                </div>
+                <div class="md:col-span-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span class="font-bold text-charcoal-text dark:text-white block">Key Factors:</span>
+                  Standard business hours vs. holiday/weekend emergency dispatch.
+                </div>
+                <div class="md:col-span-2 text-right">
+                  <a href="service-detail.html?id=no-hot-water-troubleshooting" class="text-xs font-bold text-deep-teal dark:text-fresh-aqua hover:underline inline-flex items-center gap-1">
+                    <span>View Details</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2: Thermostat & Heating Element -->
+            <div class="repair-row p-5 sm:p-6 transition-colors hover:bg-slate-50 dark:hover:bg-white/5" data-cat="repairs">
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <div class="md:col-span-5">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-warm-copper/15 text-warm-copper">
+                      Repairs
+                    </span>
+                    <h3 class="text-base font-bold text-charcoal-text dark:text-white">Thermostat &amp; Heating Element Repair</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                    Draining tank, installing heavy-duty low-watt-density Incoloy elements, thermostat calibration.
+                  </p>
+                </div>
+                <div class="md:col-span-3">
+                  <span class="text-xl font-extrabold font-heading text-warm-copper font-mono">₹195 – ₹320</span>
+                  <span class="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">Typical Turnkey Range</span>
+                </div>
+                <div class="md:col-span-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span class="font-bold text-charcoal-text dark:text-white block">Key Factors:</span>
+                  Single vs. dual element replacement, sediment buildup in tank base.
+                </div>
+                <div class="md:col-span-2 text-right">
+                  <a href="service-detail.html?id=electric-water-heater-services" class="text-xs font-bold text-deep-teal dark:text-fresh-aqua hover:underline inline-flex items-center gap-1">
+                    <span>View Details</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3: Pilot Light & Ignition -->
+            <div class="repair-row p-5 sm:p-6 transition-colors hover:bg-slate-50 dark:hover:bg-white/5" data-cat="repairs">
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <div class="md:col-span-5">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-warm-copper/15 text-warm-copper">
+                      Repairs
+                    </span>
+                    <h3 class="text-base font-bold text-charcoal-text dark:text-white">Pilot Light &amp; Ignition Repair</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                    Thermocouple / thermopile swap, burner orifice purge, electronic spark igniter alignment.
+                  </p>
+                </div>
+                <div class="md:col-span-3">
+                  <span class="text-xl font-extrabold font-heading text-warm-copper font-mono">₹175 – ₹295</span>
+                  <span class="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">Typical Turnkey Range</span>
+                </div>
+                <div class="md:col-span-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span class="font-bold text-charcoal-text dark:text-white block">Key Factors:</span>
+                  Standing pilot assembly vs. sealed electronic spark module.
+                </div>
+                <div class="md:col-span-2 text-right">
+                  <a href="service-detail.html?id=gas-water-heater-services" class="text-xs font-bold text-deep-teal dark:text-fresh-aqua hover:underline inline-flex items-center gap-1">
+                    <span>View Details</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4: Water Heater Leak Repair -->
+            <div class="repair-row p-5 sm:p-6 transition-colors hover:bg-slate-50 dark:hover:bg-white/5" data-cat="repairs">
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <div class="md:col-span-5">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-warm-copper/15 text-warm-copper">
+                      Repairs
+                    </span>
+                    <h3 class="text-base font-bold text-charcoal-text dark:text-white">Water Heater Leak Repair</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                    Replacing leaking dielectric nipples, copper flex connectors, T&amp;P relief valve, or drain spigot.
+                  </p>
+                </div>
+                <div class="md:col-span-3">
+                  <span class="text-xl font-extrabold font-heading text-warm-copper font-mono">₹185 – ₹380</span>
+                  <span class="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">Typical Turnkey Range</span>
+                </div>
+                <div class="md:col-span-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span class="font-bold text-charcoal-text dark:text-white block">Key Factors:</span>
+                  External pipe fitting replacement vs. internal tank seam failure (requires replacement).
+                </div>
+                <div class="md:col-span-2 text-right">
+                  <a href="service-detail.html?id=water-heater-leak-repair" class="text-xs font-bold text-deep-teal dark:text-fresh-aqua hover:underline inline-flex items-center gap-1">
+                    <span>View Details</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 5: Tank Flushing & Descaling -->
+            <div class="repair-row p-5 sm:p-6 transition-colors hover:bg-slate-50 dark:hover:bg-white/5" data-cat="maintenance">
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <div class="md:col-span-5">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                      Maintenance
+                    </span>
+                    <h3 class="text-base font-bold text-charcoal-text dark:text-white">Tank Flushing &amp; Descaling</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                    High-pressure sediment slurry evacuation, burner chamber inspection, calcium clearing.
+                  </p>
+                </div>
+                <div class="md:col-span-3">
+                  <span class="text-xl font-extrabold font-heading text-emerald-600 dark:text-emerald-400 font-mono">₹149 – ₹220</span>
+                  <span class="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">Annual Service Package</span>
+                </div>
+                <div class="md:col-span-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span class="font-bold text-charcoal-text dark:text-white block">Key Factors:</span>
+                  Standard annual drain flush vs. severe mineral calcification requiring chemical agitation.
+                </div>
+                <div class="md:col-span-2 text-right">
+                  <a href="service-detail.html?id=water-heater-flushing-maintenance" class="text-xs font-bold text-deep-teal dark:text-fresh-aqua hover:underline inline-flex items-center gap-1">
+                    <span>View Details</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 6: Preventive Maintenance -->
+            <div class="repair-row p-5 sm:p-6 transition-colors hover:bg-slate-50 dark:hover:bg-white/5" data-cat="maintenance">
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <div class="md:col-span-5">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                      Maintenance
+                    </span>
+                    <h3 class="text-base font-bold text-charcoal-text dark:text-white">Preventive Maintenance Annual Tune-Up</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                    22-Point comprehensive tune-up: anode rod inspection, gas pressure test, expansion tank check.
+                  </p>
+                </div>
+                <div class="md:col-span-3">
+                  <span class="text-xl font-extrabold font-heading text-emerald-600 dark:text-emerald-400 font-mono">₹189 – ₹260</span>
+                  <span class="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">Full Preventative Visit</span>
+                </div>
+                <div class="md:col-span-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span class="font-bold text-charcoal-text dark:text-white block">Key Factors:</span>
+                  Tank vs. tankless systems (tankless includes citric descaling circulation kit).
+                </div>
+                <div class="md:col-span-2 text-right">
+                  <a href="service-detail.html?id=preventative-maintenance-plans" class="text-xs font-bold text-deep-teal dark:text-fresh-aqua hover:underline inline-flex items-center gap-1">
+                    <span>View Details</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 7: Emergency Repair Assessment -->
+            <div class="repair-row p-5 sm:p-6 transition-colors hover:bg-slate-50 dark:hover:bg-white/5" data-cat="diagnostics">
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <div class="md:col-span-5">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-rose-500/15 text-rose-600 dark:text-rose-400">
+                      Emergency
+                    </span>
+                    <h3 class="text-base font-bold text-charcoal-text dark:text-white">Emergency Repair Assessment</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                    Priority dispatch for active flooding, major gas odor, or total mid-winter hot water loss.
+                  </p>
+                </div>
+                <div class="md:col-span-3">
+                  <span class="text-xl font-extrabold font-heading text-rose-600 dark:text-rose-400 font-mono">₹149 – ₹199</span>
+                  <span class="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">Applied toward major repair</span>
+                </div>
+                <div class="md:col-span-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span class="font-bold text-charcoal-text dark:text-white block">Key Factors:</span>
+                  Urgent dispatch time, immediate containment &amp; safety stabilization requirements.
+                </div>
+                <div class="md:col-span-2 text-right">
+                  <a href="service-detail.html?id=emergency-water-heater-repair" class="text-xs font-bold text-deep-teal dark:text-fresh-aqua hover:underline inline-flex items-center gap-1">
+                    <span>View Details</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 04: INTERACTIVE ESTIMATE BUILDER
+         Real JavaScript calculation engine, input validation, transparent assumptions
+         ========================================================================= -->
+    <section id="estimate-builder" class="py-16 lg:py-24 bg-white dark:bg-[#071724] border-b border-theme-border dark:border-white/10" aria-labelledby="builder-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-deep-teal/10 dark:bg-fresh-aqua/10 text-deep-teal dark:text-fresh-aqua text-xs font-bold uppercase tracking-wider mb-3">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            <span>Interactive Cost Calculator</span>
+          </div>
+          <h2 id="builder-heading" class="text-3xl sm:text-4xl font-extrabold font-heading text-charcoal-text dark:text-white tracking-tight">
+            Get a Better Idea of Your Project Cost
+          </h2>
+          <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Configure your project parameters below to view an illustrative estimate range based on realistic equipment and labor benchmarks.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Left: 4-Step Interactive Input Interface -->
+          <div class="lg:col-span-7 bg-slate-50/70 dark:bg-white/5 border border-theme-border dark:border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="space-y-6">
+              
+              <!-- Step 1: Service Type -->
+              <div>
+                <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2.5">
+                  Step 1 — Select Service Type
+                </label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="calc-service-group">
+                  <button type="button" class="btn-builder-step py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-deep-teal transition-all text-center" data-step="service" data-val="new_install">
+                    New Install
+                  </button>
+                  <button type="button" class="btn-builder-step py-2.5 px-3 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua font-bold text-xs shadow-sm text-center" data-step="service" data-val="replacement" aria-pressed="true">
+                    Replacement
+                  </button>
+                  <button type="button" class="btn-builder-step py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-deep-teal transition-all text-center" data-step="service" data-val="repair">
+                    Repair
+                  </button>
+                  <button type="button" class="btn-builder-step py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-deep-teal transition-all text-center" data-step="service" data-val="maintenance">
+                    Maintenance
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 2: Water Heater Type -->
+              <div>
+                <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2.5">
+                  Step 2 — Choose Water Heater Type
+                </label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="calc-type-group">
+                  <button type="button" class="btn-builder-step py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-deep-teal transition-all text-center" data-step="type" data-val="electric_tank">
+                    Electric Tank
+                  </button>
+                  <button type="button" class="btn-builder-step py-2.5 px-3 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua font-bold text-xs shadow-sm text-center" data-step="type" data-val="gas_tank" aria-pressed="true">
+                    Gas Tank
+                  </button>
+                  <button type="button" class="btn-builder-step py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-deep-teal transition-all text-center" data-step="type" data-val="tankless">
+                    Tankless
+                  </button>
+                  <button type="button" class="btn-builder-step py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-deep-teal transition-all text-center" data-step="type" data-val="heat_pump">
+                    Heat Pump
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 3: Project Complexity -->
+              <div>
+                <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2.5">
+                  Step 3 — Select Project Complexity
+                </label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="calc-complexity-group">
+                  <button type="button" class="btn-builder-step p-3 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua text-left transition-all shadow-sm" data-step="complexity" data-val="standard" aria-pressed="true">
+                    <span class="text-xs font-bold block">Standard Swap</span>
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">Same spot, existing pipes &amp; wiring up to code</span>
+                  </button>
+                  <button type="button" class="btn-builder-step p-3 rounded-xl border border-theme-border dark:border-white/15 bg-white dark:bg-[#091D2C] text-left transition-all hover:border-deep-teal" data-step="complexity" data-val="moderate">
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white block">Moderate Modifications</span>
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">Pipe rerouting, adding expansion tank</span>
+                  </button>
+                  <button type="button" class="btn-builder-step p-3 rounded-xl border border-theme-border dark:border-white/15 bg-white dark:bg-[#091D2C] text-left transition-all hover:border-deep-teal" data-step="complexity" data-val="significant">
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white block">Significant Retrofit</span>
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">Gas line upgrade, new PVC venting, panel wiring</span>
+                  </button>
+                  <button type="button" class="btn-builder-step p-3 rounded-xl border border-theme-border dark:border-white/15 bg-white dark:bg-[#091D2C] text-left transition-all hover:border-deep-teal" data-step="complexity" data-val="assessment">
+                    <span class="text-xs font-bold text-charcoal-text dark:text-white block">Assessment Needed</span>
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">Unsure of home specs, technician audit required</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 4: Optional Logistics Details -->
+              <div>
+                <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2.5">
+                  Step 4 — Additional Logistics
+                </label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <label class="flex items-center gap-3 p-3 rounded-xl border border-theme-border dark:border-white/10 hover:border-deep-teal cursor-pointer transition-colors bg-white dark:bg-[#091D2C]">
+                    <input type="checkbox" id="builder-removal-cb" class="w-4 h-4 text-deep-teal rounded border-slate-300 focus:ring-deep-teal" checked>
+                    <div>
+                      <span class="text-xs font-bold text-charcoal-text dark:text-white block">Old Equipment Removal</span>
+                      <span class="text-[11px] text-slate-500 dark:text-slate-400">Draining, haul-away, &amp; EPA recycling</span>
+                    </div>
+                  </label>
+
+                  <label class="flex items-center gap-3 p-3 rounded-xl border border-theme-border dark:border-white/10 hover:border-deep-teal cursor-pointer transition-colors bg-white dark:bg-[#091D2C]">
+                    <input type="checkbox" id="builder-urgent-cb" class="w-4 h-4 text-deep-teal rounded border-slate-300 focus:ring-deep-teal">
+                    <div>
+                      <span class="text-xs font-bold text-charcoal-text dark:text-white block">Same-Day Priority Dispatch</span>
+                      <span class="text-[11px] text-slate-500 dark:text-slate-400">Urgent scheduling slot</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Reset Button -->
+              <div class="pt-2 text-right">
+                <button type="button" id="builder-reset-btn" class="text-xs text-slate-500 dark:text-slate-400 hover:text-deep-teal dark:hover:text-fresh-aqua font-semibold inline-flex items-center gap-1">
+                  <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reset Selections
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: Live Estimate Output Card -->
+          <div class="lg:col-span-5 bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="flex items-center justify-between pb-4 border-b border-theme-border dark:border-white/10">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-deep-teal dark:text-fresh-aqua">
+                Calculated Estimate Summary
+              </span>
+              <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                Non-Binding Estimate
+              </span>
+            </div>
+
+            <!-- Price Output Display -->
+            <div class="mt-6 p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-theme-border dark:border-white/10 text-center">
+              <span class="text-xs text-slate-500 dark:text-slate-400 block font-semibold">Estimated Project Range</span>
+              <span id="builder-output-price" class="text-3xl sm:text-4xl font-extrabold font-heading text-deep-teal dark:text-fresh-aqua font-mono mt-1 block">
+                ₹1,850 – ₹2,550
+              </span>
+              <span id="builder-output-summary" class="text-xs text-slate-600 dark:text-slate-300 mt-2 block font-medium">
+                Gas Storage Replacement • Standard Swap Scope
+              </span>
+            </div>
+
+            <!-- Cost Factor Composition Breakdown -->
+            <div class="mt-6 space-y-2.5 text-xs">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-2">Estimate Allocation:</span>
+              <div class="flex justify-between text-slate-600 dark:text-slate-300">
+                <span>Equipment &amp; Appliance Unit:</span>
+                <span id="builder-alloc-equip" class="font-bold text-charcoal-text dark:text-white font-mono">~₹1,100 – ₹1,450</span>
+              </div>
+              <div class="flex justify-between text-slate-600 dark:text-slate-300">
+                <span>Certified Master Plumber Labor:</span>
+                <span id="builder-alloc-labor" class="font-bold text-charcoal-text dark:text-white font-mono">~₹550 – ₹800</span>
+              </div>
+              <div class="flex justify-between text-slate-600 dark:text-slate-300">
+                <span>Fittings, Expansion Tank &amp; Disposal:</span>
+                <span id="builder-alloc-materials" class="font-bold text-charcoal-text dark:text-white font-mono">~₹200 – ₹300</span>
+              </div>
+            </div>
+
+            <!-- Assumptions & Cost Factors -->
+            <div class="mt-6 pt-4 border-t border-theme-border dark:border-white/10 text-xs text-slate-500 dark:text-slate-400 space-y-2">
+              <p>
+                <strong>Assumptions:</strong> Standard floor placement, existing connections within 3 ft, code-compliant ventilation.
+              </p>
+              <p>
+                <strong>Potential Additions:</strong> Municipal building permit fee (₹65–₹200), gas pipe branch enlargement if needed.
+              </p>
+            </div>
+
+            <!-- Action CTA: Open Request Modal -->
+            <div class="mt-6">
+              <button type="button" id="builder-request-btn" class="btn-copper w-full text-center py-3.5 text-sm font-bold shadow-lg">
+                Request Accurate On-Site Quote
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 05: WHAT AFFECTS WATER HEATER PRICING?
+         6 Detailed Cost Factors & Real Photographic Inspection Asset
+         ========================================================================= -->
+    <section id="cost-factors" class="py-16 lg:py-24 bg-warm-offwhite dark:bg-midnight-navy border-b border-theme-border dark:border-white/10" aria-labelledby="factors-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua text-xs font-bold uppercase tracking-wider mb-3">
+            <i data-lucide="sliders" class="w-3.5 h-3.5"></i>
+            <span>Cost Transparency Breakdown</span>
+          </div>
+          <h2 id="factors-heading" class="text-3xl sm:text-4xl font-extrabold font-heading text-charcoal-text dark:text-white tracking-tight">
+            What Goes Into Your Final Estimate?
+          </h2>
+          <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Every home is built differently. Here is why estimates can vary and how our certified plumbers determine exact, transparent pricing before turning a single wrench.
+          </p>
+        </div>
+
+        <!-- Featured Inspection Photo Banner with Cost Composition Overlay -->
+        <div class="mb-14 rounded-2xl overflow-hidden border border-theme-border dark:border-white/15 bg-slate-900 shadow-2xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+            
+            <div class="lg:col-span-7 relative h-72 lg:h-96">
+              <picture>
+                <source srcset="assets/images/pricing/pricing-inspection.webp" type="image/webp">
+                <img src="assets/images/pricing/pricing-inspection.jpg" alt="Certified master technician inspecting a residential water heater installation with diagnostic manometer" class="w-full h-full object-cover" width="1376" height="768" loading="lazy">
+              </picture>
+              <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-900/80 via-transparent to-transparent"></div>
+            </div>
+
+            <div class="lg:col-span-5 p-6 sm:p-8 text-white">
+              <span class="text-xs font-mono uppercase tracking-wider text-fresh-aqua font-bold">Standard Cost Allocation</span>
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-white mt-1 mb-4">
+                Where Your Investment Goes
+              </h3>
+
+              <div class="space-y-3 text-xs">
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-slate-300">Equipment &amp; Appliance (Glass-lined tank or heat exchangers)</span>
+                    <span class="font-bold text-white">~50% – 55%</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                    <div class="h-full bg-fresh-aqua rounded-full" style="width: 53%;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-slate-300">Licensed Plumber Labor &amp; Craftsmanship</span>
+                    <span class="font-bold text-white">~25% – 30%</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                    <div class="h-full bg-warm-copper rounded-full" style="width: 28%;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-slate-300">Code Fittings (Expansion tank, shutoffs, relief lines)</span>
+                    <span class="font-bold text-white">~10% – 12%</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                    <div class="h-full bg-teal-400 rounded-full" style="width: 12%;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-slate-300">Permits, Eco-Disposal &amp; Jobsite Protection</span>
+                    <span class="font-bold text-white">~5% – 8%</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                    <div class="h-full bg-emerald-400 rounded-full" style="width: 7%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-[11px] text-slate-400 mt-5 leading-normal">
+                * Percentages reflect representative averages for residential retrofits. We provide fully line-itemed written quotes before any work begins.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 6 Detailed Cost Factors Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="p-6 rounded-2xl bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-deep-teal/10 dark:bg-fresh-aqua/10 text-deep-teal dark:text-fresh-aqua flex items-center justify-center mb-4">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold font-heading text-charcoal-text dark:text-white mb-2">
+              1. System Type &amp; Storage Capacity
+            </h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Standard 40–50 gallon storage cylinders cost less initially than high-output 80-gallon commercial tanks or multi-burner condensing tankless systems with continuous flow.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-warm-copper/10 text-warm-copper flex items-center justify-center mb-4">
+              <i data-lucide="gauge" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold font-heading text-charcoal-text dark:text-white mb-2">
+              2. Energy Efficiency &amp; Heat Exchangers
+            </h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Condensing units and hybrid heat pump systems utilize dual stainless steel exchangers or micro-compressors with 0.96+ UEF ratings, resulting in higher initial equipment cost but lower fuel bills.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-fresh-aqua/10 text-deep-teal dark:text-fresh-aqua flex items-center justify-center mb-4">
+              <i data-lucide="compass" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold font-heading text-charcoal-text dark:text-white mb-2">
+              3. Installation Access &amp; Rigging
+            </h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              An open basement swap takes fewer labor hours than extracting a waterlogged 200 lb tank from a tight finished attic, narrow crawlspace, or third-floor apartment utility closet.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
+              <i data-lucide="git-branch" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold font-heading text-charcoal-text dark:text-white mb-2">
+              4. Plumbing, Gas &amp; Electrical Retrofits
+            </h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Converting from tank to tankless often requires upgrading from 1/2" to 3/4" gas piping, while hybrid heat pumps require a dedicated 240V breaker and condensate drainage routing.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4">
+              <i data-lucide="shield-alert" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold font-heading text-charcoal-text dark:text-white mb-2">
+              5. Local Building Permits &amp; Safety Codes
+            </h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Municipal building codes mandate thermal expansion tanks on closed water loops, seismic strapping kits in earthquake zones, and official municipal safety permits (₹65–₹220).
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-[#071724] border border-theme-border dark:border-white/10 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-slate-500/10 text-slate-600 dark:text-slate-300 flex items-center justify-center mb-4">
+              <i data-lucide="trash-2" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold font-heading text-charcoal-text dark:text-white mb-2">
+              6. Old Equipment Disposal &amp; Recycling
+            </h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              AquaTherma handles the draining, safe disconnection, heavy transport, and EPA-certified metal scrap recycling of your decommissioned water heater so nothing sits on your curb.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 06: TANK VS. TANKLESS LONG-TERM COST COMPARISON & FAQ
+         Responsive Comparison Table + 6 Accessible Accordion FAQs
+         ========================================================================= -->
+    <section id="comparison-faq" class="py-16 lg:py-24 bg-white dark:bg-[#071724] border-b border-theme-border dark:border-white/10" aria-labelledby="comparison-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-deep-teal/10 dark:bg-fresh-aqua/10 text-deep-teal dark:text-fresh-aqua text-xs font-bold uppercase tracking-wider mb-3">
+            <i data-lucide="scale" class="w-3.5 h-3.5"></i>
+            <span>Long-Term Financial Architecture</span>
+          </div>
+          <h2 id="comparison-heading" class="text-3xl sm:text-4xl font-extrabold font-heading text-charcoal-text dark:text-white tracking-tight">
+            Compare Today’s Cost With Tomorrow’s Needs
+          </h2>
+          <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Evaluating water heaters means weighing initial equipment expense against energy consumption, lifespan, and maintenance over 15 to 20 years of continuous household operation.
+          </p>
+        </div>
+
+        <!-- Responsive Comparison Table -->
+        <div class="rounded-2xl border border-theme-border dark:border-white/10 bg-slate-50/50 dark:bg-white/5 overflow-hidden shadow-xl mb-16">
+          <div class="overflow-x-auto custom-scrollbar">
+            <table class="w-full text-left text-xs sm:text-sm min-w-[640px]">
+              <thead class="bg-midnight-navy text-white uppercase text-[11px] tracking-wider">
+                <tr>
+                  <th class="p-4 sm:p-5">Comparison Metric</th>
+                  <th class="p-4 sm:p-5">Standard 50-Gal Tank</th>
+                  <th class="p-4 sm:p-5 bg-deep-teal/40 text-fresh-aqua">Condensing Tankless</th>
+                  <th class="p-4 sm:p-5">Hybrid Heat Pump</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-theme-border dark:divide-white/10 text-slate-600 dark:text-slate-300">
+                <tr>
+                  <td class="p-4 sm:p-5 font-bold text-charcoal-text dark:text-white">Initial Turnkey Investment</td>
+                  <td class="p-4 sm:p-5 font-mono">₹1,650 – ₹2,450</td>
+                  <td class="p-4 sm:p-5 font-mono font-bold text-deep-teal dark:text-fresh-aqua">₹2,850 – ₹4,600</td>
+                  <td class="p-4 sm:p-5 font-mono">₹2,950 – ₹4,350</td>
+                </tr>
+                <tr>
+                  <td class="p-4 sm:p-5 font-bold text-charcoal-text dark:text-white">Expected Operating Life</td>
+                  <td class="p-4 sm:p-5">8 – 12 Years (Requires 2 units over 20 yrs)</td>
+                  <td class="p-4 sm:p-5 font-semibold text-emerald-600 dark:text-emerald-400">20+ Years (1 unit needed)</td>
+                  <td class="p-4 sm:p-5">12 – 15 Years</td>
+                </tr>
+                <tr>
+                  <td class="p-4 sm:p-5 font-bold text-charcoal-text dark:text-white">Annual Fuel / Electric Cost</td>
+                  <td class="p-4 sm:p-5 font-mono">~₹380 – ₹460 / yr</td>
+                  <td class="p-4 sm:p-5 font-mono font-semibold text-emerald-600 dark:text-emerald-400">~₹260 – ₹320 / yr (28% less)</td>
+                  <td class="p-4 sm:p-5 font-mono font-semibold text-emerald-600 dark:text-emerald-400">~₹110 – ₹160 / yr (75% less)</td>
+                </tr>
+                <tr>
+                  <td class="p-4 sm:p-5 font-bold text-charcoal-text dark:text-white">Floor Space Footprint</td>
+                  <td class="p-4 sm:p-5">12 – 16 Sq. Ft. floor footprint</td>
+                  <td class="p-4 sm:p-5 font-semibold text-deep-teal dark:text-fresh-aqua">0 Sq. Ft. (Wall-Mounted)</td>
+                  <td class="p-4 sm:p-5">12 – 16 Sq. Ft. (Needs open air)</td>
+                </tr>
+                <tr>
+                  <td class="p-4 sm:p-5 font-bold text-charcoal-text dark:text-white">Hot Water Delivery Capacity</td>
+                  <td class="p-4 sm:p-5">Limited to 50 gal reservoir (reheats in 40m)</td>
+                  <td class="p-4 sm:p-5 font-semibold text-charcoal-text dark:text-white">Continuous Endless (8.0–9.8 GPM)</td>
+                  <td class="p-4 sm:p-5">High first-hour recovery reservoir</td>
+                </tr>
+                <tr>
+                  <td class="p-4 sm:p-5 font-bold text-charcoal-text dark:text-white">Clean Energy Tax Credits</td>
+                  <td class="p-4 sm:p-5 text-slate-400">Standard models: None</td>
+                  <td class="p-4 sm:p-5 font-semibold text-fresh-aqua">Up to ₹600 Federal / Utility</td>
+                  <td class="p-4 sm:p-5 font-semibold text-emerald-600 dark:text-emerald-400">Up to ₹2,000 Federal 25C Credit</td>
+                </tr>
+                <tr class="bg-slate-100/70 dark:bg-[#0c2438]">
+                  <td class="p-4 sm:p-5 font-extrabold text-charcoal-text dark:text-white">Estimated 15-Year Total Cost</td>
+                  <td class="p-4 sm:p-5 font-extrabold font-mono text-charcoal-text dark:text-white">~₹9,200 (Includes 2nd unit)</td>
+                  <td class="p-4 sm:p-5 font-extrabold font-mono text-emerald-600 dark:text-emerald-400">~₹6,900 (Lower fuel + 1 unit)</td>
+                  <td class="p-4 sm:p-5 font-extrabold font-mono text-emerald-600 dark:text-emerald-400">~₹5,400 (Massive power drop)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 6 Pricing FAQs Accordions -->
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold font-heading text-charcoal-text dark:text-white">
+              Frequently Asked Pricing Questions
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+              Clear answers to the most common homeowner questions about water heating investments.
+            </p>
+          </div>
+
+          <div class="space-y-3.5" id="pricing-faq-accordion">
+            
+            <!-- FAQ 1 -->
+            <div class="faq-accordion-item rounded-xl border border-theme-border dark:border-white/10 bg-slate-50/70 dark:bg-white/5 overflow-hidden transition-all">
+              <button type="button" class="faq-accordion-header w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="true">
+                <span class="text-sm font-bold text-charcoal-text dark:text-white">
+                  1. How much does a new water heater installation typically cost?
+                </span>
+                <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-400 transition-transform duration-300 rotate-180"></i>
+              </button>
+              <div class="faq-accordion-body p-4 sm:p-5 pt-0 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                A standard residential storage tank replacement generally ranges between ₹1,650 and ₹2,450 turnkey, which covers the new equipment, solid brass shutoffs, thermal expansion tank, and safe old-unit recycling. High-efficiency condensing tankless conversions range between ₹2,850 and ₹4,600 depending on gas pipe branch sizing and venting routes.
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-accordion-item rounded-xl border border-theme-border dark:border-white/10 bg-slate-50/70 dark:bg-white/5 overflow-hidden transition-all">
+              <button type="button" class="faq-accordion-header w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+                <span class="text-sm font-bold text-charcoal-text dark:text-white">
+                  2. Why is tankless installation generally more expensive upfront?
+                </span>
+                <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-accordion-body p-4 sm:p-5 pt-0 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed hidden">
+                Tankless systems require higher heating capacity (up to 199,000 BTU/hr vs. 40,000 BTU for a tank), requiring verified 3/4" gas supply lines, dual-pipe direct PVC venting through an exterior wall, and high-grade stainless steel heat exchangers. However, they last over 20 years and consume zero fuel when faucets are closed.
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-accordion-item rounded-xl border border-theme-border dark:border-white/10 bg-slate-50/70 dark:bg-white/5 overflow-hidden transition-all">
+              <button type="button" class="faq-accordion-header w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+                <span class="text-sm font-bold text-charcoal-text dark:text-white">
+                  3. What influences water heater repair costs?
+                </span>
+                <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-accordion-body p-4 sm:p-5 pt-0 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed hidden">
+                Repair costs depend on component availability, technician diagnostic time, and whether replacement parts require full water tank draining (such as lower heating elements or T&amp;P relief valves). Our diagnostic inspection fee (₹89–₹129) is always credited toward your repair if you approve work.
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-accordion-item rounded-xl border border-theme-border dark:border-white/10 bg-slate-50/70 dark:bg-white/5 overflow-hidden transition-all">
+              <button type="button" class="faq-accordion-header w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+                <span class="text-sm font-bold text-charcoal-text dark:text-white">
+                  4. Does installation include removal and disposal of my old water heater?
+                </span>
+                <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-accordion-body p-4 sm:p-5 pt-0 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed hidden">
+                Yes. Every turnkey replacement package includes complete draining of sediment, safe disconnection from gas or electric lines, careful extraction from your utility room, and transport to an EPA-certified recycling facility.
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-accordion-item rounded-xl border border-theme-border dark:border-white/10 bg-slate-50/70 dark:bg-white/5 overflow-hidden transition-all">
+              <button type="button" class="faq-accordion-header w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+                <span class="text-sm font-bold text-charcoal-text dark:text-white">
+                  5. Are municipal permits and expansion tanks included in the quote?
+                </span>
+                <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-accordion-body p-4 sm:p-5 pt-0 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed hidden">
+                Code-required thermal expansion tanks and ASME relief valves are included in our standard turnkey packages. Municipal permit fees vary by municipal building department (₹65–₹220) and are line-itemed transparently on your written quote with zero contractor markup.
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-accordion-item rounded-xl border border-theme-border dark:border-white/10 bg-slate-50/70 dark:bg-white/5 overflow-hidden transition-all">
+              <button type="button" class="faq-accordion-header w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+                <span class="text-sm font-bold text-charcoal-text dark:text-white">
+                  6. How can I receive an exact, binding price quote for my home?
+                </span>
+                <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-accordion-body p-4 sm:p-5 pt-0 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed hidden">
+                Schedule a fast in-home compatibility audit. Our licensed master plumber inspects your incoming water pressure, gas line diameter, electrical panel, and venting path, providing a guaranteed flat-rate price in writing before any installation starts.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 07: FINAL PRICING CONSULTATION CTA
+         Asymmetric closing section with dedicated photographic asset and dual CTAs
+         ========================================================================= -->
+    <section id="pricing-consultation" class="py-16 lg:py-24 bg-warm-offwhite dark:bg-midnight-navy border-b border-theme-border dark:border-white/10 relative overflow-hidden" aria-labelledby="cta-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="bg-gradient-to-br from-midnight-navy via-[#0A263C] to-midnight-navy text-white rounded-3xl overflow-hidden shadow-2xl border border-white/15">
+          <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+            
+            <!-- Left: Consultation Copy & Actions -->
+            <div class="lg:col-span-7 p-8 sm:p-12 lg:p-14">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fresh-aqua/20 text-fresh-aqua text-xs font-bold uppercase tracking-wider mb-4 border border-fresh-aqua/30">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                <span>Honest Guidance • Flat-Rate Pricing</span>
+              </div>
+
+              <h2 id="cta-heading" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
+                Know Your Options. <br>
+                Choose With Confidence.
+              </h2>
+
+              <p class="mt-4 text-base text-slate-300 leading-relaxed max-w-xl">
+                Get guidance on water heater installation, repair, replacement, and maintenance options tailored to your home. No hidden fees, no sales pressure.
+              </p>
+
+              <!-- Trust Points -->
+              <div class="mt-7 space-y-2.5">
+                <div class="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
+                  <div class="w-5 h-5 rounded-full bg-fresh-aqua/20 text-fresh-aqua flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <span>Guaranteed upfront quotes in writing before any work begins</span>
+                </div>
+                <div class="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
+                  <div class="w-5 h-5 rounded-full bg-fresh-aqua/20 text-fresh-aqua flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <span>Licensed Master Plumbers (Lic #MP-849204)</span>
+                </div>
+                <div class="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
+                  <div class="w-5 h-5 rounded-full bg-fresh-aqua/20 text-fresh-aqua flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <span>Diagnostic fee fully credited toward any authorized repair</span>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="mt-9 flex flex-wrap items-center gap-4">
+                <button type="button" id="cta-estimate-btn" class="btn-copper text-sm sm:text-base py-3.5 px-7 shadow-xl inline-flex items-center gap-2 font-bold">
+                  <span>Request a Personalized Estimate</span>
+                  <i data-lucide="file-text" class="w-4 h-4"></i>
+                </button>
+                <a href="contact.html" class="btn-teal text-sm sm:text-base py-3.5 px-6 shadow-md inline-flex items-center gap-2 font-bold">
+                  <span>Contact AquaTherma</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
+
+              <!-- Hotline Dispatch -->
+              <div class="mt-6 flex items-center gap-4 text-xs text-slate-400">
+                <a href="tel:18005554689" class="hover:text-white flex items-center gap-2 text-slate-200 font-bold">
+                  <i data-lucide="phone-call" class="w-4 h-4 text-warm-copper"></i>
+                  <span>Live Dispatch: (800) 555-4689</span>
+                </a>
+                <span>•</span>
+                <span>Immediate phone assistance available</span>
+              </div>
+            </div>
+
+            <!-- Right: Dedicated Photographic Asset -->
+            <div class="lg:col-span-5 h-full min-h-[360px] relative overflow-hidden">
+              <picture>
+                <source srcset="assets/images/pricing/pricing-cta.webp" type="image/webp">
+                <img src="assets/images/pricing/pricing-cta.jpg" alt="Turnkey residential water heater installation in modern home utility space" class="w-full h-full object-cover min-h-[360px]" width="1376" height="768" loading="lazy">
+              </picture>
+              <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-midnight-navy via-transparent to-transparent opacity-80"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ESTIMATE REQUEST MODAL DIALOG -->
+  <div id="estimate-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/60 modal-backdrop-blur" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="relative w-full max-w-xl bg-white dark:bg-[#071724] border border-theme-border dark:border-white/15 rounded-2xl shadow-2xl overflow-hidden p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+      
+      <!-- Close Button -->
+      <button type="button" id="modal-close-btn" class="absolute top-5 right-5 p-2 rounded-lg text-slate-500 hover:text-charcoal-text dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition-colors" aria-label="Close Modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="mb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-deep-teal dark:text-fresh-aqua">Personalized Cost Evaluation</span>
+        <h3 id="modal-title" class="text-xl sm:text-2xl font-bold font-heading text-charcoal-text dark:text-white mt-1">
+          Request a Water Heater Estimate
+        </h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          Complete the details below. Our certified team reviews your specifications and provides an itemized proposal.
+        </p>
+      </div>
+
+      <!-- Modal Estimate Form -->
+      <form id="estimate-request-form" class="space-y-4" novalidate>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="estimate-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              Full Name *
+            </label>
+            <input type="text" id="estimate-name" required minlength="3" autocomplete="name" aria-describedby="estimate-name-error" placeholder="Jane Doe" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-theme-border dark:border-white/15 bg-slate-50 dark:bg-white/5 text-charcoal-text dark:text-white placeholder-slate-400 focus:outline-none focus:border-deep-teal dark:focus:border-fresh-aqua">
+            <span id="estimate-name-error" class="error-msg text-[11px] text-rose-500 hidden mt-1">Please enter your full name (at least 3 characters).</span>
+          </div>
+
+          <div>
+            <label for="estimate-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              Email Address *
+            </label>
+            <input type="email" id="estimate-email" required placeholder="jane@example.com" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-theme-border dark:border-white/15 bg-slate-50 dark:bg-white/5 text-charcoal-text dark:text-white placeholder-slate-400 focus:outline-none focus:border-deep-teal dark:focus:border-fresh-aqua">
+            <span class="error-msg text-[11px] text-rose-500 hidden mt-1">Please enter a valid email.</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="estimate-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              Phone Number *
+            </label>
+            <input type="tel" id="estimate-phone" required inputmode="numeric" pattern="[0-9]{10,}" minlength="10" autocomplete="tel" aria-describedby="estimate-phone-error" placeholder="5550000000" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-theme-border dark:border-white/15 bg-slate-50 dark:bg-white/5 text-charcoal-text dark:text-white placeholder-slate-400 focus:outline-none focus:border-deep-teal dark:focus:border-fresh-aqua">
+            <span id="estimate-phone-error" class="error-msg text-[11px] text-rose-500 hidden mt-1">Please enter a phone number with at least 10 digits, using numbers only.</span>
+          </div>
+
+          <div>
+            <label for="estimate-service" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              Selected Package / Service *
+            </label>
+            <select id="estimate-service" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-theme-border dark:border-white/15 bg-slate-50 dark:bg-slate-900 text-charcoal-text dark:text-white focus:outline-none focus:border-deep-teal dark:focus:border-fresh-aqua">
+              <option value="electric-tank">Electric Tank Water Heater (₹1,650–₹2,250)</option>
+              <option value="gas-tank" selected>Gas Tank Water Heater (₹1,850–₹2,550)</option>
+              <option value="tankless">Tankless Water Heater (₹2,850–₹4,600)</option>
+              <option value="high-efficiency">High-Efficiency Upgrade (₹2,950–₹4,350)</option>
+              <option value="diagnostic">Diagnostic &amp; Repair Service</option>
+              <option value="maintenance">Preventive Maintenance Tune-Up</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="estimate-budget" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+            Expected Timeline &amp; Budget Range (Optional)
+          </label>
+          <select id="estimate-budget" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-theme-border dark:border-white/15 bg-slate-50 dark:bg-slate-900 text-charcoal-text dark:text-white focus:outline-none focus:border-deep-teal dark:focus:border-fresh-aqua">
+            <option value="standard">Standard Priority (Within next 1–2 weeks)</option>
+            <option value="urgent">Urgent Need (Within 24–48 hours)</option>
+            <option value="emergency">Emergency (Active leak or total failure)</option>
+            <option value="planning">Planning Ahead / Remodel in 1–3 months</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="estimate-notes" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+            Project Description / Home Details (Optional)
+          </label>
+          <textarea id="estimate-notes" rows="3" placeholder="Tell us about existing equipment age, location (basement, attic, closet), or issues..." class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-theme-border dark:border-white/15 bg-slate-50 dark:bg-white/5 text-charcoal-text dark:text-white placeholder-slate-400 focus:outline-none focus:border-deep-teal dark:focus:border-fresh-aqua"></textarea>
+        </div>
+
+        <label class="flex items-start gap-2.5 cursor-pointer">
+          <input type="checkbox" id="estimate-consent" required class="mt-1 w-4 h-4 text-deep-teal rounded border-slate-300 focus:ring-deep-teal">
+          <span class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">
+            I agree to receive estimate communications and confirm that quotes require on-site technical inspection.
+          </span>
+        </label>
+        <span id="consent-error" class="error-msg text-[11px] text-rose-500 hidden">Please accept the consent terms.</span>
+
+        <!-- Submit Feedback Display -->
+        <div id="modal-feedback" class="p-3.5 rounded-xl text-xs font-semibold hidden"></div>
+
+        <div class="pt-2">
+          <button type="submit" id="modal-submit-btn" class="btn-copper w-full py-3 text-xs sm:text-sm font-bold shadow-lg">
+            Submit Estimate Request
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- SITE FOOTER -->
+  <footer class="bg-white dark:bg-midnight-navy text-slate-700 dark:text-slate-300 text-sm pt-16 pb-12 border-t border-theme-border dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-theme-border dark:border-white/10">
+        <!-- Col 1: Brand Info -->
+        <div class="lg:col-span-4">
+          <a href="index.html" class="inline-block mb-4">
+            <img src="assets/images/brand/logo.svg" alt="AquaTherma" class="site-logo-img h-9 w-auto">
+          </a>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+            Residential Water Heater Installation, Rapid Emergency Repair, Tankless Engineering, and Preventative Maintenance. Serving homeowners with honesty and precision.
+          </p>
+          <div class="space-y-2 text-xs">
+            <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+              <i data-lucide="map-pin" class="w-4 h-4 text-deep-teal dark:text-fresh-aqua"></i> 4820 Precision Way, Suite 100, Metro City, ST 90210
+            </p>
+            <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+              <i data-lucide="shield-check" class="w-4 h-4 text-deep-teal dark:text-fresh-aqua"></i> Lic #MP-849204 | HVAC-R #HV-309112
+            </p>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="lg:col-span-2">
+          <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Navigation</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="index.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Home 01: Standard &amp; Repair</a></li>
+            <li><a href="home-02.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Home 02 (Tankless)</a></li>
+            <li><a href="about.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">All Services</a></li>
+            <li><a href="projects.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Projects Portfolio</a></li>
+            <li><a href="pricing.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Pricing Guide</a></li>
+            <li><a href="contact.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services Menu -->
+        <div class="lg:col-span-3">
+          <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Top Services</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="service-detail.html?id=tankless-water-heater-installation" class="hover:text-deep-teal dark:hover:text-white transition-colors">Tankless Installation</a></li>
+            <li><a href="service-detail.html?id=tank-water-heater-installation" class="hover:text-deep-teal dark:hover:text-white transition-colors">Tank Water Heater Install</a></li>
+            <li><a href="service-detail.html?id=water-heater-leak-repair" class="hover:text-deep-teal dark:hover:text-white transition-colors">Water Heater Leak Repair</a></li>
+            <li><a href="service-detail.html?id=no-hot-water-troubleshooting" class="hover:text-deep-teal dark:hover:text-white transition-colors">No Hot Water Diagnostics</a></li>
+            <li><a href="service-detail.html?id=gas-water-heater-services" class="hover:text-deep-teal dark:hover:text-white transition-colors">Gas Water Heater Service</a></li>
+            <li><a href="service-detail.html?id=water-heater-flushing-maintenance" class="hover:text-deep-teal dark:hover:text-white transition-colors">Flushing &amp; Descaling</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Emergency Hotline -->
+        <div class="lg:col-span-3">
+          <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Urgent Dispatch</h4>
+          <a href="tel:18005554689" class="block p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-theme-border dark:border-white/10 hover:border-warm-copper transition-colors mb-4">
+            <span class="text-[11px] text-[#995027] dark:text-warm-copper font-bold uppercase tracking-wider block">Hot Water Hotline</span>
+            <span class="text-base font-extrabold text-charcoal-text dark:text-white mt-1 block">(800) 555-4689</span>
+            <span class="text-[11px] text-slate-600 dark:text-slate-400 mt-1 block">Live technician assistance</span>
+          </a>
+
+          <!-- Newsletter Form -->
+          <form class="newsletter-form mt-4">
+            <label class="text-[11px] font-semibold text-slate-700 dark:text-slate-300 block mb-1">Water Heater Maintenance Tips</label>
+            <div class="flex gap-2">
+              <input type="email" placeholder="Your email address" required class="w-full text-xs px-3 py-2 rounded-lg bg-slate-100 dark:bg-white/10 border border-theme-border dark:border-white/20 text-charcoal-text dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-deep-teal">
+              <button type="submit" class="btn-copper text-xs py-2 px-3 whitespace-nowrap">Join</button>
+            </div>
+            <span class="newsletter-feedback"></span>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-600 dark:text-slate-400 gap-4">
+        <p>© 2026 AquaTherma Water Heating Specialists LLC. All Rights Reserved. Demonstration Portfolio Content.</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy-policy.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Terms of Service</a>
+          <a href="coming-soon.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Coming Soon</a>
+          <a href="maintenance.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">System Status</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING EMERGENCY HOTLINE BUTTON (Sleek, unobtrusive) -->
+  <a href="tel:18005554689" class="floating-hotline whitespace-nowrap" title="Call Emergency Dispatch">
+    <i data-lucide="phone-call" class="w-4 h-4"></i> (800) 555-4689
+  </a>
+
+  <!-- Core Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+
+  <!-- INTERACTIVE PRICING EXPERIENCE SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initRepairFilters();
+      initEstimateBuilder();
+      initEstimateModal();
+      initFaqAccordion();
+    });
+
+    /**
+     * 1. Repair Category Filter Logic (Section 3)
+     */
+    function initRepairFilters() {
+      const filterBtns = document.querySelectorAll('.repair-filter-btn');
+      const repairRows = document.querySelectorAll('.repair-row');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const category = btn.getAttribute('data-category');
+
+          // Update Button Styling
+          filterBtns.forEach(b => {
+            b.className = 'repair-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-theme-border dark:border-white/10 bg-white dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white';
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.className = 'repair-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border border-deep-teal/40 dark:border-fresh-aqua/40 bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua';
+          btn.setAttribute('aria-selected', 'true');
+
+          // Filter Rows
+          repairRows.forEach(row => {
+            const rowCat = row.getAttribute('data-cat');
+            if (category === 'all' || rowCat === category) {
+              row.style.display = '';
+            } else {
+              row.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+
+    /**
+     * 2. Interactive Estimate Builder Logic (Section 4)
+     */
+    function initEstimateBuilder() {
+      const state = {
+        service: 'replacement',
+        type: 'gas_tank',
+        complexity: 'standard',
+        removal: true,
+        urgent: false
+      };
+
+      const stepBtns = document.querySelectorAll('.btn-builder-step');
+      const cbRemoval = document.getElementById('builder-removal-cb');
+      const cbUrgent = document.getElementById('builder-urgent-cb');
+      const resetBtn = document.getElementById('builder-reset-btn');
+
+      const outPrice = document.getElementById('builder-output-price');
+      const outSummary = document.getElementById('builder-output-summary');
+      const allocEquip = document.getElementById('builder-alloc-equip');
+      const allocLabor = document.getElementById('builder-alloc-labor');
+      const allocMaterials = document.getElementById('builder-alloc-materials');
+
+      // Pricing matrix benchmarks
+      const benchmarks = {
+        electric_tank: { baseLow: 1650, baseHigh: 2250, equipLow: 950, equipHigh: 1300, name: 'Electric Tank' },
+        gas_tank: { baseLow: 1850, baseHigh: 2550, equipLow: 1100, equipHigh: 1450, name: 'Gas Tank' },
+        tankless: { baseLow: 2850, baseHigh: 4600, equipLow: 1750, equipHigh: 2600, name: 'Tankless System' },
+        heat_pump: { baseLow: 2950, baseHigh: 4350, equipLow: 1850, equipHigh: 2550, name: 'Hybrid Heat Pump' }
+      };
+
+      function calculate() {
+        if (state.service === 'repair') {
+          if (outPrice) outPrice.textContent = '₹195 – ₹380';
+          if (outSummary) outSummary.textContent = `${benchmarks[state.type].name} • Component Diagnostic & Repair`;
+          if (allocEquip) allocEquip.textContent = '~₹95 – ₹180 (Parts)';
+          if (allocLabor) allocLabor.textContent = '~₹100 – ₹200 (Technician)';
+          if (allocMaterials) allocMaterials.textContent = 'Included in repair';
+          return;
+        }
+
+        if (state.service === 'maintenance') {
+          if (outPrice) outPrice.textContent = '₹149 – ₹249';
+          if (outSummary) outSummary.textContent = `${benchmarks[state.type].name} • Annual Flush & Descaling Tune-Up`;
+          if (allocEquip) allocEquip.textContent = '₹0 (Equipment)';
+          if (allocLabor) allocLabor.textContent = '~₹120 – ₹190 (Technician)';
+          if (allocMaterials) allocMaterials.textContent = '~₹29 – ₹59 (Citric/Flushing solution)';
+          return;
+        }
+
+        const bench = benchmarks[state.type] || benchmarks.gas_tank;
+        let low = bench.baseLow;
+        let high = bench.baseHigh;
+
+        // Service modifier
+        if (state.service === 'new_install') {
+          low += 250;
+          high += 450;
+        }
+
+        // Complexity modifier
+        if (state.complexity === 'moderate') {
+          low += 220;
+          high += 400;
+        } else if (state.complexity === 'significant') {
+          low += 480;
+          high += 850;
+        } else if (state.complexity === 'assessment') {
+          low += 100;
+          high += 500;
+        }
+
+        // Logistics modifier
+        if (!state.removal && state.service === 'replacement') {
+          low -= 100;
+          high -= 150;
+        }
+        if (state.urgent) {
+          low += 150;
+          high += 200;
+        }
+
+        const equipL = Math.round(bench.equipLow);
+        const equipH = Math.round(bench.equipHigh);
+        const laborL = Math.round((low - equipL) * 0.7);
+        const laborH = Math.round((high - equipH) * 0.7);
+        const matL = Math.round(low - equipL - laborL);
+        const matH = Math.round(high - equipH - laborH);
+
+        if (outPrice) outPrice.textContent = `₹${low.toLocaleString('en-IN')} – ₹${high.toLocaleString('en-IN')}`;
+        if (outSummary) {
+          const sName = state.service === 'replacement' ? 'Replacement' : 'New Installation';
+          outSummary.textContent = `${bench.name} ${sName} • ${state.complexity.toUpperCase()} Complexity`;
+        }
+        if (allocEquip) allocEquip.textContent = `~₹${equipL.toLocaleString('en-IN')} – ₹${equipH.toLocaleString('en-IN')}`;
+        if (allocLabor) allocLabor.textContent = `~₹${laborL.toLocaleString('en-IN')} – ₹${laborH.toLocaleString('en-IN')}`;
+        if (allocMaterials) allocMaterials.textContent = `~₹${matL.toLocaleString('en-IN')} – ₹${matH.toLocaleString('en-IN')}`;
+      }
+
+      stepBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const step = btn.getAttribute('data-step');
+          const val = btn.getAttribute('data-val');
+
+          // Highlight selected in group
+          const siblings = document.querySelectorAll(`.btn-builder-step[data-step="${step}"]`);
+          siblings.forEach(s => {
+            s.className = s.classList.contains('text-left')
+              ? 'btn-builder-step p-3 rounded-xl border border-theme-border dark:border-white/15 bg-white dark:bg-[#091D2C] text-left transition-all hover:border-deep-teal'
+              : 'btn-builder-step py-2.5 px-3 rounded-xl border border-theme-border dark:border-white/15 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-deep-teal transition-all text-center';
+            s.setAttribute('aria-pressed', 'false');
+          });
+
+          btn.className = btn.classList.contains('text-left')
+            ? 'btn-builder-step p-3 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua text-left transition-all shadow-sm'
+            : 'btn-builder-step py-2.5 px-3 rounded-xl border-2 border-deep-teal dark:border-fresh-aqua bg-deep-teal/10 dark:bg-fresh-aqua/15 text-deep-teal dark:text-fresh-aqua font-bold text-xs shadow-sm text-center';
+          btn.setAttribute('aria-pressed', 'true');
+
+          state[step] = val;
+          calculate();
+        });
+      });
+
+      if (cbRemoval) {
+        cbRemoval.addEventListener('change', e => {
+          state.removal = e.target.checked;
+          calculate();
+        });
+      }
+      if (cbUrgent) {
+        cbUrgent.addEventListener('change', e => {
+          state.urgent = e.target.checked;
+          calculate();
+        });
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          state.service = 'replacement';
+          state.type = 'gas_tank';
+          state.complexity = 'standard';
+          state.removal = true;
+          state.urgent = false;
+          if (cbRemoval) cbRemoval.checked = true;
+          if (cbUrgent) cbUrgent.checked = false;
+
+          // Re-trigger defaults
+          const defaultBtns = [
+            document.querySelector('[data-step="service"][data-val="replacement"]'),
+            document.querySelector('[data-step="type"][data-val="gas_tank"]'),
+            document.querySelector('[data-step="complexity"][data-val="standard"]')
+          ];
+          defaultBtns.forEach(b => { if (b) b.click(); });
+        });
+      }
+
+      calculate();
+    }
+
+    /**
+     * 3. Estimate Request Modal Form Logic
+     */
+    function initEstimateModal() {
+      const modal = document.getElementById('estimate-modal');
+      const closeBtn = document.getElementById('modal-close-btn');
+      const form = document.getElementById('estimate-request-form');
+      const packageSelect = document.getElementById('estimate-service');
+      const feedback = document.getElementById('modal-feedback');
+
+      const triggerButtons = document.querySelectorAll('.btn-calc-request, #builder-request-btn, #cta-estimate-btn');
+
+      function openModal(selectedPackage) {
+        if (!modal) return;
+        if (selectedPackage && packageSelect) {
+          packageSelect.value = selectedPackage;
+        }
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        if (!modal) return;
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      triggerButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const pkg = btn.getAttribute('data-package') || 'gas-tank';
+          openModal(pkg);
+        });
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+      // Close on backdrop click
+      if (modal) {
+        modal.addEventListener('click', e => {
+          if (e.target === modal) closeModal();
+        });
+      }
+
+      // Close on Escape key
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // Form validation & submission
+      if (form) {
+        const phoneField = document.getElementById('estimate-phone');
+        phoneField.addEventListener('input', () => {
+          const cursor = phoneField.selectionStart;
+          const digitsBeforeCursor = phoneField.value.slice(0, cursor).replace(/[^0-9]/g, '').length;
+          phoneField.value = phoneField.value.replace(/[^0-9]/g, '');
+          if (cursor !== null) phoneField.setSelectionRange(digitsBeforeCursor, digitsBeforeCursor);
+        });
+
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          if (feedback) feedback.classList.add('hidden');
+          let valid = true;
+
+          const nameInp = document.getElementById('estimate-name');
+          const emailInp = document.getElementById('estimate-email');
+          const phoneInp = document.getElementById('estimate-phone');
+          const consentInp = document.getElementById('estimate-consent');
+          const consentError = document.getElementById('consent-error');
+
+          // Validate Name
+          if (nameInp.value.trim().length < 3) {
+            nameInp.nextElementSibling.classList.remove('hidden');
+            valid = false;
+          } else {
+            nameInp.nextElementSibling.classList.add('hidden');
+          }
+
+          // Validate Email
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(emailInp.value.trim())) {
+            emailInp.nextElementSibling.classList.remove('hidden');
+            valid = false;
+          } else {
+            emailInp.nextElementSibling.classList.add('hidden');
+          }
+
+          // Validate Phone
+          if (!/^[0-9]{10,}$/.test(phoneInp.value)) {
+            phoneInp.nextElementSibling.classList.remove('hidden');
+            valid = false;
+          } else {
+            phoneInp.nextElementSibling.classList.add('hidden');
+          }
+
+          // Validate Consent
+          if (!consentInp.checked) {
+            if (consentError) consentError.classList.remove('hidden');
+            valid = false;
+          } else {
+            if (consentError) consentError.classList.add('hidden');
+          }
+
+          [nameInp, emailInp, phoneInp].forEach(input => {
+            input.setAttribute('aria-invalid', String(!input.nextElementSibling.classList.contains('hidden')));
+          });
+          consentInp.setAttribute('aria-invalid', String(!consentInp.checked));
+
+          if (!valid) {
+            form.querySelector('[aria-invalid="true"]').focus();
+            return;
+          }
+
+          // Demo Success feedback
+          if (feedback) {
+            feedback.className = 'p-3.5 rounded-xl text-xs font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 block';
+            feedback.textContent = `Estimate Request Recorded: Thank you, ${nameInp.value.trim()}! A certified AquaTherma technical advisor will review your specifications and contact you at ${phoneInp.value.trim()} to finalize your quote.`;
+          }
+
+          form.reset();
+          setTimeout(() => {
+            closeModal();
+            if (feedback) feedback.classList.add('hidden');
+          }, 3500);
+        });
+      }
+    }
+
+    /**
+     * 4. FAQ Accordion Logic (Section 6)
+     */
+    function initFaqAccordion() {
+      const items = document.querySelectorAll('.faq-accordion-item');
+
+      items.forEach(item => {
+        const header = item.querySelector('.faq-accordion-header');
+        const body = item.querySelector('.faq-accordion-body');
+        const icon = item.querySelector('.faq-icon');
+
+        if (!header || !body) return;
+
+        header.addEventListener('click', () => {
+          const isOpen = !body.classList.contains('hidden');
+
+          // Close all others
+          items.forEach(other => {
+            const oBody = other.querySelector('.faq-accordion-body');
+            const oIcon = other.querySelector('.faq-icon');
+            const oHeader = other.querySelector('.faq-accordion-header');
+            if (oBody && oBody !== body) {
+              oBody.classList.add('hidden');
+              if (oIcon) oIcon.classList.remove('rotate-180');
+              if (oHeader) oHeader.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Toggle current
+          if (isOpen) {
+            body.classList.add('hidden');
+            if (icon) icon.classList.remove('rotate-180');
+            header.setAttribute('aria-expanded', 'false');
+          } else {
+            body.classList.remove('hidden');
+            if (icon) icon.classList.add('rotate-180');
+            header.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

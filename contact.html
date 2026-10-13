@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <!-- Apply the theme before styles and page content can render. -->
+  <script id="theme-bootstrap">
+    (() => {
+      let savedTheme = null;
+      try { savedTheme = localStorage.getItem('aquatherma_theme'); } catch (_) {}
+      const isDark = savedTheme === 'dark' ||
+        (savedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.toggle('dark', isDark);
+    })();
+  </script>
+  <style id="theme-bootstrap-colors">
+    html { background-color: #F6F5F1; color-scheme: light; }
+    html.dark { background-color: #091D2C; color-scheme: dark; }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & 24/7 Emergency Dispatch | AquaTherma</title>
+  <meta name="description" content="Contact AquaTherma for water heater repair, installation, or 24/7 emergency dispatch. Rapid response for active leaks and cold water outages.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'midnight-navy': '#091D2C',
+            'deep-teal': '#087E8B',
+            'fresh-aqua': '#36D4CC',
+            'warm-copper': '#DB8959',
+            'warm-offwhite': '#F6F5F1',
+            'charcoal-text': '#17252D',
+            // Semantic Aliases
+            'deep-navy': '#091D2C',
+            'primary-blue': '#087E8B',
+            'accent-aqua': '#36D4CC',
+            'warm-orange': '#DB8959',
+            'soft-bg': '#F6F5F1',
+            'main-text': '#17252D',
+            'secondary-text': '#5A6D7C',
+            'theme-border': '#E2E8F0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-warm-offwhite dark:bg-[#091D2C] text-charcoal-text dark:text-[#F6F5F1] antialiased selection:bg-deep-teal selection:text-white">
+
+  <!-- SITE HEADER / CINEMATIC ARCHITECTURAL NAVIGATION -->
+<header class="header-cinematic-glass sticky top-0 z-50 text-charcoal-text dark:text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
+    <!-- Brand Logo -->
+    <a href="index.html" class="flex items-center gap-2 flex-shrink-0" aria-label="AquaTherma Home">
+      <img src="assets/images/brand/logo.svg" alt="AquaTherma Water Heater Specialists" class="site-logo-img h-7 sm:h-9 w-auto">
+    </a>
+
+    <!-- Desktop Navigation Menu (whitespace-nowrap prevents any multi-line wrapping) -->
+    <nav class="hidden xl:flex items-center gap-5 xl:gap-7 text-[13px] xl:text-sm font-semibold whitespace-nowrap text-slate-700 dark:text-slate-200" aria-label="Main Navigation">
+      <!-- Home Dropdown -->
+      <div class="relative group py-2">
+        <button type="button" class="flex items-center gap-1.5 text-deep-teal dark:text-fresh-aqua font-bold hover:text-deep-teal dark:hover:text-white transition-colors focus:outline-none whitespace-nowrap">
+          Home <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform"></i>
+        </button>
+        <div class="absolute top-full left-0 w-60 bg-white dark:bg-[#091D2C] border border-theme-border dark:border-[#1C3E57] rounded-xl shadow-2xl p-2 hidden group-hover:block transition-all z-50">
+          <a href="index.html" class="block px-3 py-2 rounded-lg bg-deep-teal/10 dark:bg-[#16364E] text-xs font-bold text-deep-teal dark:text-fresh-aqua whitespace-nowrap">
+            Home 01: Standard &amp; Repair
+          </a>
+          <a href="home-02.html" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-[#16364E] text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white whitespace-nowrap">
+            Home 02: Tankless Solutions
+          </a>
+        </div>
+      </div>
+
+      <a href="about.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">About Us</a>
+      <a href="services.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Services</a>
+      <a href="projects.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Projects</a>
+      <a href="blog.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Knowledge Hub</a>
+      <a href="pricing.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Pricing Guide</a>
+      <a href="contact.html" class="hover:text-deep-teal dark:hover:text-fresh-aqua transition-colors whitespace-nowrap">Contact</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0 ms-auto">
+      <!-- Controls: Theme & RTL -->
+      <div class="flex items-center gap-1 sm:gap-2 sm:me-2">
+        <button type="button" class="theme-toggle w-10 h-10 sm:w-11 sm:h-11 inline-flex items-center justify-center rounded-lg text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <i data-lucide="moon" class="theme-toggle-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+        </button>
+        <button type="button" class="rtl-toggle w-10 h-10 sm:w-11 sm:h-11 inline-flex items-center justify-center rounded-lg text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors" title="Toggle RTL Layout" aria-label="Toggle right-to-left layout">
+          RTL
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-toggle" type="button" class="xl:hidden w-10 h-10 inline-flex items-center justify-center rounded-lg border border-theme-border dark:border-white/20 text-charcoal-text dark:text-white" aria-label="Open Mobile Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Primary Request Service CTA -->
+      <a href="contact.html" class="header-book-service btn-copper text-xs py-2 px-4 shadow-md hidden xl:inline-flex whitespace-nowrap">
+        Book Your Service
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU DRAWER -->
+<div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60 z-50 hidden backdrop-blur-sm transition-opacity"></div>
+<div id="mobile-menu-drawer" class="fixed top-0 right-0 w-80 max-w-[85vw] h-full bg-white dark:bg-midnight-navy z-50 p-6 flex flex-col justify-between shadow-2xl transform translate-x-full transition-transform duration-300 overflow-y-auto text-charcoal-text dark:text-white">
+  <div>
+    <div class="flex items-center justify-between pb-6 border-b border-theme-border dark:border-white/10">
+      <img src="assets/images/brand/logo.svg" alt="AquaTherma" class="site-logo-img h-8 w-auto">
+      <button id="mobile-menu-close" type="button" class="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-deep-teal dark:hover:text-white" aria-label="Close Mobile Menu">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <nav class="flex flex-col gap-3 py-6 text-base font-semibold">
+      <span class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 font-bold">Main Navigation</span>
+      <a href="index.html" class="py-2 text-deep-teal dark:text-fresh-aqua font-bold">Home 01: Standard &amp; Repair</a>
+      <a href="home-02.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Home 02: Tankless Solutions</a>
+      <a href="about.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">About Us</a>
+      <a href="services.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">All Services</a>
+      <a href="projects.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Projects Portfolio</a>
+      <a href="blog.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Water Heater Blog</a>
+      <a href="pricing.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Pricing Guide</a>
+      <a href="contact.html" class="py-2 text-slate-700 dark:text-slate-300 hover:text-deep-teal dark:hover:text-white">Contact &amp; Support</a>
+    </nav>
+  </div>
+
+  <div class="pt-6 border-t border-theme-border dark:border-white/10 flex flex-col gap-3">
+    <a href="tel:18005554689" class="btn-copper w-full text-center text-sm py-2.5">
+      <i data-lucide="phone-call" class="w-4 h-4"></i> Call (800) 555-4689
+    </a>
+    <a href="contact.html" class="btn-teal w-full text-center text-sm py-2.5">
+      Book Appointment
+    </a>
+  </div>
+</div>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 1: CONTACT HERO (1/7)
+         ========================================================================= -->
+    <section class="relative bg-gradient-to-b from-soft-bg to-white dark:from-[#0B1726] dark:to-[#09131F] py-16 lg:py-20 border-b border-theme-border dark:border-[#182C46]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+        <span class="badge-tag badge-blue mb-3">Responsive Customer Service</span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-deep-navy dark:text-white mb-6">
+          Connect With Our Water Heating Specialists
+        </h1>
+        <p class="text-base sm:text-lg text-secondary-text dark:text-slate-300 leading-relaxed">
+          Whether you need a scheduled replacement estimate or same-day emergency assistance for an active tank leak, our dispatch center is ready to help.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: MULTI-CHANNEL CONTACT INFO (2/7)
+         ========================================================================= -->
+    <section class="py-12 bg-white dark:bg-[#09131F]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div class="card-theme p-6 text-center">
+            <div class="w-12 h-12 rounded-xl bg-warm-orange/10 text-warm-orange flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="phone-call" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-base font-bold text-main-text dark:text-white mb-1">Direct Hotline</h4>
+            <a href="tel:18005554689" class="text-sm font-extrabold text-warm-orange hover:underline block mt-1">
+              (800) 555-4689
+            </a>
+            <span class="text-xs text-secondary-text block mt-1">24/7 Priority Emergency Support</span>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card-theme p-6 text-center">
+            <div class="w-12 h-12 rounded-xl bg-primary-blue/10 text-primary-blue flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="mail" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-base font-bold text-main-text dark:text-white mb-1">Email Inquiries</h4>
+            <a href="mailto:service@aquatherma-example.com" class="text-sm font-bold text-primary-blue hover:underline block mt-1">
+              service@aquatherma-example.com
+            </a>
+            <span class="text-xs text-secondary-text block mt-1">Estimates & general questions</span>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card-theme p-6 text-center">
+            <div class="w-12 h-12 rounded-xl bg-accent-aqua/10 text-accent-aqua flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="map-pin" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-base font-bold text-main-text dark:text-white mb-1">Regional HQ</h4>
+            <p class="text-xs text-main-text dark:text-white font-medium mt-1">
+              4820 Precision Way, Suite 100
+            </p>
+            <span class="text-xs text-secondary-text block">Metro City, ST 90210</span>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card-theme p-6 text-center">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="clock" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-base font-bold text-main-text dark:text-white mb-1">Service Hours</h4>
+            <p class="text-xs text-main-text dark:text-white font-medium mt-1">
+              Mon – Sat: 7:00 AM – 8:00 PM
+            </p>
+            <span class="text-xs text-secondary-text block">Sunday: On-Call Emergencies</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: STANDARD SERVICE BOOKING FORM (3/7)
+         ========================================================================= -->
+    <section class="py-16 bg-soft-bg dark:bg-[#0E1B2C] border-y border-theme-border dark:border-[#182C46]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="card-theme p-8 lg:p-12 shadow-2xl">
+          <div class="text-center max-w-2xl mx-auto mb-8">
+            <span class="badge-tag badge-blue text-[11px] mb-2">Standard Service Request</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-deep-navy dark:text-white">
+              Schedule an In-Home Assessment or Repair
+            </h2>
+            <p class="text-xs sm:text-sm text-secondary-text mt-2">
+              Select your required service and preferred appointment window. (Frontend demonstration form with client-side validation).
+            </p>
+          </div>
+
+          <div id="demo-booking-status" role="status" aria-live="polite"></div>
+
+          <form id="standard-booking-form" class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Full Name *</label>
+                <input type="text" name="fullName" required minlength="3" autocomplete="name" placeholder="Jane Smith" class="input-theme">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Email Address *</label>
+                <input type="email" name="email" required placeholder="jane@example.com" class="input-theme">
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Phone Number *</label>
+                <input type="tel" name="phone" required inputmode="numeric" pattern="[0-9]{10,}" minlength="10" autocomplete="tel" placeholder="5551234567" class="input-theme">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Service Type *</label>
+                <select name="serviceType" required class="input-theme">
+                  <option value="">Select Service...</option>
+                  <option value="tankless-installation">Tankless Water Heater Installation</option>
+                  <option value="tank-installation">Standard Tank Water Heater Installation</option>
+                  <option value="gas-service">Gas Water Heater Service</option>
+                  <option value="electric-service">Electric Water Heater Service</option>
+                  <option value="leak-repair">Water Heater Leak Repair</option>
+                  <option value="no-hot-water">No Hot Water Troubleshooting</option>
+                  <option value="replacement">Water Heater Replacement</option>
+                  <option value="maintenance">Flushing & Maintenance</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Preferred Date *</label>
+                <input type="date" name="preferredDate" required class="input-theme">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Preferred Time Window</label>
+                <select name="preferredTime" class="input-theme">
+                  <option value="morning">Morning (8:00 AM – 12:00 PM)</option>
+                  <option value="afternoon">Afternoon (12:00 PM – 4:00 PM)</option>
+                  <option value="evening">Late Afternoon (4:00 PM – 7:00 PM)</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Message or Current Tank Issue</label>
+              <textarea name="message" rows="3" placeholder="Describe symptoms, age of current unit, or questions..." class="input-theme"></textarea>
+            </div>
+
+            <div class="flex items-start gap-2 pt-2">
+              <input type="checkbox" name="consent" id="std-consent" required class="mt-1 rounded text-primary-blue focus:ring-primary-blue">
+              <label for="std-consent" class="text-xs text-secondary-text">
+                I agree to the privacy terms and consent to be contacted regarding this request. (Demo notice: no server database).
+              </label>
+            </div>
+
+            <div class="text-center pt-4">
+              <button type="submit" class="btn-primary text-sm py-3 px-8 shadow-md">
+                Submit Service Appointment Request
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: EMERGENCY REQUEST FORM (4/7)
+         ========================================================================= -->
+    <section id="emergency" class="py-16 bg-white dark:bg-[#09131F]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="card-theme p-8 lg:p-12 shadow-2xl border-2 border-warm-orange relative">
+          <div class="text-center max-w-2xl mx-auto mb-8">
+            <span class="badge-tag badge-orange text-[11px] mb-2">Priority Emergency Dispatch</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-deep-navy dark:text-white">
+              24/7 Priority Emergency Request Form
+            </h2>
+            <p class="text-xs text-secondary-text mt-2">
+              For active leaks, basement flooding, gas smells, or immediate complete hot water loss. (Frontend demo form).
+            </p>
+          </div>
+
+          <div id="emergency-booking-status" role="status" aria-live="polite"></div>
+
+          <form id="emergency-request-form" class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Full Name *</label>
+                <input type="text" name="emergencyName" required minlength="3" autocomplete="name" placeholder="Your Name" class="input-theme">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Phone Number *</label>
+                <input type="tel" name="emergencyPhone" required inputmode="numeric" pattern="[0-9]{10,}" minlength="10" autocomplete="tel" placeholder="5559990000" class="input-theme">
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Emergency Nature *</label>
+                <select name="emergencyType" required class="input-theme">
+                  <option value="">Select Emergency Type...</option>
+                  <option value="active-leak">Active Water Leak / Pooling Water</option>
+                  <option value="tank-burst">Severe Tank Burst / Rupture</option>
+                  <option value="no-hot-water">Total Hot Water Loss</option>
+                  <option value="gas-smell">Gas Odor Near Appliance</option>
+                  <option value="steam-blowing">High-Pressure Steam Blowing</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Water Heater Fuel Type</label>
+                <select name="emergencyFuel" class="input-theme">
+                  <option value="gas">Natural Gas</option>
+                  <option value="propane">Propane (LP)</option>
+                  <option value="electric">Electric (240V)</option>
+                  <option value="unknown">Not Sure</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Service Address *</label>
+              <input type="text" name="serviceAddress" required placeholder="Street address, city, zip code..." class="input-theme">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-main-text dark:text-white uppercase tracking-wider mb-1">Problem Description *</label>
+              <textarea name="problemDescription" rows="3" required placeholder="Describe where water is leaking from or current danger..." class="input-theme"></textarea>
+            </div>
+
+            <div class="text-center pt-4">
+              <button type="submit" class="btn-emergency text-sm py-3 px-8 shadow-md">
+                <i data-lucide="zap" class="w-4 h-4"></i> Submit Priority Emergency Request
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5: SERVICE AREAS & RESPONSE TIMES (5/7)
+         ========================================================================= -->
+    <section class="py-16 bg-soft-bg dark:bg-[#0E1B2C] border-y border-theme-border dark:border-[#182C46]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="badge-tag badge-blue mb-3">Service Coverage</span>
+          <h2 class="text-3xl font-extrabold text-deep-navy dark:text-white">
+            Regional Response Coverage
+          </h2>
+          <p class="text-base text-secondary-text dark:text-slate-300 mt-2">
+            We maintain radio-dispatched mobile service vans stationed across four primary regional sectors for prompt arrivals.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="card-theme p-6 text-center">
+            <span class="text-base font-bold text-main-text dark:text-white block">Central Metro</span>
+            <span class="text-xs text-accent-aqua font-bold block mt-1">45 – 60 Min Arrival</span>
+            <p class="text-xs text-secondary-text mt-2">Downtown, Heights, Midtown, and Historic District</p>
+          </div>
+          <div class="card-theme p-6 text-center">
+            <span class="text-base font-bold text-main-text dark:text-white block">West Suburbs</span>
+            <span class="text-xs text-accent-aqua font-bold block mt-1">45 – 60 Min Arrival</span>
+            <p class="text-xs text-secondary-text mt-2">Westfield, Oak Ridge, Canyon Ridge, and Pinecrest</p>
+          </div>
+          <div class="card-theme p-6 text-center">
+            <span class="text-base font-bold text-main-text dark:text-white block">North Corridor</span>
+            <span class="text-xs text-accent-aqua font-bold block mt-1">60 – 75 Min Arrival</span>
+            <p class="text-xs text-secondary-text mt-2">Riverdale, Highland Park, Greenbriar, and Summit</p>
+          </div>
+          <div class="card-theme p-6 text-center">
+            <span class="text-base font-bold text-main-text dark:text-white block">South & East Valley</span>
+            <span class="text-xs text-accent-aqua font-bold block mt-1">60 – 75 Min Arrival</span>
+            <p class="text-xs text-secondary-text mt-2">Maple Grove, Valley Hills, Lakeview, and Metro South</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 6: INTERACTIVE MAP & ZIP CODE CHECKER (6/7)
+         ========================================================================= -->
+    <section class="py-16 bg-white dark:bg-[#09131F]">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="card-theme p-8 shadow-xl">
+          <div class="grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-6">
+              <span class="badge-tag badge-blue text-[11px] mb-2">Instant Lookup</span>
+              <h3 class="text-2xl font-bold text-deep-navy dark:text-white mb-3">Check Your Zip Code</h3>
+              <p class="text-xs text-secondary-text leading-relaxed mb-6">
+                Enter your 5-digit postal code to view your area on the map. Call dispatch to confirm service availability.
+              </p>
+
+              <form id="zip-checker-form" class="flex gap-2 mb-4">
+                <input type="text" id="zip-input" aria-label="5-digit ZIP code" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="e.g. 90210" required class="input-theme text-xs py-2.5 max-w-[160px]">
+                <button type="submit" class="btn-primary text-xs py-2.5 px-4">Check Zip</button>
+              </form>
+              <div id="zip-checker-feedback" class="text-xs font-semibold" role="status" aria-live="polite"></div>
+            </div>
+
+            <div class="lg:col-span-6 min-w-0">
+              <div class="rounded-2xl overflow-hidden border border-theme-border dark:border-[#213A5C] bg-slate-100 dark:bg-[#14253B]">
+                <!-- Default to the template ZIP until the actual HQ location is supplied. -->
+                <iframe
+                  id="service-area-map"
+                  title="Area map for ZIP code 90210, USA"
+                  src="https://maps.google.com/maps?q=90210%2C%20USA&amp;z=11&amp;output=embed"
+                  width="600"
+                  height="300"
+                  class="block w-full h-[300px] border-0"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mt-3 text-xs">
+                <span id="map-location-label" class="text-secondary-text">Area map: ZIP 90210</span>
+                <a id="service-area-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=90210%2C%20USA" target="_blank" rel="noopener noreferrer" class="font-semibold text-primary-blue hover:underline">Open in Google Maps <span class="sr-only">(opens in a new tab)</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 7: SAFE SHUTOFF INSTRUCTIONS & EMERGENCY FAQ (7/7)
+         ========================================================================= -->
+    <section class="py-16 bg-soft-bg dark:bg-[#0E1B2C] border-t border-theme-border dark:border-[#182C46]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="badge-tag badge-orange mb-3">Emergency Action Protocol</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-deep-navy dark:text-white">
+            What to Do Right Now While Waiting for Dispatch
+          </h2>
+          <p class="text-xs sm:text-sm text-secondary-text mt-2">
+            Follow these 3 crucial steps to stop active water damage while your technician is en route:
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-6 mb-12">
+          <div class="card-theme p-6">
+            <span class="w-8 h-8 rounded-full bg-warm-orange text-white font-bold flex items-center justify-center mb-3 text-xs">1</span>
+            <h4 class="font-bold text-sm text-main-text dark:text-white mb-1">Shut Off Cold Supply</h4>
+            <p class="text-xs text-secondary-text leading-relaxed">Turn the valve located on the pipe directly above the heater clockwise (or quarter-turn for ball valves).</p>
+          </div>
+
+          <div class="card-theme p-6">
+            <span class="w-8 h-8 rounded-full bg-warm-orange text-white font-bold flex items-center justify-center mb-3 text-xs">2</span>
+            <h4 class="font-bold text-sm text-main-text dark:text-white mb-1">Cut Fuel / Power</h4>
+            <p class="text-xs text-secondary-text leading-relaxed">For gas: switch thermostat dial to 'OFF'. For electric: switch off dedicated 30-amp circuit breaker.</p>
+          </div>
+
+          <div class="card-theme p-6">
+            <span class="w-8 h-8 rounded-full bg-warm-orange text-white font-bold flex items-center justify-center mb-3 text-xs">3</span>
+            <h4 class="font-bold text-sm text-main-text dark:text-white mb-1">Open Hot Faucet</h4>
+            <p class="text-xs text-secondary-text leading-relaxed">Open a hot faucet in the lowest sink to relieve residual hydrostatic pressure from the hot water lines.</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="tel:18005554689" class="btn-emergency text-sm py-3 px-8 shadow-xl">
+            <i data-lucide="phone-call" class="w-4 h-4"></i> Call Live Dispatch: (800) 555-4689
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Contact FAQs -->
+    <section id="contact-faq" class="py-16 bg-white dark:bg-[#09131F] border-t border-theme-border dark:border-[#182C46]" aria-labelledby="contact-faq-heading">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <span class="badge-tag badge-blue mb-3">Before You Get in Touch</span>
+          <h2 id="contact-faq-heading" class="text-2xl sm:text-3xl font-extrabold text-deep-navy dark:text-white">Frequently Asked Questions</h2>
+          <p class="text-sm text-secondary-text mt-3">Helpful answers about booking, estimates, and contacting our team.</p>
+        </div>
+
+        <div class="contact-faq-list">
+          <details class="contact-faq-item">
+            <summary>How do I request a service appointment?</summary>
+            <div class="contact-faq-answer">
+              <p>Complete the <a href="#standard-booking-form">service booking form</a> with your contact information, the service you need, and your preferred date. Contact our team to confirm availability and your appointment time.</p>
+            </div>
+          </details>
+          <details class="contact-faq-item">
+            <summary>Who should I contact for an urgent water heater problem?</summary>
+            <div class="contact-faq-answer">
+              <p>For an urgent repair request, call our emergency dispatch line at <a href="tel:18005554689">(800) 555-4689</a>. Share your location and describe the problem so the team can discuss availability and the next steps.</p>
+            </div>
+          </details>
+          <details class="contact-faq-item">
+            <summary>What information should I include in my request?</summary>
+            <div class="contact-faq-answer">
+              <p>Include your name, phone number, email, ZIP code, and a brief description of the issue. If available, add the heater's model, approximate age, fuel type, and any error code shown on its display.</p>
+            </div>
+          </details>
+          <details class="contact-faq-item">
+            <summary>Can I get an estimate before booking?</summary>
+            <div class="contact-faq-answer">
+              <p>Visit our <a href="pricing.html">Pricing Guide</a> for sample package prices and to request an estimate. Final pricing depends on the equipment, existing connections, and installation conditions confirmed during an on-site assessment.</p>
+            </div>
+          </details>
+          <details class="contact-faq-item">
+            <summary>How can I confirm that you serve my area?</summary>
+            <div class="contact-faq-answer">
+              <p>Use the <a href="#zip-checker-form">ZIP code checker</a> on this page to view your area, then call dispatch to confirm service availability and the expected arrival window for your address.</p>
+            </div>
+          </details>
+          <details class="contact-faq-item">
+            <summary>How do I change or cancel an appointment?</summary>
+            <div class="contact-faq-answer">
+              <p>Call <a href="tel:18005554689">(800) 555-4689</a> with the name and phone number used for your booking. Let the team know your scheduled date and any preferred alternative so they can help update your appointment.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+<footer class="bg-white dark:bg-midnight-navy text-slate-700 dark:text-slate-300 text-sm pt-16 pb-12 border-t border-theme-border dark:border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-theme-border dark:border-white/10">
+      <!-- Col 1: Brand Info -->
+      <div class="lg:col-span-4">
+        <a href="index.html" class="inline-block mb-4">
+          <img src="assets/images/brand/logo.svg" alt="AquaTherma" class="site-logo-img h-9 w-auto">
+        </a>
+        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+          Residential Water Heater Installation, Rapid Emergency Repair, Tankless Engineering, and Preventative Maintenance. Serving homeowners with honesty and precision.
+        </p>
+        <div class="space-y-2 text-xs">
+          <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+            <i data-lucide="map-pin" class="w-4 h-4 text-deep-teal dark:text-fresh-aqua"></i> 4820 Precision Way, Suite 100, Metro City, ST 90210
+          </p>
+          <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+            <i data-lucide="shield-check" class="w-4 h-4 text-deep-teal dark:text-fresh-aqua"></i> Lic #MP-849204 | HVAC-R #HV-309112
+          </p>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation -->
+      <div class="lg:col-span-2">
+        <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Navigation</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Home 01: Standard &amp; Repair</a></li>
+          <li><a href="home-02.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Home 02 (Tankless)</a></li>
+          <li><a href="about.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">All Services</a></li>
+          <li><a href="projects.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Projects Portfolio</a></li>
+          <li><a href="pricing.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Pricing Guide</a></li>
+          <li><a href="contact.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services Menu -->
+      <div class="lg:col-span-3">
+        <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Top Services</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="service-detail.html?id=tankless-water-heater-installation" class="hover:text-deep-teal dark:hover:text-white transition-colors">Tankless Installation</a></li>
+          <li><a href="service-detail.html?id=tank-water-heater-installation" class="hover:text-deep-teal dark:hover:text-white transition-colors">Tank Water Heater Install</a></li>
+          <li><a href="service-detail.html?id=water-heater-leak-repair" class="hover:text-deep-teal dark:hover:text-white transition-colors">Water Heater Leak Repair</a></li>
+          <li><a href="service-detail.html?id=no-hot-water-troubleshooting" class="hover:text-deep-teal dark:hover:text-white transition-colors">No Hot Water Diagnostics</a></li>
+          <li><a href="service-detail.html?id=gas-water-heater-services" class="hover:text-deep-teal dark:hover:text-white transition-colors">Gas Water Heater Service</a></li>
+          <li><a href="service-detail.html?id=water-heater-flushing-maintenance" class="hover:text-deep-teal dark:hover:text-white transition-colors">Flushing &amp; Descaling</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Newsletter & Emergency Hotline -->
+      <div class="lg:col-span-3">
+        <h4 class="text-sm font-bold text-charcoal-text dark:text-white uppercase tracking-wider mb-4">Urgent Dispatch</h4>
+        <a href="tel:18005554689" class="block p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-theme-border dark:border-white/10 hover:border-warm-copper transition-colors mb-4">
+          <span class="text-[11px] text-[#995027] dark:text-warm-copper font-bold uppercase tracking-wider block">Hot Water Hotline</span>
+          <span class="text-base font-extrabold text-charcoal-text dark:text-white mt-1 block">(800) 555-4689</span>
+          <span class="text-[11px] text-slate-600 dark:text-slate-400 mt-1 block">Live technician assistance</span>
+        </a>
+
+        <!-- Newsletter Form -->
+        <form class="newsletter-form mt-4">
+          <label class="text-[11px] font-semibold text-slate-700 dark:text-slate-300 block mb-1">Water Heater Maintenance Tips</label>
+          <div class="flex gap-2">
+            <input type="email" placeholder="Your email address" required class="w-full text-xs px-3 py-2 rounded-lg bg-slate-100 dark:bg-white/10 border border-theme-border dark:border-white/20 text-charcoal-text dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-deep-teal">
+            <button type="submit" class="btn-copper text-xs py-2 px-3 whitespace-nowrap">Join</button>
+          </div>
+          <span class="newsletter-feedback"></span>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-600 dark:text-slate-400 gap-4">
+      <p>© 2026 AquaTherma Water Heating Specialists LLC. All Rights Reserved. Demonstration Portfolio Content.</p>
+      <div class="flex items-center gap-6">
+        <a href="privacy-policy.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Terms of Service</a>
+        <a href="coming-soon.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">Coming Soon</a>
+        <a href="maintenance.html" class="hover:text-deep-teal dark:hover:text-white transition-colors">System Status</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING EMERGENCY HOTLINE BUTTON (Sleek, unobtrusive) -->
+<a href="tel:18005554689" class="floating-hotline whitespace-nowrap" title="Call Emergency Dispatch">
+  <i data-lucide="phone-call" class="w-4 h-4"></i> (800) 555-4689
+</a>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script>
+    // Interactive Zip Code Checker
+    document.addEventListener('DOMContentLoaded', () => {
+      const zipForm = document.getElementById('zip-checker-form');
+      const zipInput = document.getElementById('zip-input');
+      const feedback = document.getElementById('zip-checker-feedback');
+      const serviceMap = document.getElementById('service-area-map');
+      const mapLink = document.getElementById('service-area-map-link');
+      const mapLabel = document.getElementById('map-location-label');
+
+      if (zipForm && zipInput && feedback) {
+        zipForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const zip = zipInput.value.trim();
+          if (zip.length === 5 && /^\d+$/.test(zip)) {
+            const locationQuery = encodeURIComponent(`${zip}, USA`);
+            serviceMap.src = `https://maps.google.com/maps?q=${locationQuery}&z=11&output=embed`;
+            serviceMap.title = `Area map for ZIP code ${zip}, USA`;
+            mapLink.href = `https://www.google.com/maps/search/?api=1&query=${locationQuery}`;
+            mapLabel.textContent = `Area map: ZIP ${zip}`;
+            feedback.innerHTML = `
+              <span class="text-primary-blue">
+                Map updated for ZIP ${zip}. Call <a href="tel:18005554689" class="underline">(800) 555-4689</a> to confirm service availability.
+              </span>
+            `;
+          } else {
+            feedback.innerHTML = `<span class="text-red-500">Please enter a valid 5-digit zip code.</span>`;
+          }
+          if (window.lucide) window.lucide.createIcons();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
