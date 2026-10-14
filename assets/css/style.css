@@ -343,6 +343,39 @@ html.dark .blog-cat-btn.active {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .blog-filter-layout #blog-category-pills {
+    flex-wrap: nowrap;
+    gap: 0.375rem;
+  }
+
+  .blog-filter-layout .blog-cat-btn {
+    flex: 0 0 auto;
+    min-height: 40px;
+    padding: 0.5rem;
+    font-size: 0.6875rem;
+    white-space: nowrap;
+  }
+}
+
+/* Keep benchmark amounts on their own aligned line on mobile. */
+@media (max-width: 639px) {
+  .pricing-benchmark-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.375rem;
+  }
+
+  .pricing-benchmark-heading > span:last-child {
+    white-space: nowrap;
+  }
+
+  .pricing-benchmark-heading [data-lucide],
+  .pricing-benchmark-heading .lucide {
+    flex-shrink: 0;
+  }
+}
+
 .btn-emergency {
   display: inline-flex;
   align-items: center;

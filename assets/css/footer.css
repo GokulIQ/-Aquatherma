@@ -2,6 +2,25 @@
    AquaTherma - Global Master Footer & Floating Hotline Styles
    ========================================================================== */
 
+/* Keep utility links evenly spaced without splitting labels on mobile. */
+@media (max-width: 639px) {
+  footer .footer-utility-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.25rem 1rem;
+    width: 100%;
+  }
+
+  footer .footer-utility-links > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    white-space: nowrap;
+    text-align: center;
+  }
+}
+
 /* Floating Hotline Pill */
 .floating-hotline {
   position: fixed;
